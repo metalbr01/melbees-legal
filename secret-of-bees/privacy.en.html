@@ -11,7 +11,7 @@
   <p class="lang"><strong>English</strong> · <a href="privacy.pt-BR.html">Português</a></p>
 
   <h1>Privacy Policy — Melbees: The Secret of Bees</h1>
-  <p class="muted">Effective date: 2026-07-27 · Last updated: 2026-07-27</p>
+  <p class="muted">Effective date: 2026-07-27 · Last updated: 2026-09-06</p>
 
   <h2>1. Who we are</h2>
   <p>Melbees (“the app”, “we”, “us”) is provided by <strong>Melbee Games</strong>, Brazil.
@@ -36,14 +36,20 @@
   </ul>
   <p>We do not collect your name, e-mail, phone number, precise location, contacts, or any account
      identifier.</p>
-  <p><strong>In this version, no information leaves your device.</strong> The app sends no data to us
-     or to third parties, and contains no advertising, analytics or payment SDK.</p>
+  <p><strong>The only information that leaves your device is a report you choose to send us</strong>
+     from the game's feedback screen, described in <a href="#feedback">section 8</a>. If you never
+     use that screen, nothing is transmitted. The app contains no advertising, analytics or payment
+     SDK, and sends no other data — to us or to third parties.</p>
 
   <h2>4. Children and the age gate (COPPA)</h2>
   <p>Melbees is family-friendly and shows a neutral age screen on first run. Players under 13 are
      placed in <strong>Kids-safe mode</strong>, in which:</p>
   <ul>
     <li>No personal data is collected, and no persistent-identifier analytics are used.</li>
+    <li><strong>Nothing is transmitted.</strong> The free-text feedback form
+        (<a href="#feedback">section 8</a>) is not offered: the support screen shows only our e-mail
+        address, so that a responsible adult can get in touch on their own. In this mode the app also
+        assembles no technical block at all.</li>
     <li>No advertising is shown.</li>
     <li>No purchases are offered.</li>
     <li>Account sign-in and social features are not offered.</li>
@@ -62,14 +68,118 @@
      policy will be updated beforehand.</p>
 
   <h2>7. Analytics and third-party services</h2>
-  <p>We do not use third-party analytics or tracking SDKs. The app makes no network connections to us
-     or to external providers.</p>
+  <p>We do not use third-party analytics or tracking SDKs. The app does not log how you play, does not
+     profile players, and makes no automatic or background network connection. The
+     <strong>only</strong> network connection the app opens is sending a feedback report that you
+     started, described below.</p>
 
-  <h2>8. Your choices and rights</h2>
+  <h2 id="feedback">8. Feedback and support</h2>
+  <p>The game has a <strong>Send feedback</strong> screen (Settings ▸ Account) and a
+     <strong>per-word report</strong> on the results screen. They exist so you can tell us about a
+     problem, a wrong word, an idea or a compliment.</p>
+
+  <h3>8.1 Who can send</h3>
+  <p>Only players in <strong>Standard mode</strong> (13 or over at the age gate). In Kids-safe mode
+     the form is not shown and the app <em>does not even assemble</em> a submission, even if the
+     screen were reached some other way (section 4).</p>
+
+  <h3>8.2 When a send happens</h3>
+  <p><strong>Only when you tap “Send”.</strong> There is no automatic, scheduled or background
+     sending, and nothing is sent when the game crashes or is closed.</p>
+
+  <h3>8.3 What is sent</h3>
+  <p>Exactly these items, and nothing beyond them:</p>
   <ul>
-    <li><strong>Delete my data:</strong> Settings → “Delete my data” erases all local game data on the
-        device and returns the app to the age screen. Since nothing is transmitted, this erases
-        <em>everything</em> that exists.</li>
+    <li><strong>The category you picked</strong> — one of four fixed labels: <code>Problem</code>,
+        <code>Word</code>, <code>Idea</code>, <code>Praise</code>.</li>
+    <li><strong>Your message</strong> — the free text you type, up to 5,000 characters. It is the only
+        field you write in, and it reaches us exactly as you wrote it.</li>
+    <li><strong>A technical block</strong> (up to 3,000 characters), assembled by the app and
+        <strong>shown on screen before you send</strong>. It contains only:
+      <ul>
+        <li>the app version and build number (e.g. <code>1.0.0+3</code>) and the build type
+            (<code>release</code> / <code>debug</code> / <code>profile</code>);</li>
+        <li>the platform (e.g. <code>android</code>) and the <strong>operating-system version string
+            exactly as the system reports it, truncated to the first 40 characters</strong> — on
+            Android this is typically a technical kernel line (<code>Linux 5.10.…</code>), not
+            “Android 14”, and it does <strong>not</strong> include the device model;</li>
+        <li>the interface language (e.g. <code>pt-BR</code>) and the tap mode chosen in settings;</li>
+        <li>the screen you were on and a list of <strong>up to 20 recent actions</strong>, each one an
+            internal game code (a card activation, for example) or, when an error occurs, a
+            <strong>label from a closed list</strong> (<code>range</code>, <code>argument</code>,
+            <code>format</code>, <code>state</code>, <code>unsupported</code>,
+            <code>unimplemented</code>, <code>assertion</code>, <code>type</code>,
+            <code>exception</code>, <code>other</code>). Never the error message, never the stack
+            trace, never anything you typed;</li>
+        <li><strong>for a per-word report only:</strong> the run's category and subcategory, the
+            number of secrets (K), the phase, and the word's internal identifier
+            (<code>wordId</code>) — so we know which entry to fix.</li>
+      </ul>
+    </li>
+    <li><strong>A fixed anti-spam token</strong> shipped inside the app. It is
+        <strong>identical on every installation</strong>: it identifies the app, not you.</li>
+  </ul>
+  <p><strong>Not sent</strong> — because the app never collects them in the first place: your name,
+     e-mail, phone number, address, location, contacts, advertising or device identifier, device
+     model, serial number, file paths, your date of birth, your game progress, your Vault or your
+     best times.</p>
+  <p><strong>Important:</strong> the message field is free text and reaches us as you wrote it.
+     <strong>Do not type your name, e-mail, phone number, address or any other personal information
+     there — yours or a child's.</strong> We do not need it to fix the game.</p>
+
+  <h3>8.4 Where it goes, and who has access</h3>
+  <p>The report is sent over <strong>HTTPS</strong> to a Google Apps Script service operated by
+     Melbee Games, which appends it as <strong>one row in a Google Sheets spreadsheet owned by
+     Melbee Games</strong>, with access restricted to us. Google acts only as the hosting provider
+     (processor), under its own terms. <strong>Nothing is sold, shared with third parties, used for
+     advertising, or used to build profiles.</strong> We use reports only to fix defects, correct
+     words and decide what to improve.</p>
+  <p>The spreadsheet row <strong>carries no identifier</strong> tied to you or your device: there is
+     no account, no device id, and we do not store your IP address. In practice we cannot link a
+     report to a person, nor group two reports from the same person — other than by what is written
+     in them.</p>
+
+  <h3>8.5 If the send fails</h3>
+  <p>With no internet, or if the service does not answer, the app <strong>tells you it failed</strong>
+     (it never says “sent” when it did not) and offers two alternatives, both started by you:</p>
+  <ul>
+    <li><strong>Send by e-mail</strong> — opens <em>your</em> mail app with a short pre-filled message
+        (your message, the app version, the platform, the language, the category and, where relevant,
+        the <code>wordId</code>). You decide whether to send it. If you do, <strong>we learn your
+        e-mail address</strong>, because it is an ordinary e-mail — and then we can link that message
+        to you. We keep such correspondence as we would any support contact, and you can ask us to
+        delete it by replying to that e-mail.</li>
+    <li><strong>Copy</strong> — copies your message and the technical block to the device clipboard.
+        Nothing is sent; you send it however you wish.</li>
+  </ul>
+
+  <h3>8.6 The technical block before it is sent</h3>
+  <p>The information in the technical block lives <strong>only in the app's memory</strong> while the
+     app is open, is never written to the device, and disappears when the game is closed. In
+     Kids-safe mode this recording is <strong>disabled and cleared</strong>.</p>
+
+  <h3>8.7 How long we keep it, and how to delete it</h3>
+  <p>We keep a report row for as long as it is useful to fix what it describes and, in any case, for
+     <strong>no more than 24 months</strong> from the day we receive it; after that it is deleted.</p>
+  <p>You can ask us to delete it sooner at any time by writing to
+     <a href="mailto:melbees.games@gmail.com">melbees.games@gmail.com</a>. Because the rows
+     <strong>carry no identifier</strong>, we need your help to find yours: <strong>tell us the date
+     you sent it (and the approximate time, if you remember) plus an excerpt of what you
+     wrote</strong>. We delete the matching rows and confirm by e-mail. Without those two details we
+     have no way to locate your report — not out of refusal, but because the spreadsheet holds
+     nothing that ties a row to a person.</p>
+  <p><strong>“Delete my data” inside the game erases device data only</strong> (progress, settings and
+     the age choice). It does <strong>not</strong> reach reports you have already sent — use the
+     e-mail route above for those.</p>
+
+  <h2>9. Your choices and rights</h2>
+  <ul>
+    <li><strong>Delete my data:</strong> Settings → “Delete my data” erases all local game data
+        <strong>on the device</strong> and returns the app to the age screen. That covers everything
+        the game stores; feedback reports already sent are deleted via the e-mail route in
+        <a href="#feedback">section 8.7</a>.</li>
+    <li><strong>Send nothing:</strong> feedback is optional and always started by you. If you never
+        use the feedback screen, we receive nothing.</li>
     <li><strong>Uninstall:</strong> removing the app also deletes the local data.</li>
     <li><strong>Requests:</strong> contact
         <a href="mailto:melbees.games@gmail.com">melbees.games@gmail.com</a>.</li>
@@ -77,21 +187,25 @@
   <p>Melbees is offered first in <strong>Brazil</strong>, and data handling follows Brazil’s
      <strong>General Data Protection Law (Law No. 13.709/2018 — LGPD)</strong>, which grants you rights
      including confirmation, access, correction, anonymization, portability and deletion. Because
-     Melbees keeps data only on your device and does not transmit it, you exercise those rights
-     directly in the app (“Delete my data”); you may also write to the address above. If the game is
-     later offered in the EU/UK or California, the applicable GDPR/CCPA rights and legal bases will be
-     added here beforehand.</p>
+     Melbees keeps game data only on your device, you exercise those rights directly in the app
+     (“Delete my data”); for a feedback report you sent us, use the e-mail address above with the
+     date and an excerpt of the message (<a href="#feedback">section 8.7</a>). The legal basis for
+     handling that report is our <strong>legitimate interest</strong> in fixing and improving the
+     game from a contact you started yourself (LGPD art. 7, IX). If the game is later offered in the
+     EU/UK or California, the applicable GDPR/CCPA rights and legal bases will be added here
+     beforehand.</p>
 
-  <h2>9. Data retention</h2>
-  <p>On-device data is kept until you delete it (via “Delete my data”) or uninstall the app. We keep no
-     copies, because we receive no data.</p>
+  <h2>10. Data retention</h2>
+  <p>On-device data is kept until you delete it (via “Delete my data”) or uninstall the app; we keep no
+     copies of it. Feedback reports you send us stay in our spreadsheet for <strong>no more than 24
+     months</strong>, or less if you ask us to delete them (<a href="#feedback">section 8.7</a>).</p>
 
-  <h2>10. Changes to this policy</h2>
+  <h2>11. Changes to this policy</h2>
   <p>We may update this policy; the “Last updated” date will change, and for material changes we will
      provide notice in the app. Features that involve sending data — advertising, accounts, online
      leaderboards — will only be enabled after this policy has been updated.</p>
 
-  <h2>11. Contact</h2>
+  <h2>12. Contact</h2>
   <p>Melbee Games — Brazil<br>
      <a href="mailto:melbees.games@gmail.com">melbees.games@gmail.com</a></p>
 </body>
