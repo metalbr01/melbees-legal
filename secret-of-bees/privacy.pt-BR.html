@@ -11,7 +11,7 @@
   <p class="lang"><a href="privacy.en.html">English</a> · <strong>Português</strong></p>
 
   <h1>Política de Privacidade — Melbees: The Secret of Bees</h1>
-  <p class="muted">Data de vigência: 27/07/2026 · Última atualização: 27/07/2026</p>
+  <p class="muted">Data de vigência: 27/07/2026 · Última atualização: 06/09/2026</p>
 
   <h2>1. Quem somos</h2>
   <p>O Melbees (“o aplicativo”, “nós”) é fornecido por <strong>Melbee Games</strong>, Brasil.
@@ -38,14 +38,21 @@
   </ul>
   <p>Não coletamos seu nome, e-mail, telefone, localização precisa, contatos, nem qualquer
      identificador de conta.</p>
-  <p><strong>Nesta versão, nenhuma informação sai do seu aparelho.</strong> O aplicativo não envia
-     dados para nós nem para terceiros, e não contém SDK de anúncios, de análise ou de pagamento.</p>
+  <p><strong>A única informação que sai do seu aparelho é o relatório que você mesmo decide nos
+     enviar</strong> pela tela de feedback do jogo, descrita na <a href="#feedback">seção 8</a>. Se
+     você nunca usar essa tela, nada é transmitido. O aplicativo não contém SDK de anúncios, de
+     análise nem de pagamento, e não faz nenhum outro envio de dados — nem para nós, nem para
+     terceiros.</p>
 
   <h2>4. Crianças e a porta de idade</h2>
   <p>O Melbees é adequado para a família e mostra uma tela de idade neutra no primeiro uso. Jogadores
      menores de 13 anos ficam no <strong>modo Kids-safe</strong>, no qual:</p>
   <ul>
     <li>Nenhum dado pessoal é coletado e não há análises com identificador persistente.</li>
+    <li><strong>Nada é transmitido.</strong> O formulário de feedback com campo de texto livre
+        (<a href="#feedback">seção 8</a>) não é oferecido: a tela de suporte mostra apenas o nosso
+        e-mail, para que um adulto responsável entre em contato por conta própria. Nesse modo o
+        aplicativo também não monta nenhum bloco técnico.</li>
     <li>Não são exibidos anúncios.</li>
     <li>Compras não são oferecidas.</li>
     <li>Login de conta e recursos sociais não são oferecidos.</li>
@@ -64,14 +71,122 @@
      esta política será atualizada antes.</p>
 
   <h2>7. Análises e serviços de terceiros</h2>
-  <p>Não usamos análises de terceiros nem SDKs de rastreamento. O aplicativo não faz conexões de rede
-     para nós nem para provedores externos.</p>
+  <p>Não usamos análises de terceiros nem SDKs de rastreamento. O aplicativo não registra o que você
+     joga, não cria perfis de jogadores e não faz nenhuma conexão de rede automática ou em segundo
+     plano. A <strong>única</strong> conexão de rede que o aplicativo abre é o envio de um relatório
+     de feedback iniciado por você, descrito a seguir.</p>
 
-  <h2>8. Suas escolhas e direitos</h2>
+  <h2 id="feedback">8. Feedback e suporte</h2>
+  <p>O jogo tem uma tela <strong>Enviar feedback</strong> (Configurações ▸ Conta) e um
+     <strong>relatório por palavra</strong> na tela de resultados. Eles existem para você nos contar
+     um problema, uma palavra errada, uma ideia ou um elogio.</p>
+
+  <h3>8.1 Quem pode enviar</h3>
+  <p>Somente jogadores no <strong>modo Padrão</strong> (13 anos ou mais na porta de idade). No modo
+     Kids-safe o formulário não aparece e o aplicativo <em>não chega a montar</em> um envio, mesmo
+     que a tela seja alcançada de outra forma (seção 4).</p>
+
+  <h3>8.2 Quando um envio acontece</h3>
+  <p><strong>Só quando você toca em “Enviar”.</strong> Não há envio automático, agendado ou em
+     segundo plano, e nada é enviado quando o jogo trava ou é fechado.</p>
+
+  <h3>8.3 O que é enviado</h3>
+  <p>Exatamente estes itens, e nada além deles:</p>
+  <ul>
+    <li><strong>A categoria escolhida</strong> — um entre quatro rótulos fixos: <code>Problem</code>,
+        <code>Word</code>, <code>Idea</code>, <code>Praise</code>.</li>
+    <li><strong>A sua mensagem</strong> — o texto livre que você digitar, até 5.000 caracteres. É o
+        único campo em que você escreve, e chega até nós exatamente como você o escreveu.</li>
+    <li><strong>Um bloco técnico</strong> (até 3.000 caracteres), montado pelo aplicativo e
+        <strong>exibido na tela antes de você enviar</strong>. Ele contém somente:
+      <ul>
+        <li>a versão e o número de build do aplicativo (ex.: <code>1.0.0+3</code>) e o tipo de build
+            (<code>release</code> / <code>debug</code> / <code>profile</code>);</li>
+        <li>a plataforma (ex.: <code>android</code>) e a <strong>string de versão do sistema
+            operacional exatamente como o sistema a informa, cortada nos primeiros 40
+            caracteres</strong> — no Android isso costuma ser uma linha técnica de kernel
+            (<code>Linux 5.10.…</code>), não “Android 14”, e <strong>não</strong> inclui o modelo do
+            aparelho;</li>
+        <li>o idioma da interface (ex.: <code>pt-BR</code>) e o modo de toque escolhido nas
+            configurações;</li>
+        <li>a tela em que você estava e uma lista das <strong>até 20 ações recentes</strong>, cada
+            uma como um código interno do jogo (por exemplo, a ativação de uma carta) ou, quando
+            ocorre um erro, um <strong>rótulo de uma lista fechada</strong> (<code>range</code>,
+            <code>argument</code>, <code>format</code>, <code>state</code>, <code>unsupported</code>,
+            <code>unimplemented</code>, <code>assertion</code>, <code>type</code>,
+            <code>exception</code>, <code>other</code>). Nunca a mensagem do erro, nunca a pilha de
+            execução, nunca um texto que você digitou;</li>
+        <li><strong>somente no relatório por palavra:</strong> a categoria e a subcategoria da
+            partida, a quantidade de segredos (K), a fase e o identificador interno da palavra
+            (<code>wordId</code>) — para sabermos qual verbete corrigir.</li>
+      </ul>
+    </li>
+    <li><strong>Um token fixo antisspam</strong> que acompanha o aplicativo. Ele é
+        <strong>idêntico para todas as instalações</strong>: identifica o aplicativo, não você.</li>
+  </ul>
+  <p><strong>Não são enviados</strong> — porque o aplicativo não os coleta em momento algum: seu
+     nome, e-mail, telefone, endereço, localização, contatos, identificador de anúncios ou do
+     aparelho, modelo do aparelho, número de série, caminhos de arquivo, sua data de nascimento, seu
+     progresso de jogo, seu Vault ou seus melhores tempos.</p>
+  <p><strong>Importante:</strong> o campo de mensagem é texto livre e chega até nós como você o
+     escreveu. <strong>Não escreva ali o seu nome, e-mail, telefone, endereço nem qualquer outra
+     informação pessoal — sua ou de uma criança.</strong> Não precisamos dessa informação para
+     corrigir o jogo.</p>
+
+  <h3>8.4 Para onde vai, e quem tem acesso</h3>
+  <p>O relatório é enviado por <strong>HTTPS</strong> a um serviço Google Apps Script operado pela
+     Melbee Games, que o acrescenta como <strong>uma linha em uma planilha do Google Sheets de
+     propriedade da Melbee Games</strong>, com acesso restrito a nós. O Google atua apenas como
+     provedor de hospedagem (operador), sob os termos dele. <strong>Nada é vendido, compartilhado
+     com terceiros, usado para publicidade ou para criar perfis.</strong> Usamos os relatórios apenas
+     para corrigir defeitos, corrigir palavras e decidir o que melhorar.</p>
+  <p>A linha da planilha <strong>não carrega nenhum identificador</strong> ligado a você ou ao seu
+     aparelho: não há conta, não há id de dispositivo e não guardamos o seu endereço IP. Na prática,
+     não conseguimos ligar um relatório a uma pessoa, nem juntar dois relatórios da mesma pessoa —
+     exceto pelo que estiver escrito neles.</p>
+
+  <h3>8.5 Se o envio falhar</h3>
+  <p>Sem internet, ou se o serviço não responder, o aplicativo <strong>avisa que falhou</strong>
+     (nunca diz “enviado” quando não enviou) e oferece duas alternativas, ambas iniciadas por você:</p>
+  <ul>
+    <li><strong>Enviar por e-mail</strong> — abre o <em>seu</em> aplicativo de e-mail com uma
+        mensagem curta já preenchida (a sua mensagem, a versão do aplicativo, a plataforma, o idioma,
+        a categoria e, se for o caso, o <code>wordId</code>). Você decide se envia. Se enviar,
+        <strong>passamos a conhecer o seu endereço de e-mail</strong>, porque é um e-mail comum — e
+        aí sim conseguimos ligar aquela mensagem a você. Guardamos essa correspondência como qualquer
+        contato de suporte, e você pode pedir a exclusão respondendo ao próprio e-mail.</li>
+    <li><strong>Copiar</strong> — copia a sua mensagem e o bloco técnico para a área de transferência
+        do aparelho. Nada é enviado; você envia por onde quiser.</li>
+  </ul>
+
+  <h3>8.6 O bloco técnico antes do envio</h3>
+  <p>As informações do bloco técnico ficam <strong>apenas na memória do aplicativo</strong> enquanto
+     ele está aberto, nunca são gravadas no aparelho e desaparecem quando o jogo é fechado. No modo
+     Kids-safe esse registro fica <strong>desligado e é apagado</strong>.</p>
+
+  <h3>8.7 Por quanto tempo guardamos, e como apagar</h3>
+  <p>Guardamos a linha do relatório enquanto ela for útil para corrigir o que ela descreve e, em
+     qualquer caso, por <strong>no máximo 24 meses</strong> a contar do recebimento; depois disso ela
+     é apagada.</p>
+  <p>Você pode pedir a exclusão antes disso a qualquer momento, escrevendo para
+     <a href="mailto:melbees.games@gmail.com">melbees.games@gmail.com</a>. Como as linhas
+     <strong>não têm identificador</strong>, precisamos que você nos ajude a achar a sua:
+     <strong>informe a data (e, se lembrar, o horário aproximado) do envio e um trecho do que você
+     escreveu</strong>. Apagamos as linhas correspondentes e confirmamos por e-mail. Sem esses dois
+     dados não temos como localizar o seu relatório — não por recusa, mas porque a planilha não
+     guarda nada que ligue uma linha a uma pessoa.</p>
+  <p><strong>“Apagar meus dados”, dentro do jogo, apaga somente os dados do aparelho</strong>
+     (progresso, configurações e a escolha de idade). Ele <strong>não</strong> alcança relatórios que
+     você já enviou — para esses, use o e-mail acima.</p>
+
+  <h2>9. Suas escolhas e direitos</h2>
   <ul>
     <li><strong>Apagar meus dados:</strong> Configurações → “Apagar meus dados” apaga todos os dados
-        locais do jogo no aparelho e retorna o aplicativo à tela de idade. Como nada é transmitido,
-        essa ação apaga <em>tudo</em> o que existe.</li>
+        locais do jogo <strong>no aparelho</strong> e retorna o aplicativo à tela de idade. Isso
+        cobre tudo o que o jogo guarda; relatórios de feedback já enviados são apagados pelo e-mail
+        descrito na <a href="#feedback">seção 8.7</a>.</li>
+    <li><strong>Não enviar nada:</strong> o feedback é opcional e sempre iniciado por você. Se não
+        usar a tela de feedback, não recebemos nada.</li>
     <li><strong>Desinstalar:</strong> remover o aplicativo também elimina os dados locais.</li>
     <li><strong>Solicitações:</strong> escreva para
         <a href="mailto:melbees.games@gmail.com">melbees.games@gmail.com</a>.</li>
@@ -79,22 +194,26 @@
   <p>O primeiro mercado do Melbees é o <strong>Brasil</strong>, e o tratamento de dados observa a
      <strong>Lei Geral de Proteção de Dados (Lei nº 13.709/2018 — LGPD)</strong>. A LGPD assegura a
      você, entre outros, os direitos de confirmação, acesso, correção, anonimização, portabilidade e
-     eliminação dos seus dados. Como o Melbees mantém os dados apenas no seu aparelho e não os
-     transmite, você exerce esses direitos diretamente pelo próprio aplicativo (“Apagar meus dados”);
-     ainda assim, pode nos escrever no e-mail acima. Se o jogo passar a ser oferecido na UE/Reino
-     Unido ou na Califórnia, os direitos e bases legais aplicáveis (GDPR/CCPA) serão acrescentados
-     aqui antes.</p>
+     eliminação dos seus dados. Como o Melbees mantém os dados de jogo apenas no seu aparelho, você
+     exerce esses direitos diretamente pelo próprio aplicativo (“Apagar meus dados”); para um
+     relatório de feedback que você nos enviou, use o e-mail acima com a data e um trecho da
+     mensagem (<a href="#feedback">seção 8.7</a>). A base legal para tratar esse relatório é o
+     <strong>legítimo interesse</strong> em corrigir e melhorar o jogo a partir de um contato que
+     você mesmo iniciou (art. 7º, IX). Se o jogo passar a ser oferecido na UE/Reino Unido ou na
+     Califórnia, os direitos e bases legais aplicáveis (GDPR/CCPA) serão acrescentados aqui antes.</p>
 
-  <h2>9. Retenção de dados</h2>
+  <h2>10. Retenção de dados</h2>
   <p>Os dados no aparelho ficam até você apagá-los (via “Apagar meus dados”) ou desinstalar o
-     aplicativo. Não mantemos cópias, porque não recebemos nenhum dado.</p>
+     aplicativo; não mantemos cópias deles. Os relatórios de feedback que você nos enviar ficam na
+     nossa planilha por <strong>no máximo 24 meses</strong>, ou menos, se você pedir a exclusão
+     (<a href="#feedback">seção 8.7</a>).</p>
 
-  <h2>10. Alterações nesta política</h2>
+  <h2>11. Alterações nesta política</h2>
   <p>Podemos atualizar esta política; a data de “Última atualização” mudará e, para alterações
      relevantes, avisaremos dentro do aplicativo. Recursos que envolvam envio de dados — anúncios,
      conta, ranking online — só serão ativados após esta política ser atualizada.</p>
 
-  <h2>11. Contato</h2>
+  <h2>12. Contato</h2>
   <p>Melbee Games — Brasil<br>
      <a href="mailto:melbees.games@gmail.com">melbees.games@gmail.com</a></p>
 </body>
