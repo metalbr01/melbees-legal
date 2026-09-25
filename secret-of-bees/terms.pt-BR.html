@@ -3,85 +3,295 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Melbees: The Secret of Bees — Termos de Uso</title>
+  <title>Melbees: The Secret of Bees · Termos de Uso</title>
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
   <nav class="top"><a href="../">← Família Melbees</a> <a href="./">Jurídico do Secret of Bees</a></nav>
   <p class="lang"><a href="terms.en.html">English</a> · <strong>Português</strong></p>
 
-  <h1>Termos de Uso — Melbees: The Secret of Bees</h1>
-  <p class="muted">Data de vigência: 27/07/2026 ·
-     Última atualização: 27/07/2026</p>
+  <h1>Termos de Uso do Melbees: The Secret of Bees</h1>
+  <p class="muted">Data de vigência: 27/07/2026 · Última atualização: 25/09/2026</p>
+
+  <!--
+    VERSÃO 2: os termos do jogo MONETIZADO. Rascunho de 25/09/2026, escrito contra a
+    Política de Privacidade v2 e as specs do Premium, das Pétalas, dos anúncios, da conta
+    e do ranking. Esta página é a fonte; terms.en.html é a tradução, e as duas andam juntas.
+
+    PUBLICAR SÓ JUNTO COM O BUILD MONETIZADO (o trem R1), no mesmo passo da política v2.
+    Cada seção abaixo depende de uma chave do build que sobe; se a chave subir DESLIGADA,
+    tire a seção (e as frases que a citam) em vez de publicá-la:
+      - realAdsEnabled ............ seção 8 (Anúncios) e a opção de anúncio na seção 6
+      - purchasePathEnabled ....... seções 5 (Premium), 7 (Compras) e a compra na seção 6
+      - supabaseUrl + apiBaseUrl + supabaseAnonKey + googleServerClientId e
+        kRankingServiceLive/kServerTicket ... seções 4 (Conta) e 9 (Ranking online)
+
+    A v1 não tinha âncoras (id). As âncoras abaixo são novas e seguem os nomes da política.
+  -->
+
   <p>Estes Termos de Uso (“Termos”) regem o uso do jogo <strong>Melbees: The Secret of Bees</strong>
-     (“o jogo”). Eles funcionam em conjunto com a nossa
-     <a href="privacy.pt-BR.html">Política de Privacidade</a>. Ao usar o jogo, você concorda com
-     estes Termos.</p>
+     (“o jogo”), distribuído no <strong>Google Play</strong>. Eles funcionam junto com a nossa
+     <a href="privacy.pt-BR.html">Política de Privacidade</a>, que explica quais dados o jogo trata e
+     como você pode apagá-los.</p>
 
   <h2>1. Quem somos</h2>
-  <p>O jogo é fornecido por
-     <strong>Melbee Games</strong>, Brasil
-     (“nós”). Contato: <a href="mailto:melbees.games@gmail.com">melbees.games@gmail.com</a>.</p>
+  <p>O jogo é fornecido por <strong>Melbee Games</strong>, Brasil (“nós”). Para qualquer dúvida ou
+     pedido, escreva para <a href="mailto:melbees.games@gmail.com">melbees.games@gmail.com</a>.</p>
 
-  <h2>2. Elegibilidade e crianças</h2>
-  <p>O jogo mostra uma tela de idade neutra no primeiro uso. Se você tiver menos de 13 anos (ou a
-     idade definida pelo app para a sua região), um pai/mãe ou responsável legal deve concordar com
-     estes Termos e supervisionar o uso. A versão atual não oferece compras nem anúncios; caso venham a
-     existir, ficarão atrás de um controle parental no modo Kids-safe.</p>
+  <h2>2. Aceitação destes Termos</h2>
+  <p>Ao usar o jogo, você concorda com estes Termos. Se não concordar, não use o jogo. As compras são
+     feitas pelo Google Play, e para elas valem também os termos do Google Play.</p>
 
-  <h2>3. Sua licença de uso</h2>
+  <h2 id="gratis">3. O jogo é gratuito</h2>
+  <ul>
+    <li><strong>Todos os modos são gratuitos para todo mundo</strong>: Run, Passeio e Desafio diário.
+        O Run e o Passeio não têm limite de partidas. O Desafio diário é uma tentativa por dia em
+        cada dificuldade e idioma, para todos.</li>
+    <li><strong>Não é preciso comprar nada nem criar conta para jogar.</strong> Jogar é offline, e o
+        seu progresso fica guardado só no seu aparelho.</li>
+    <li>Sem pagar, você tem o conjunto gratuito de categorias, todas as cartas de poder, as mesmas
+        recompensas de qualquer jogador, a mesma oferta de continuar de cada modo e o ranking local
+        com os seus tempos.</li>
+  </ul>
+
+  <h2 id="conta">4. A conta Google, que é opcional</h2>
+  <ul>
+    <li><strong>A conta não é exigida para jogar nem para comprar.</strong> Ela serve para o ranking
+        online (<a href="#ranking">seção 9</a>) e para restaurar a assinatura em outro aparelho
+        (<a href="#premium">seção 5</a>).</li>
+    <li>A conta é <strong>só o Google</strong>: não há cadastro com e-mail e senha. Você entra em
+        Configurações → Conta → <strong>Entrar com o Google</strong>, ou quando o ranking online
+        pede. O jogo nunca pede login ao abrir.</li>
+    <li>O que guardamos da conta está na <a href="privacy.pt-BR.html#conta">Política de
+        Privacidade</a>.</li>
+    <li><strong>Apagar a conta</strong>: em Configurações → Conta → <strong>Apagar minha
+        conta</strong>, na hora. Sem o jogo instalado, pela página
+        <a href="delete-account.pt-BR.html">Apagar sua conta</a>, e atendemos em até
+        <strong>30 dias</strong>. Isso apaga a conta, o seu nome de exibição e as suas partidas no
+        ranking online.</li>
+    <li>Apagar a conta <strong>não cancela nem reembolsa</strong> a assinatura e não apaga nada do seu
+        aparelho. Apagar os dados do aparelho (<strong>Apagar meus dados</strong>) não apaga a conta.
+        São ações diferentes.</li>
+  </ul>
+
+  <h2 id="premium">5. Premium, a assinatura</h2>
+  <p>O <strong>Premium</strong> é uma assinatura <strong>mensal</strong>, opcional, vendida pelo
+     Google Play, que <strong>se renova automaticamente</strong>. Ele não compra acesso a nenhum modo:
+     tudo o que a <a href="#gratis">seção 3</a> lista continua gratuito. Enquanto a assinatura está
+     ativa, ela dá quatro benefícios:</p>
+  <ul>
+    <li><strong>Ranking online</strong>: o ranking global de cada categoria e o do Desafio diário
+        (<a href="#ranking">seção 9</a>).</li>
+    <li><strong>Categorias Premium</strong>: as categorias marcadas como Premium ficam abertas.</li>
+    <li><strong>Todas as skins e temas</strong>: são visuais e não mudam nada no jogo.</li>
+    <li><strong>Continues grátis</strong>: um continue grátis de 5 Pétalas por Run e um por Desafio
+        diário, e continues sem limite no Passeio.</li>
+  </ul>
+  <p><strong>O Premium não melhora o seu tempo.</strong> Nos modos com ranking (Run e Desafio
+     diário), cada Pétala recebida num continue soma o mesmo tempo ao seu tempo final, venha ela de um
+     anúncio, de uma compra ou do Premium. As cartas e as recompensas são as mesmas para quem assina e
+     para quem não assina.</p>
+  <ul>
+    <li><strong>Teste grátis de 7 dias.</strong> O preço, o período e o teste aparecem na tela do
+        Premium como o Google Play os informa, antes de você assinar. Quando o teste termina, a
+        assinatura passa a ser cobrada e se renova sozinha a cada mês, até você cancelar. Quem decide
+        se uma conta pode usar o teste é o Google Play: uma conta que já usou um teste antes pode não
+        receber outro.</li>
+    <li><strong>Assinar não exige conta.</strong> Para recuperar a assinatura, use
+        <strong>Restaurar compras</strong>, na tela do Premium ou em Configurações → Conta. Em outro
+        aparelho, o jogo pede a conta Google.</li>
+    <li><strong>Cancelar</strong>: quando quiser, nas assinaturas da sua conta Google Play. Em
+        Configurações → Conta, <strong>Gerenciar assinatura</strong> abre essa página. O jogo nunca
+        cancela a assinatura por você, e apagar a sua conta do Melbees não a cancela.</li>
+  </ul>
+  <p><strong>Quando a assinatura deixa de estar ativa:</strong></p>
+  <ul>
+    <li>as categorias Premium, as skins e os temas <strong>voltam a ficar bloqueados</strong>, e você
+        volta ao conjunto gratuito. Uma skin equipada deixa de aparecer, mas o registro dela não é
+        apagado;</li>
+    <li>o ranking online deixa de valer para você: você volta aos tempos locais. Os tempos que você já
+        enviou não são apagados por causa disso, mas nenhum tempo novo é aceito no ranking online;</li>
+    <li><strong>continua com você</strong>: tudo o que está no aparelho e tudo o que você já
+        conquistou, como os melhores tempos, as façanhas, os segredos descobertos e as
+        configurações.</li>
+  </ul>
+
+  <h2 id="petalas">6. Pétalas e o continue</h2>
+  <p>Quando as Pétalas da partida acabam, o jogo para o relógio e oferece continuar. As opções
+     dependem do modo:</p>
+  <ul>
+    <li><strong>Assistir a um anúncio recompensado</strong>: dá 1 Pétala
+        (<a href="#anuncios">seção 8</a>).</li>
+    <li><strong>Comprar um pacote de 2 ou de 5 Pétalas</strong>, no Run e no Desafio diário. No
+        Passeio não há compra de Pétalas, para ninguém.</li>
+    <li><strong>O continue grátis do Premium</strong>, se você assina (<a href="#premium">seção
+        5</a>).</li>
+    <li><strong>Desistir</strong>, com um toque, sempre disponível.</li>
+  </ul>
+  <p>Cada Pétala recebida aumenta o tempo que resta na fase e, nos modos com ranking (Run e Desafio
+     diário), soma o mesmo tempo ao seu tempo final, qualquer que seja a origem dela.</p>
+  <p><strong>As Pétalas compradas:</strong></p>
+  <ul>
+    <li>só são vendidas nesse momento, quando as suas acabam. O jogo não tem loja;</li>
+    <li>têm o preço do Google Play, que aparece ao lado do botão Comprar. Sem o preço, o botão não
+        aparece;</li>
+    <li><strong>entram na partida na hora e são gastas nela.</strong> Elas não ficam guardadas para
+        outra partida, não têm valor em dinheiro, não podem ser trocadas por dinheiro e não podem ser
+        passadas para outra pessoa, outra conta ou outro aparelho;</li>
+    <li>não são sorteio: <strong>não existe caixa de recompensa</strong>. Você sabe exatamente o que
+        está comprando, e nada comprado vira sorteio.</li>
+  </ul>
+  <p>Se uma compra ficar esperando a aprovação de um responsável, o jogo avisa que ela está
+     aguardando. Se a aprovação chegar com a oferta de continuar ainda aberta, as Pétalas entram na
+     partida. Uma compra que não é usada numa oferta de continuar aberta (por exemplo, uma aprovação
+     que chega depois que você desistiu, um pagamento que só se confirma depois do fim da partida, ou
+     o jogo fechar entre a cobrança e a entrega) não é entregue sozinha em outra partida, e o Google
+     Play a reembolsa automaticamente 3 dias depois da cobrança. Antes disso, se você comprar o mesmo
+     pacote numa oferta de continuar, o jogo entrega essa compra já paga, sem cobrar de novo.</p>
+
+  <h2 id="compras">7. Compras: quem cobra, cancelamento e reembolso</h2>
+  <ul>
+    <li><strong>Quem cobra é o Google Play</strong>, pelo sistema de pagamento dele e sob os termos
+        dele. <strong>Nós nunca vemos nem recebemos os seus dados de pagamento.</strong> O que chega
+        até nós está na <a href="privacy.pt-BR.html#compras">Política de Privacidade</a>.</li>
+    <li>Comprar não exige conta e não pergunta idade (<a href="#criancas">seção 10</a>).</li>
+    <li><strong>Reembolsos</strong> são pedidos ao Google Play e decididos por ele, conforme as
+        políticas dele e a lei de proteção ao consumidor do seu país.</li>
+    <li><strong>Direito de arrependimento.</strong> No Brasil, você tem o direito de arrependimento
+        do Código de Defesa do Consumidor (CDC), nos termos da lei. Na União Europeia e no Reino
+        Unido, você tem 14 dias para desistir de uma compra digital, salvo se aceitou expressamente
+        começar a usá-la de imediato e reconheceu a perda desse direito, o que a própria tela de
+        compra do Google Play apresenta; o pedido é feito pelo Google Play, que é o vendedor.</li>
+  </ul>
+
+  <h2 id="anuncios">8. Anúncios recompensados</h2>
+  <ul>
+    <li>O jogo exibe <strong>só anúncios recompensados</strong>, servidos pelo Google AdMob. Não há
+        banner e não há anúncio entre telas.</li>
+    <li><strong>Nenhum anúncio aparece sozinho.</strong> Ele só é exibido quando você toca para
+        assistir a um anúncio na oferta de continuar (<a href="#petalas">seção 6</a>), e dá 1
+        Pétala. Se você nunca tocar, nunca verá um anúncio. O anúncio é sempre identificado como
+        anúncio.</li>
+    <li>Nem sempre há um anúncio disponível. Quando não há, o jogo não mostra essa opção. No Passeio,
+        sem anúncio e sem Premium, a única opção é desistir.</li>
+    <li><strong>Na primeira vez em que um anúncio vai ser exibido</strong>, o jogo pergunta a sua idade
+        uma única vez, com um botão <strong>Pular</strong> do mesmo tamanho. Pular não bloqueia nada.
+        Para que serve a resposta, e o que guardamos dela, está nas seções
+        <a href="privacy.pt-BR.html#criancas">5</a> e <a href="privacy.pt-BR.html#anuncios">6</a> da
+        Política de Privacidade.</li>
+  </ul>
+
+  <h2 id="ranking">9. O ranking online e o jogo limpo</h2>
+  <ul>
+    <li><strong>O ranking local é grátis para todos</strong>: os seus 10 melhores tempos de cada
+        quadro ficam no aparelho.</li>
+    <li><strong>O ranking online é um benefício do Premium</strong>: o ranking global de cada
+        categoria e o do Desafio diário. Para enviar tempos e ver a sua posição, você entra com a
+        conta Google.</li>
+    <li>No ranking online você aparece com <strong>um nome gerado pelo jogo</strong>, que você não
+        escolhe, e não há campo de texto. O público vê só as cinquenta melhores marcas de cada quadro:
+        posição, nome gerado e tempo.</li>
+    <li>O ranking online precisa de internet e dos nossos servidores. Quando eles não respondem, o
+        ranking local continua funcionando.</li>
+  </ul>
+  <p><strong>Jogo limpo.</strong> Cada partida enviada é reexecutada no nosso servidor, jogada por
+     jogada, para confirmar que o tempo é real. Não é permitido alterar o jogo, o aplicativo ou os
+     dados que ele envia, usar programas para jogar por você ou para inventar uma partida, nem
+     aproveitar falhas do jogo para conseguir um tempo. <strong>Podemos remover resultados que
+     quebrem estas regras.</strong></p>
+
+  <h2 id="criancas">10. Crianças, adolescentes e o controle dos pais</h2>
+  <p>O Melbees é um jogo de público geral, adequado para a família, e sabemos que crianças e
+     adolescentes jogam. A versão que todo mundo recebe já é a versão permitida para um menor de
+     idade: não há bate-papo, não há mensagens entre jogadores, não há nome escolhido por você no
+     ranking, não há recompensa aleatória paga e não há perfil de publicidade montado a partir do que
+     você joga.</p>
+  <ul>
+    <li><strong>Não há tela de idade na entrada, e não há pergunta de idade para comprar.</strong> Quem
+        tem uma forma de pagamento na conta Google Play pode comprar. A única pergunta de idade do
+        jogo aparece antes do primeiro anúncio (<a href="#anuncios">seção 8</a>).</li>
+    <li><strong>Quem tem menos de 18 anos usa o jogo com o conhecimento dos pais ou responsáveis</strong>,
+        que controlam as compras pelo Google Play: a <strong>aprovação de compras</strong> permite
+        exigir autorização antes de qualquer compra, e o <strong>Family Link</strong> do Google
+        também permite definir limites de tempo. Uma compra que espera aprovação aparece no jogo
+        como aguardando (<a href="#petalas">seção 6</a>).</li>
+    <li>Em Configurações, a página <strong>Para pais e responsáveis</strong> mostra o tempo de jogo
+        neste aparelho e onde ficam esses controles. Ela não pede idade e não está atrás de compra
+        nenhuma.</li>
+    <li>Se você é pai, mãe ou responsável e acredita que uma criança nos enviou dados pessoais, escreva
+        para <a href="mailto:melbees.games@gmail.com">melbees.games@gmail.com</a> e nós apagamos.</li>
+  </ul>
+
+  <h2 id="feedback">11. O que você nos envia</h2>
+  <p>O jogo não tem bate-papo nem mensagens entre jogadores, e o ranking não tem campo de texto. Dentro
+     do jogo, o único texto seu que chega até nós é o da tela <strong>Enviar feedback</strong>
+     (Configurações → Conta) e o do relatório por palavra na tela de resultados.</p>
+  <ul>
+    <li>Nada é enviado até você tocar em “Enviar”.</li>
+    <li>Esses envios existem para você nos contar um problema, uma palavra errada, uma ideia ou um
+        elogio, e usamos o que você escreve para cuidar do que a mensagem descreve.</li>
+    <li>Ao enviar, você nos deixa usar o que escreveu para melhorar o jogo, sem pagamento. Nunca
+        publicamos o que você enviou com o seu nome.</li>
+    <li><strong>Não escreva ali o seu nome, e-mail, telefone, endereço nem qualquer outra informação
+        pessoal</strong>, sua ou de uma criança.</li>
+    <li>O que é enviado, por quanto tempo guardamos (no máximo 24 meses) e como pedir a exclusão estão
+        na <a href="privacy.pt-BR.html#feedback">Política de Privacidade</a>.</li>
+  </ul>
+
+  <h2>12. Sua licença de uso</h2>
   <p>Concedemos a você uma licença pessoal, não exclusiva, intransferível e revogável para usar o jogo
      para seu próprio entretenimento. Você concorda em não: copiar, vender, sublicenciar ou
      redistribuir o jogo; fazer engenharia reversa ou adulterá-lo; trapacear, explorar falhas ou usar
      software não autorizado; ou usar o jogo de forma ilegal.</p>
 
-  <h2>4. Itens virtuais e compras</h2>
-  <p>A versão atual <strong>não oferece compras no aplicativo</strong> nem itens virtuais pagos.
-     Caso venham a existir, os itens virtuais serão <strong>licenciados, não vendidos</strong>, sem
-     valor monetário no mundo real, e toda a cobrança será feita pela loja da plataforma, segundo os
-     termos dela — não processamos nem recebemos seus dados de pagamento. Estes Termos serão
-     atualizados antes.</p>
-
-  <h2>5. Anúncios</h2>
-  <p>A versão atual <strong>não exibe anúncios</strong>. Caso passem a existir, serão regidos pela
-     nossa <a href="privacy.pt-BR.html">Política de Privacidade</a>, e estes Termos e a política
-     serão atualizados antes.</p>
-
-  <h2>6. Propriedade intelectual</h2>
+  <h2>13. Propriedade intelectual</h2>
   <p>O jogo e seu conteúdo (personagens, arte, áudio, textos e código) pertencem a nós ou aos nossos
      licenciadores e são protegidos por lei. Estes Termos não concedem a você nenhum direito sobre
-     eles além da licença da seção 3.</p>
+     eles além da licença da seção 12.</p>
 
-  <h2>7. Disponibilidade e mudanças no jogo</h2>
-  <p>Podemos atualizar, alterar, suspender ou descontinuar o jogo (ou qualquer recurso) a qualquer
-     momento. Não somos obrigados a manter qualquer recurso, conteúdo ou item virtual disponível
-     indefinidamente.</p>
+  <h2>14. Disponibilidade e mudanças no jogo</h2>
+  <ul>
+    <li>Podemos atualizar o jogo e mudar regras, conteúdo e recursos, e podemos suspender ou encerrar o
+        jogo ou um recurso dele.</li>
+    <li><strong>Se um benefício do Premium ou o próprio jogo for encerrado</strong>, avisaremos com
+        antecedência, a assinatura deixará de ser renovada, e os reembolsos seguem as regras do
+        Google Play e a lei.</li>
+    <li>A tela do Premium só lista um benefício quando a versão do jogo que você tem já o entrega.
+        Nada é prometido para o futuro.</li>
+    <li>O ranking online, as compras e os anúncios dependem de internet e de serviços de terceiros,
+        como o Google, e podem ficar fora do ar por um tempo. Jogar continua funcionando offline.</li>
+    <li>Se uma mudança não servir para você, pode cancelar a assinatura a qualquer momento no Google
+        Play (<a href="#premium">seção 5</a>), e os seus direitos de consumidor continuam valendo
+        (<a href="#consumidor">seção 18</a>).</li>
+  </ul>
 
-  <h2>8. Isenção de garantias</h2>
-  <p>O jogo é fornecido “no estado em que se encontra” e “conforme disponível”, sem garantias de
-     qualquer tipo, na medida permitida por lei.</p>
+  <h2>15. Limitação de responsabilidade</h2>
+  <p>Trabalhamos para o jogo funcionar bem, mas não prometemos que ele estará sempre disponível ou sem
+     erros. O seu progresso fica só no seu aparelho, e nós não guardamos cópia dele em servidor
+     nenhum: se ele se perder, por exemplo ao desinstalar o jogo ou usar <strong>Apagar meus
+     dados</strong>, não temos como devolvê-lo. Na medida em que a lei permite, não respondemos por
+     prejuízos indiretos causados pelo uso do jogo. Nada nesta seção limita direitos que a lei de
+     proteção ao consumidor do seu país garante e que não podem ser afastados.</p>
 
-  <h2>9. Limitação de responsabilidade</h2>
-  <p>Na medida permitida por lei, não somos responsáveis por danos indiretos, incidentais ou
-     consequenciais decorrentes do uso do jogo. Nada nestes Termos limita direitos que não possam ser
-     limitados pela legislação de proteção ao consumidor aplicável (por exemplo, o CDC no Brasil).</p>
+  <h2>16. Como parar de usar o jogo</h2>
+  <p>Você pode parar de usar o jogo quando quiser. <strong>Apagar meus dados</strong> (Configurações)
+     apaga o que está no aparelho. <strong>Apagar minha conta</strong> (Configurações → Conta), ou a
+     página <a href="delete-account.pt-BR.html">Apagar sua conta</a>, apaga a conta. A assinatura se
+     cancela no Google Play (<a href="#premium">seção 5</a>).</p>
 
-  <h2>10. Rescisão</h2>
-  <p>Você pode parar de usar o jogo a qualquer momento (e apagar seus dados locais em Configurações →
-     “Apagar meus dados”). Podemos suspender ou encerrar seu acesso se você violar estes Termos.</p>
-
-  <h2>11. Lei aplicável e foro</h2>
-  <p>Estes Termos são regidos pelas leis da <strong>República Federativa do Brasil</strong>. Nada
-     aqui afasta as normas cogentes de proteção ao consumidor: nas relações de consumo aplica-se o
-     Código de Defesa do Consumidor, inclusive quanto ao foro do domicílio do consumidor. Se você
-     usar o jogo em outro país, as regras obrigatórias de proteção ao consumidor do seu país
-     continuam válidas.</p>
-
-  <h2>12. Alterações nestes Termos</h2>
+  <h2>17. Alterações nestes Termos</h2>
   <p>Podemos atualizar estes Termos; a data de “Última atualização” mudará e, para alterações
      relevantes, avisaremos dentro do jogo.</p>
 
-  <h2>13. Contato</h2>
-  <p><a href="mailto:melbees.games@gmail.com">melbees.games@gmail.com</a></p>
+  <h2 id="consumidor">18. Lei aplicável e foro</h2>
+  <p>Estes Termos são regidos pelas leis do Brasil. Nas relações de consumo aplica-se o Código de
+     Defesa do Consumidor (CDC), e você pode recorrer ao foro do seu domicílio. Se você mora em outro
+     país, continua com as proteções obrigatórias da lei do seu país. Nada nestes Termos tira de você
+     um direito que a lei de proteção ao consumidor garante e que não pode ser afastado por
+     contrato.</p>
+
+  <h2>19. Contato</h2>
+  <p>Melbee Games, Brasil<br>
+     <a href="mailto:melbees.games@gmail.com">melbees.games@gmail.com</a></p>
 </body>
 </html>

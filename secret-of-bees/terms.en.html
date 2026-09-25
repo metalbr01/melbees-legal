@@ -3,81 +3,289 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Melbees: The Secret of Bees — Terms of Use</title>
+  <title>Melbees: The Secret of Bees · Terms of Use</title>
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
   <nav class="top"><a href="../">← Melbees family</a> <a href="./">Secret of Bees legal</a></nav>
   <p class="lang"><strong>English</strong> · <a href="terms.pt-BR.html">Português</a></p>
 
-  <h1>Terms of Use — Melbees: The Secret of Bees</h1>
-  <p class="muted">Effective date: 2026-07-27 ·
-     Last updated: 2026-07-27</p>
+  <h1>Terms of Use of Melbees: The Secret of Bees</h1>
+  <p class="muted">Effective date: 2026-07-27 · Last updated: 2026-09-25</p>
+
+  <!--
+    VERSION 2: the terms of the MONETIZED game. Draft of 2026-09-25, written against
+    Privacy Policy v2 and the Premium, Petals, ads, account and leaderboard specs. This page
+    is the translation of terms.pt-BR.html; keep the two in step, and edit the pt-BR one first.
+
+    PUBLISH ONLY ALONGSIDE THE MONETIZED BUILD (the R1 train), in the same step as policy v2.
+    Each section below depends on a key of the build going up; if a key ships OFF, take the
+    section (and the sentences that cite it) out rather than publish it:
+      - realAdsEnabled ............ section 8 (Ads) and the ad option in section 6
+      - purchasePathEnabled ....... sections 5 (Premium), 7 (Purchases) and the purchase in section 6
+      - supabaseUrl + apiBaseUrl + supabaseAnonKey + googleServerClientId and
+        kRankingServiceLive/kServerTicket ... sections 4 (Account) and 9 (Online leaderboard)
+
+    v1 had no anchors (id). The anchors below are new and follow the policy's names.
+  -->
+
   <p>These Terms of Use (“Terms”) govern your use of the game <strong>Melbees: The Secret of
-     Bees</strong> (“the game”). They work alongside our
-     <a href="privacy.en.html">Privacy Policy</a>. By using the game you agree to these Terms.</p>
+     Bees</strong> (“the game”), distributed on <strong>Google Play</strong>. They work alongside our
+     <a href="privacy.en.html">Privacy Policy</a>, which explains what data the game handles and how
+     you can delete it.</p>
 
   <h2>1. Who we are</h2>
-  <p>The game is provided by
-     <strong>Melbee Games</strong>, Brazil
-     (“we”, “us”). Contact: <a href="mailto:melbees.games@gmail.com">melbees.games@gmail.com</a>.</p>
+  <p>The game is provided by <strong>Melbee Games</strong>, Brazil (“we”, “us”). For any question or
+     request, write to <a href="mailto:melbees.games@gmail.com">melbees.games@gmail.com</a>.</p>
 
-  <h2>2. Eligibility and children</h2>
-  <p>The game shows a neutral age screen on first run. If you are under the age of 13 (or the age set
-     by the app for your region), a parent or legal guardian must agree to these Terms and supervise
-     your use. The current version offers no purchases and no advertising; should either exist, they
-     will be placed behind a parental gate in Kids-safe mode.</p>
+  <h2>2. Accepting these Terms</h2>
+  <p>By using the game you agree to these Terms. If you do not agree, do not use the game. Purchases
+     are made through Google Play, and Google Play's terms also apply to them.</p>
 
-  <h2>3. Your licence to use the game</h2>
+  <h2 id="free">3. The game is free</h2>
+  <ul>
+    <li><strong>Every mode is free for everyone</strong>: Run, Walk and Daily Challenge. Run and Walk
+        have no limit on matches. The Daily Challenge is one attempt a day per difficulty and
+        language, for everyone.</li>
+    <li><strong>You need to buy nothing and create no account to play.</strong> Playing is offline,
+        and your progress is kept on your device only.</li>
+    <li>Without paying you get the free set of categories, all the power cards, the same rewards as
+        any player, the same continue offer in each mode, and the local leaderboard with your own
+        times.</li>
+  </ul>
+
+  <h2 id="account">4. The Google account, which is optional</h2>
+  <ul>
+    <li><strong>An account is not required to play or to buy.</strong> It is for the online
+        leaderboard (<a href="#leaderboard">section 9</a>) and for restoring your subscription on
+        another device (<a href="#premium">section 5</a>).</li>
+    <li>The account is <strong>Google only</strong>: there is no e-mail-and-password sign-up. You sign
+        in under Settings → Account → <strong>Sign in with Google</strong>, or when the online
+        leaderboard asks. The game never asks you to sign in on launch.</li>
+    <li>What we keep from the account is in the <a href="privacy.en.html#account">Privacy
+        Policy</a>.</li>
+    <li><strong>Deleting the account</strong>: under Settings → Account → <strong>Delete my
+        account</strong>, right away. Without the game installed, through the
+        <a href="delete-account.en.html">Delete your account</a> page, and we act within
+        <strong>30 days</strong>. This deletes the account, your display name and your runs on the
+        online leaderboard.</li>
+    <li>Deleting the account <strong>does not cancel or refund</strong> the subscription and erases
+        nothing on your device. Deleting the device data (<strong>Delete my data</strong>) does not
+        delete the account. They are different actions.</li>
+  </ul>
+
+  <h2 id="premium">5. Premium, the subscription</h2>
+  <p><strong>Premium</strong> is an optional <strong>monthly</strong> subscription, sold through
+     Google Play, that <strong>renews automatically</strong>. It does not buy access to any mode:
+     everything <a href="#free">section 3</a> lists stays free. While the subscription is active, it
+     gives four benefits:</p>
+  <ul>
+    <li><strong>Online leaderboard</strong>: the global leaderboard of each category and the Daily
+        Challenge one (<a href="#leaderboard">section 9</a>).</li>
+    <li><strong>Premium categories</strong>: the categories marked Premium are open.</li>
+    <li><strong>All skins and themes</strong>: they are visual and change nothing in play.</li>
+    <li><strong>Free continues</strong>: one free 5-Petal continue per Run and one per Daily
+        Challenge, and unlimited continues in Walk.</li>
+  </ul>
+  <p><strong>Premium does not improve your time.</strong> In the ranked modes (Run and Daily
+     Challenge), each Petal received in a continue adds the same time to your final time, whether it
+     comes from an ad, a purchase or Premium. The cards and the rewards are the same for subscribers
+     and non-subscribers.</p>
+  <ul>
+    <li><strong>7-day free trial.</strong> The price, the period and the trial are shown on the Premium
+        screen as Google Play reports them, before you subscribe. When the trial ends, the
+        subscription starts being charged and renews by itself every month, until you cancel. Google
+        Play decides whether an account can use the trial: an account that has used a trial before
+        may not get another.</li>
+    <li><strong>Subscribing needs no account.</strong> To recover the subscription, use
+        <strong>Restore purchases</strong>, on the Premium screen or under Settings → Account. On
+        another device, the game asks for the Google account.</li>
+    <li><strong>Cancelling</strong>: whenever you like, in your Google Play account's subscriptions.
+        Under Settings → Account, <strong>Manage subscription</strong> opens that page. The game never
+        cancels the subscription for you, and deleting your Melbees account does not cancel it.</li>
+  </ul>
+  <p><strong>When the subscription stops being active:</strong></p>
+  <ul>
+    <li>the Premium categories, skins and themes <strong>lock again</strong>, and you go back to the
+        free set. An equipped skin stops showing, but its record is not erased;</li>
+    <li>the online leaderboard no longer applies to you: you go back to your local times. Times you
+        already sent are not deleted because of it, but no new time is accepted on the online
+        leaderboard;</li>
+    <li><strong>you keep</strong> everything on the device and everything you have already earned,
+        such as best times, feats, discovered secrets and settings.</li>
+  </ul>
+
+  <h2 id="petals">6. Petals and the continue</h2>
+  <p>When the match's Petals run out, the game stops the clock and offers to continue. The options
+     depend on the mode:</p>
+  <ul>
+    <li><strong>Watch a rewarded ad</strong>: it gives 1 Petal (<a href="#ads">section 8</a>).</li>
+    <li><strong>Buy a pack of 2 or 5 Petals</strong>, in Run and in the Daily Challenge. In Walk there
+        is no Petal purchase, for anybody.</li>
+    <li><strong>Premium's free continue</strong>, if you subscribe (<a href="#premium">section
+        5</a>).</li>
+    <li><strong>Give up</strong>, in one tap, always available.</li>
+  </ul>
+  <p>Each Petal received adds time to what is left of the phase and, in the ranked modes (Run and
+     Daily Challenge), adds the same time to your final time, wherever it came from.</p>
+  <p><strong>Bought Petals:</strong></p>
+  <ul>
+    <li>are sold only at that moment, when yours run out. The game has no store;</li>
+    <li>carry Google Play's price, shown beside the Buy button. Without the price, the button does not
+        appear;</li>
+    <li><strong>go into the match at once and are spent in it.</strong> They are not kept for another
+        match, have no cash value, cannot be exchanged for money, and cannot be passed to another
+        person, another account or another device;</li>
+    <li>are not a draw: <strong>there is no loot box</strong>. You know exactly what you are buying,
+        and nothing bought turns into a draw.</li>
+  </ul>
+  <p>If a purchase is waiting for a guardian's approval, the game says it is pending. If the approval
+     arrives while the continue offer is still open, the Petals go into the match. A purchase that is
+     not used on an open continue offer (for example, an approval that arrives after you gave up, a
+     payment that clears only after the match has ended, or the game closing between the charge and
+     the delivery) is not delivered to another match on its own, and Google Play refunds it
+     automatically 3 days after the charge. Before that, if you buy the same pack on a continue offer,
+     the game delivers that already-paid purchase, with no second charge.</p>
+
+  <h2 id="purchases">7. Purchases: who charges, cancelling and refunds</h2>
+  <ul>
+    <li><strong>Google Play does the charging</strong>, through its own billing system and under its
+        own terms. <strong>We never see or receive your payment details.</strong> What reaches us is
+        in the <a href="privacy.en.html#purchases">Privacy Policy</a>.</li>
+    <li>Buying requires no account and asks no age (<a href="#children">section 10</a>).</li>
+    <li><strong>Refunds</strong> are requested from Google Play and decided by it, under its policies
+        and the consumer-protection law of your country.</li>
+    <li><strong>Right of withdrawal.</strong> In Brazil, you have the right of withdrawal of the
+        Consumer Defense Code (CDC), under the terms of the law. In the European Union and the United
+        Kingdom, you have 14 days to withdraw from a digital purchase, unless you expressly agreed to
+        immediate performance and acknowledged losing that right, which Google Play's own purchase
+        screen presents; the request goes to Google Play, which is the seller.</li>
+  </ul>
+
+  <h2 id="ads">8. Rewarded ads</h2>
+  <ul>
+    <li>The game shows <strong>rewarded ads only</strong>, served by Google AdMob. There is no banner
+        and no ad between screens.</li>
+    <li><strong>No ad ever appears by itself.</strong> One is shown only when you tap to watch an ad on
+        the continue offer (<a href="#petals">section 6</a>), and it gives 1 Petal. If you never tap,
+        you will never see an ad. The ad is always labelled as an ad.</li>
+    <li>An ad is not always available. When none is, the game does not show that option. In Walk,
+        with no ad and no Premium, the only option is to give up.</li>
+    <li><strong>The first time an ad is about to be shown</strong>, the game asks your age once, with
+        a <strong>Skip</strong> button of the same weight. Skipping blocks nothing. What the answer is
+        for, and what we keep of it, is in sections <a href="privacy.en.html#children">5</a> and
+        <a href="privacy.en.html#ads">6</a> of the Privacy Policy.</li>
+  </ul>
+
+  <h2 id="leaderboard">9. The online leaderboard and fair play</h2>
+  <ul>
+    <li><strong>The local leaderboard is free for everyone</strong>: your 10 best times on each board
+        are kept on the device.</li>
+    <li><strong>The online leaderboard is a Premium benefit</strong>: the global leaderboard of each
+        category and the Daily Challenge one. To send times and see your position, you sign in with
+        the Google account.</li>
+    <li>On the online leaderboard you appear under <strong>a name the game generates</strong>, which
+        you do not choose, and there is no text field. The public sees only the fifty best marks of
+        each board: rank, generated name and time.</li>
+    <li>The online leaderboard needs the internet and our servers. When they do not answer, the local
+        leaderboard keeps working.</li>
+  </ul>
+  <p><strong>Fair play.</strong> Every run sent is re-run on our server, move by move, to confirm the
+     time is real. You may not alter the game, the app or the data it sends, use software to play for
+     you or to make up a run, or exploit bugs in the game to get a time. <strong>We may remove results
+     that break these rules.</strong></p>
+
+  <h2 id="children">10. Children, teenagers and parental control</h2>
+  <p>Melbees is a general-audience, family-friendly game, and we know that children and teenagers
+     play it. The version everyone gets is already the version a minor is allowed to have: there is no
+     chat, no messaging between players, no nickname you choose on the leaderboard, no paid random
+     reward, and no advertising profile built out of what you play.</p>
+  <ul>
+    <li><strong>There is no age screen at the door, and no age question to buy.</strong> Whoever has a
+        payment method on the Google Play account can buy. The game's only age question comes before
+        the first ad (<a href="#ads">section 8</a>).</li>
+    <li><strong>Players under 18 use the game with the knowledge of their parents or
+        guardians</strong>, who control purchases through Google Play: <strong>purchase
+        approval</strong> can require authorisation before any purchase, and Google
+        <strong>Family Link</strong> can also set time limits. A purchase waiting for approval shows
+        in the game as pending (<a href="#petals">section 6</a>).</li>
+    <li>Under Settings, the <strong>For parents and guardians</strong> page shows the play time on this
+        device and where those controls are. It asks for no age and sits behind no purchase.</li>
+    <li>If you are a parent or guardian and believe a child has sent us personal information, write to
+        <a href="mailto:melbees.games@gmail.com">melbees.games@gmail.com</a> and we will delete
+        it.</li>
+  </ul>
+
+  <h2 id="feedback">11. What you send us</h2>
+  <p>The game has no chat and no messaging between players, and the leaderboard has no text field.
+     Inside the game, the only text of yours that reaches us is what you write on the
+     <strong>Send feedback</strong> screen (Settings → Account) and in the per-word report on the
+     results screen.</p>
+  <ul>
+    <li>Nothing is sent until you tap “Send”.</li>
+    <li>They exist so you can tell us about a problem, a wrong word, an idea or a compliment, and we
+        use what you write to deal with what the message describes.</li>
+    <li>By sending it, you let us use what you wrote to improve the game, without payment. We never
+        publish what you sent with your name.</li>
+    <li><strong>Do not write your name, e-mail, phone number, address or any other personal
+        information there</strong>, yours or a child's.</li>
+    <li>What is sent, how long we keep it (24 months at most) and how to ask for it to be deleted are
+        in the <a href="privacy.en.html#feedback">Privacy Policy</a>.</li>
+  </ul>
+
+  <h2>12. Your licence to use the game</h2>
   <p>We grant you a personal, non-exclusive, non-transferable, revocable licence to use the game for
      your own entertainment. You agree not to: copy, sell, sublicense or redistribute the game;
      reverse-engineer or tamper with it; cheat, exploit bugs, or use unauthorized software; or use the
      game unlawfully.</p>
 
-  <h2>4. Virtual items and purchases</h2>
-  <p>The current version offers <strong>no in-app purchases</strong> and no paid virtual items.
-     Should they exist, virtual items will be <strong>licensed, not sold</strong>, carry no real-world
-     monetary value, and all billing will be handled by the platform store under its terms — we would
-     not process or receive your payment details. These Terms will be updated beforehand.</p>
-
-  <h2>5. Advertising</h2>
-  <p>The current version <strong>shows no advertising</strong>. Should ads exist, they will be
-     governed by our <a href="privacy.en.html">Privacy Policy</a>, and both these Terms and that
-     policy will be updated beforehand.</p>
-
-  <h2>6. Intellectual property</h2>
+  <h2>13. Intellectual property</h2>
   <p>The game and its content (characters, art, audio, text, and code) are owned by us or our
      licensors and are protected by law. These Terms grant you no rights in them beyond the licence in
-     section 3.</p>
+     section 12.</p>
 
-  <h2>7. Availability and changes to the game</h2>
-  <p>We may update, change, suspend, or discontinue the game (or any feature) at any time. We are not
-     obligated to keep any feature, content, or virtual item available indefinitely.</p>
+  <h2>14. Availability and changes to the game</h2>
+  <ul>
+    <li>We may update the game and change rules, content and features, and we may suspend or end the
+        game or a feature of it.</li>
+    <li><strong>If a Premium benefit or the game itself ends</strong>, we will give notice in advance,
+        the subscription will stop renewing, and refunds follow Google Play's rules and the law.</li>
+    <li>The Premium screen lists a benefit only once the version of the game you have already delivers
+        it. Nothing is promised for the future.</li>
+    <li>The online leaderboard, purchases and ads depend on the internet and on third-party services,
+        such as Google's, and may be down for a while. Playing keeps working offline.</li>
+    <li>If a change does not suit you, you can cancel the subscription at any time in Google Play
+        (<a href="#premium">section 5</a>), and your consumer rights still apply
+        (<a href="#consumer">section 18</a>).</li>
+  </ul>
 
-  <h2>8. Disclaimer</h2>
-  <p>The game is provided “as is” and “as available”, without warranties of any kind to the extent
-     permitted by law.</p>
+  <h2>15. Limitation of liability</h2>
+  <p>We work to keep the game running well, but we do not promise that it will always be available or
+     free of errors. Your progress is kept on your device only, and we keep no copy of it on any
+     server: if it is lost, for instance by uninstalling the game or using <strong>Delete my
+     data</strong>, we have no way to give it back. To the extent the law allows, we are not liable
+     for indirect losses caused by using the game. Nothing in this section limits rights that the
+     consumer-protection law of your country gives you and that cannot be set aside.</p>
 
-  <h2>9. Limitation of liability</h2>
-  <p>To the extent permitted by law, we are not liable for indirect, incidental, or consequential
-     damages arising from your use of the game. Nothing in these Terms limits rights that cannot be
-     limited under applicable consumer-protection law.</p>
+  <h2>16. How to stop using the game</h2>
+  <p>You can stop using the game whenever you like. <strong>Delete my data</strong> (Settings) erases
+     what is on the device. <strong>Delete my account</strong> (Settings → Account), or the
+     <a href="delete-account.en.html">Delete your account</a> page, deletes the account. The
+     subscription is cancelled in Google Play (<a href="#premium">section 5</a>).</p>
 
-  <h2>10. Termination</h2>
-  <p>You may stop using the game at any time (and delete your local data via Settings → “Delete my
-     data”). We may suspend or end your access if you breach these Terms.</p>
-
-  <h2>11. Governing law</h2>
-  <p>These Terms are governed by the laws of the <strong>Federative Republic of Brazil</strong>.
-     Nothing here displaces mandatory consumer-protection rules: in consumer relationships Brazil’s
-     Consumer Defence Code (CDC) applies, including as to the consumer’s home venue. If you use the
-     game in another country, your country’s mandatory consumer-protection rules still apply.</p>
-
-  <h2>12. Changes to these Terms</h2>
+  <h2>17. Changes to these Terms</h2>
   <p>We may update these Terms; the “Last updated” date will change and, for material changes, we will
-     provide notice in the game.</p>
+     say so inside the game.</p>
 
-  <h2>13. Contact</h2>
-  <p><a href="mailto:melbees.games@gmail.com">melbees.games@gmail.com</a></p>
+  <h2 id="consumer">18. Governing law and venue</h2>
+  <p>These Terms are governed by the laws of Brazil. In consumer relationships Brazil's Consumer
+     Defense Code (CDC) applies, and you may bring a claim in the courts of the place where you live. If you live in
+     another country, you keep the mandatory protections of your own country's law. Nothing in these
+     Terms takes away a right that consumer-protection law gives you and that cannot be set aside by
+     contract.</p>
+
+  <h2>19. Contact</h2>
+  <p>Melbee Games, Brazil<br>
+     <a href="mailto:melbees.games@gmail.com">melbees.games@gmail.com</a></p>
 </body>
 </html>
