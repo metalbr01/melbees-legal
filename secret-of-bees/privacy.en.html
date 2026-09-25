@@ -11,201 +11,388 @@
   <p class="lang"><strong>English</strong> · <a href="privacy.pt-BR.html">Português</a></p>
 
   <h1>Privacy Policy — Melbees: The Secret of Bees</h1>
-  <p class="muted">Effective date: 2026-07-27 · Last updated: 2026-09-06</p>
+  <p class="muted">Effective date: 2026-07-27 · Last updated: 2026-09-23</p>
+
+  <!--
+    VERSION 2 — the policy for the MONETIZED game. Written by mission P1 of
+    launch-director-plan.md against the code that G5 (Play Billing), G6 (AdMob + UMP),
+    M1 (Firebase) and S3 (Google account) landed. This page is the translation of
+    privacy.pt-BR.html; keep the two in step, and edit the pt-BR one first.
+
+    PUBLISH ONLY ALONGSIDE THE MONETIZED BUILD (the R1 train), never before: while
+    the closed-test track is the one live, this page describes an app that is not
+    published yet, which is as wrong as the other way round.
+
+    BEFORE PUBLISHING, CHECK THE KEYS on the build going up. Each section below
+    depends on one; if R1 ships with a key OFF, delete the section rather than
+    publish it:
+      - realAdsEnabled ......... section 6 (Ads)
+      - purchasePathEnabled .... section 7 (Purchases)
+      - supabaseUrl + apiBaseUrl + supabaseAnonKey + googleServerClientId (all four
+        together, hasSupabaseAuth) and kRankingServiceLive/kServerTicket ... sections 8 and 9
+      - firebaseAnalyticsEnabled ... section 10 (Analytics). The Firebase SDK embarked
+        (F1, F2) and is on in the R1 build (tag validated/2026-09-25-2): section 10 and
+        the Firebase line in section 13 stay. Checked by R2 on 2026-09-25.
+
+    DO NOT REMOVE THE id="feedback" ANCHOR: it is the data-deletion URL already saved
+    in the Play Console. The id="deletion" anchor is the new one, for account deletion.
+  -->
 
   <h2>1. Who we are</h2>
-  <p>Melbees (“the app”, “we”, “us”) is provided by <strong>Melbee Games</strong>, Brazil.
-     For any privacy question or request, contact
-     <a href="mailto:melbees.games@gmail.com">melbees.games@gmail.com</a>.</p>
+  <p>Melbees (“the app”, “we”) is provided by <strong>Melbee Games</strong>, Brazil, which is the
+     <strong>controller</strong> of the data described in this policy. For any privacy question or
+     request, write to <a href="mailto:melbees.games@gmail.com">melbees.games@gmail.com</a>.</p>
 
   <h2>2. Scope</h2>
-  <p>This policy explains what information Melbees handles, how, and your choices. It applies to the
-     Melbees game distributed on <strong>Google Play</strong>. If the game is later distributed on
-     other stores, this policy will be updated beforehand.</p>
+  <p>This policy explains what information Melbees handles, how, and what your choices are. It applies
+     to the Melbees game distributed on <strong>Google Play</strong>, in every country where it is
+     available. If the game is ever distributed through another store, this policy will be updated
+     first.</p>
+  <p>Depending on where you live, besides Brazil's <strong>LGPD</strong> (Law 13.709/2018) the
+     <strong>GDPR</strong> of the European Union and the United Kingdom, the United States'
+     <strong>COPPA</strong> and other local laws may apply to you.
+     <a href="#rights">Section 15</a> describes the rights each of them gives you and how to use
+     them.</p>
 
-  <h2>3. Information we handle</h2>
-  <p>Melbees stores the following <strong>only on your device</strong> to make the game work; none of
-     it is sent to us or to a server:</p>
+  <h2>3. The summary, in five lines</h2>
   <ul>
-    <li>Game progress: solved secrets (your Vault), best times, unlocks and settings.</li>
-    <li>Your <strong>age band</strong> (13-or-over / under-13), derived on your device from the date
-        of birth you enter. The date of birth itself is <strong>used only for that calculation and
-        then immediately discarded</strong> — it is never stored or transmitted.</li>
-    <li>Your advertising/analytics <strong>consent choice</strong> (players 13+).</li>
-    <li>Your chosen language.</li>
-  </ul>
-  <p>We do not collect your name, e-mail, phone number, precise location, contacts, or any account
-     identifier.</p>
-  <p><strong>The only information that leaves your device is a report you choose to send us</strong>
-     from the game's feedback screen, described in <a href="#feedback">section 8</a>. If you never
-     use that screen, nothing is transmitted. The app contains no advertising, analytics or payment
-     SDK, and sends no other data — to us or to third parties.</p>
-
-  <h2>4. Children and the age gate (COPPA)</h2>
-  <p>Melbees is family-friendly and shows a neutral age screen on first run. Players under 13 are
-     placed in <strong>Kids-safe mode</strong>, in which:</p>
-  <ul>
-    <li>No personal data is collected, and no persistent-identifier analytics are used.</li>
-    <li><strong>Nothing is transmitted.</strong> The free-text feedback form
-        (<a href="#feedback">section 8</a>) is not offered: the support screen shows only our e-mail
-        address, so that a responsible adult can get in touch on their own. In this mode the app also
-        assembles no technical block at all.</li>
-    <li>No advertising is shown.</li>
-    <li>No purchases are offered.</li>
-    <li>Account sign-in and social features are not offered.</li>
-  </ul>
-  <p>Players 13 and over use <strong>Standard mode</strong>. Should personalized advertising or
-     analytics ever exist, they will be used <strong>only with consent</strong> (off by default), and
-     this policy will be updated beforehand.</p>
-
-  <h2>5. Advertising</h2>
-  <p>This version <strong>does not display</strong> third-party advertising. There is no ad SDK in the
-     app. If this changes, we will update this policy and the store listing beforehand.</p>
-
-  <h2>6. In-app purchases</h2>
-  <p>This version <strong>does not offer in-app purchases</strong>. If that changes, purchases will be
-     processed by the platform store, not by us — we would not receive your payment details — and this
-     policy will be updated beforehand.</p>
-
-  <h2>7. Analytics and third-party services</h2>
-  <p>We do not use third-party analytics or tracking SDKs. The app does not log how you play, does not
-     profile players, and makes no automatic or background network connection. The
-     <strong>only</strong> network connection the app opens is sending a feedback report that you
-     started, described below.</p>
-
-  <h2 id="feedback">8. Feedback and support</h2>
-  <p>The game has a <strong>Send feedback</strong> screen (Settings ▸ Account) and a
-     <strong>per-word report</strong> on the results screen. They exist so you can tell us about a
-     problem, a wrong word, an idea or a compliment.</p>
-
-  <h3>8.1 Who can send</h3>
-  <p>Only players in <strong>Standard mode</strong> (13 or over at the age gate). In Kids-safe mode
-     the form is not shown and the app <em>does not even assemble</em> a submission, even if the
-     screen were reached some other way (section 4).</p>
-
-  <h3>8.2 When a send happens</h3>
-  <p><strong>Only when you tap “Send”.</strong> There is no automatic, scheduled or background
-     sending, and nothing is sent when the game crashes or is closed.</p>
-
-  <h3>8.3 What is sent</h3>
-  <p>Exactly these items, and nothing beyond them:</p>
-  <ul>
-    <li><strong>The category you picked</strong> — one of four fixed labels: <code>Problem</code>,
-        <code>Word</code>, <code>Idea</code>, <code>Praise</code>.</li>
-    <li><strong>Your message</strong> — the free text you type, up to 5,000 characters. It is the only
-        field you write in, and it reaches us exactly as you wrote it.</li>
-    <li><strong>A technical block</strong> (up to 3,000 characters), assembled by the app and
-        <strong>shown on screen before you send</strong>. It contains only:
-      <ul>
-        <li>the app version and build number (e.g. <code>1.0.0+3</code>) and the build type
-            (<code>release</code> / <code>debug</code> / <code>profile</code>);</li>
-        <li>the platform (e.g. <code>android</code>) and the <strong>operating-system version string
-            exactly as the system reports it, truncated to the first 40 characters</strong> — on
-            Android this is typically a technical kernel line (<code>Linux 5.10.…</code>), not
-            “Android 14”, and it does <strong>not</strong> include the device model;</li>
-        <li>the interface language (e.g. <code>pt-BR</code>) and the tap mode chosen in settings;</li>
-        <li>the screen you were on and a list of <strong>up to 20 recent actions</strong>, each one an
-            internal game code (a card activation, for example) or, when an error occurs, a
-            <strong>label from a closed list</strong> (<code>range</code>, <code>argument</code>,
-            <code>format</code>, <code>state</code>, <code>unsupported</code>,
-            <code>unimplemented</code>, <code>assertion</code>, <code>type</code>,
-            <code>exception</code>, <code>other</code>). Never the error message, never the stack
-            trace, never anything you typed;</li>
-        <li><strong>for a per-word report only:</strong> the run's category and subcategory, the
-            number of secrets (K), the phase, and the word's internal identifier
-            (<code>wordId</code>) — so we know which entry to fix.</li>
-      </ul>
-    </li>
-    <li><strong>A fixed anti-spam token</strong> shipped inside the app. It is
-        <strong>identical on every installation</strong>: it identifies the app, not you.</li>
-  </ul>
-  <p><strong>Not sent</strong> — because the app never collects them in the first place: your name,
-     e-mail, phone number, address, location, contacts, advertising or device identifier, device
-     model, serial number, file paths, your date of birth, your game progress, your Vault or your
-     best times.</p>
-  <p><strong>Important:</strong> the message field is free text and reaches us as you wrote it.
-     <strong>Do not type your name, e-mail, phone number, address or any other personal information
-     there — yours or a child's.</strong> We do not need it to fix the game.</p>
-
-  <h3>8.4 Where it goes, and who has access</h3>
-  <p>The report is sent over <strong>HTTPS</strong> to a Google Apps Script service operated by
-     Melbee Games, which appends it as <strong>one row in a Google Sheets spreadsheet owned by
-     Melbee Games</strong>, with access restricted to us. Google acts only as the hosting provider
-     (processor), under its own terms. <strong>Nothing is sold, shared with third parties, used for
-     advertising, or used to build profiles.</strong> We use reports only to fix defects, correct
-     words and decide what to improve.</p>
-  <p>The spreadsheet row <strong>carries no identifier</strong> tied to you or your device: there is
-     no account, no device id, and we do not store your IP address. In practice we cannot link a
-     report to a person, nor group two reports from the same person — other than by what is written
-     in them.</p>
-
-  <h3>8.5 If the send fails</h3>
-  <p>With no internet, or if the service does not answer, the app <strong>tells you it failed</strong>
-     (it never says “sent” when it did not) and offers two alternatives, both started by you:</p>
-  <ul>
-    <li><strong>Send by e-mail</strong> — opens <em>your</em> mail app with a short pre-filled message
-        (your message, the app version, the platform, the language, the category and, where relevant,
-        the <code>wordId</code>). You decide whether to send it. If you do, <strong>we learn your
-        e-mail address</strong>, because it is an ordinary e-mail — and then we can link that message
-        to you. We keep such correspondence as we would any support contact, and you can ask us to
-        delete it by replying to that e-mail.</li>
-    <li><strong>Copy</strong> — copies your message and the technical block to the device clipboard.
-        Nothing is sent; you send it however you wish.</li>
+    <li><strong>Playing is offline.</strong> All of your progress stays on the device and is never
+        sent to us.</li>
+    <li><strong>We do not ask your age in order to let you play</strong>, and there is no date-of-birth
+        screen. We ask your age <strong>once, before the first ad</strong>, and we keep only the
+        band — never the number (<a href="#children">section 5</a>).</li>
+    <li><strong>An account is optional</strong> and is only asked for when you choose to enter the
+        online leaderboard or to restore your subscription on another device
+        (<a href="#account">section 8</a>).</li>
+    <li><strong>We do not sell your data</strong>, we do not trade it with data brokers, and we do not
+        build advertising profiles out of what you play.</li>
+    <li><strong>You can delete everything</strong>: the device data from inside the game, and the
+        account from the game or from a web page, without needing the game installed
+        (<a href="#deletion">section 15</a>).</li>
   </ul>
 
-  <h3>8.6 The technical block before it is sent</h3>
-  <p>The information in the technical block lives <strong>only in the app's memory</strong> while the
-     app is open, is never written to the device, and disappears when the game is closed. In
-     Kids-safe mode this recording is <strong>disabled and cleared</strong>.</p>
+  <h2>4. What stays only on your device</h2>
+  <p>Melbees keeps the following <strong>on your device only</strong>, so the game can work; none of
+     it is sent to us or to any server:</p>
+  <ul>
+    <li><strong>Game progress</strong>: the secrets you uncovered (your Apiary), best times, phases,
+        feats, items and unlocks.</li>
+    <li><strong>Settings</strong>: language, sound, tap mode, theme and anything else you choose.</li>
+    <li><strong>The age band you answered before the ad</strong> — only <em>under 13</em>,
+        <em>13 to 17</em> or <em>18 or over</em> (<a href="#children">section 5</a>).</li>
+    <li><strong>Your answer to the ad-consent request</strong>, when it is shown
+        (<a href="#ads">section 6</a>). It is Google's own SDK that stores it.</li>
+    <li><strong>Your play time on this device</strong>, which the “For parents and guardians” page
+        shows (<a href="#parents">section 12</a>). That counter never leaves the device.</li>
+  </ul>
+  <p>Deleting the game, or using <strong>Settings → Delete my data</strong>, removes all of it.</p>
 
-  <h3>8.7 How long we keep it, and how to delete it</h3>
-  <p>We keep a report row for as long as it is useful to fix what it describes and, in any case, for
-     <strong>no more than 24 months</strong> from the day we receive it; after that it is deleted.</p>
-  <p>You can ask us to delete it sooner at any time by writing to
-     <a href="mailto:melbees.games@gmail.com">melbees.games@gmail.com</a>. Because the rows
-     <strong>carry no identifier</strong>, we need your help to find yours: <strong>tell us the date
-     you sent it (and the approximate time, if you remember) plus an excerpt of what you
-     wrote</strong>. We delete the matching rows and confirm by e-mail. Without those two details we
-     have no way to locate your report — not out of refusal, but because the spreadsheet holds
+  <h2 id="children">5. Children, teenagers and the age question</h2>
+  <p>Melbees is a general-audience, family-friendly game, and we know that
+     <strong>children and teenagers play it</strong>. That is why the version of the game everyone
+     gets is already the version a minor is allowed to have: there is no chat, no messaging between
+     players, no nickname you choose on the leaderboard, no paid random reward, and no advertising
+     profile built out of what you play.</p>
+  <p><strong>There is no age screen at the door and no parental gate.</strong> A date-of-birth form is
+     trivially bypassed by a child, and a weak control gives parents a safety that does not exist. The
+     strong control is the parents', at the platform: Google <strong>Family Link</strong> and Google
+     Play's <strong>purchase approval</strong>. <a href="#parents">Section 12</a> says where they
+     are.</p>
+  <p><strong>The one thing that needs an age is the ad</strong>, because the advertising rule is
+     different for each band. So, <strong>the first time an ad is about to be shown</strong>, the game
+     asks your age once:</p>
+  <ul>
+    <li>It is <strong>a free field</strong>, with nothing preselected, and a <strong>Skip</strong>
+        button of the same weight. We do not say which answer changes what, so that nobody is nudged
+        into lying.</li>
+    <li><strong>We keep only the band</strong> — <em>under 13</em>, <em>13 to 17</em> or
+        <em>18 or over</em>. <strong>The number you typed is discarded</strong> and is never stored or
+        transmitted.</li>
+    <li><strong>Skipping blocks nothing.</strong> You keep playing and you still get the ad's Petal;
+        the band simply stays unknown, and an unknown band gets
+        <strong>the most restricted treatment</strong>, the same one a child gets.</li>
+    <li><strong>The band is used for exactly two things, both on your device</strong>: choosing the
+        treatment of the ad request (<a href="#ads">section 6</a>), and deciding whether analytics may
+        keep an installation identifier, which happens only at 18 or over
+        (<a href="#analytics">section 10</a>). Crash reports do not depend on it: they are sent for
+        everyone. It does <strong>not</strong> enter any
+        statistic, it does <strong>not</strong> go to any server of ours or of Google's, it does
+        <strong>not</strong> change price, offer or content, and it is <strong>not</strong> used to
+        profile anyone.</li>
+    <li><strong>We do not ask the platform.</strong> Google offers an age signal derived from the
+        account (<em>Play Age Signals</em>) and we <strong>do not query it</strong>: its terms forbid
+        using that information for advertising, which is the only thing we would need an age for.</li>
+  </ul>
+  <p><strong>United States.</strong> We do not knowingly collect personal information from children
+     under 13 for the purposes COPPA restricts. <strong>European Union and United Kingdom.</strong>
+     Some countries set the age at which a teenager can consent alone anywhere between 13 and 16;
+     where that limit is higher than ours, ad personalisation depends on the valid consent described
+     in <a href="#ads">section 6</a>.</p>
+  <p>If you are a parent or guardian and believe a child has sent us personal information — through
+     the feedback screen, for instance — write to
+     <a href="mailto:melbees.games@gmail.com">melbees.games@gmail.com</a> and we will delete it.</p>
+
+  <h2 id="ads">6. Ads</h2>
+  <p>The game shows <strong>rewarded ads</strong>, and only those. There is no banner, no interstitial,
+     and <strong>no ad ever appears by itself</strong>: one is shown only after you tap to earn an
+     extra Petal when you lose your last one. If you never tap, you will never see an ad.</p>
+  <p>Ads are served by <strong>Google AdMob</strong>, which acts as an independent controller of the
+     data it receives. The treatment of each request depends on the band from
+     <a href="#children">section 5</a>:</p>
+  <ul>
+    <li><strong>Under 13, or an unknown band (you skipped, or have not answered yet):</strong> the
+        request is marked <em>child-directed</em>, the ad is capped at the lowest content rating,
+        personalisation is off, and <strong>the device's advertising identifier (AAID) is not
+        sent</strong>.</li>
+    <li><strong>13 to 17:</strong> a <strong>non-personalised</strong> ad.</li>
+    <li><strong>18 or over:</strong> the ad <strong>may</strong> be personalised — and only is if you
+        consent. The consent request is Google's own dialog (<em>User Messaging Platform</em>), shown
+        according to the rules of your country; in the European Union and the United Kingdom nothing
+        is personalised without your consent, and you can change it later through the same dialog.</li>
+  </ul>
+  <p>For a personalised ad, AdMob receives your device's <strong>advertising identifier</strong> — an
+     identifier you can reset or delete yourself in the Android settings, under
+     <em>Google → Ads</em>. <strong>We do not receive it, we do not store it, and we do not use it
+     anywhere else in the game</strong>, analytics included
+     (<a href="#analytics">section 10</a>).</p>
+
+  <h2 id="purchases">7. In-app purchases</h2>
+  <p>The game offers three items, and none of them is required to play: two <strong>Petal packs</strong>
+     (one-off purchases) and the monthly <strong>Premium</strong> subscription. <strong>There is no
+     loot box</strong>: you always know exactly what you are buying, and nothing bought turns into a
+     draw.</p>
+  <ul>
+    <li><strong>Google Play does the charging</strong>, through its own billing system.
+        <strong>We never see or receive your payment details</strong> — card, billing address or any
+        part of them.</li>
+    <li>What reaches us is the <strong>purchase receipt</strong> Google issues: a purchase token, the
+        product identifier and, for the subscription, its state (active, cancelled, in a trial,
+        refunded). We use that to unlock what you bought, to acknowledge the purchase to Google, and
+        to stop one receipt being used on several accounts.</li>
+    <li><strong>Buying does not require an account.</strong> If you have signed in
+        (<a href="#account">section 8</a>), the subscription is bound to your account so that you can
+        restore it on another device.</li>
+    <li><strong>Cancellation and refunds belong to Google Play</strong>, under the subscriptions of
+        your Google account. Deleting your Melbees account does <strong>not</strong> cancel the
+        subscription.</li>
+    <li><strong>Right of withdrawal (European Union and United Kingdom).</strong> You have 14 days to
+        withdraw from a digital purchase, unless you expressly agreed to immediate performance and
+        acknowledged losing that right — which Google Play's own purchase screen presents. The request
+        goes to Google Play, which is the seller.</li>
+  </ul>
+
+  <h2 id="account">8. The account, and when it is asked for</h2>
+  <p><strong>The account is optional, and you need none to play or to buy.</strong> The game never
+     asks you to sign in on launch. It asks in two moments, both of which start with an action of
+     yours: when you enter the <strong>online leaderboard</strong>, and when you want to
+     <strong>restore a subscription</strong> on another device.</p>
+  <p>The account is <strong>Google only</strong>: no e-mail-and-password sign-up, no anonymous login.
+     When you sign in, Google confirms to us that it is you, and of what it sends us
+     <strong>we keep only an opaque account identifier</strong> — a meaningless string that lets us
+     recognise you next time.</p>
+  <p><strong>We do not store your name, your picture or your e-mail address.</strong></p>
+  <p>The session lives <strong>in the app's memory only</strong> and disappears when you close it:
+     nothing that would let someone into your account is written to the device, precisely so that an
+     Android backup cannot carry your session to a device you never signed in on.</p>
+
+  <h2 id="leaderboard">9. The online leaderboard</h2>
+  <p>If — and only if — you enter the online leaderboard, this leaves your device:</p>
+  <ul>
+    <li><strong>Your run</strong>: the total time, the category, the language, the difficulty, the date
+        and <strong>the list of moves</strong> (what you revealed, when, and which cards you used). We
+        re-run it on the server to confirm the time is real — that is how the leaderboard defends
+        itself against cheating. It contains nothing about you, only about the run.</li>
+    <li><strong>A display name we generate</strong>, of the “Curious Bee” kind. You do not choose a
+        nickname and there is no free-text field: that way no name can carry personal data and no
+        player can write to another.</li>
+  </ul>
+  <p><strong>What the public sees</strong> is only the fifty best marks of each board: rank, generated
+     name and time. <strong>No identification of who played appears there</strong>, neither to other
+     players nor to anyone looking from outside.</p>
+  <p>The raw list of moves is deleted <strong>60 days</strong> after submission; the time and the rank
+     stay for as long as your account exists. We <strong>do not store your IP address</strong>: the
+     server uses it in memory only, at the instant of the call, to rate-limit requests, and it is never
+     written to a log or to any column.</p>
+
+  <h2 id="analytics">10. Analytics and crash reports</h2>
+  <p>We use <strong>Google Analytics for Firebase</strong> and <strong>Firebase Crashlytics</strong> to
+     know whether the game works and where it breaks. They are configured as
+     <strong>internal operations</strong>, and that configuration is the reason we can use them with
+     every player:</p>
+  <ul>
+    <li><strong>Advertising-identifier collection is off</strong>, explicitly, for everyone.</li>
+    <li><strong>Ad-personalisation signals are off</strong> and <em>Google Signals</em> is off. None of
+        it is linked to AdMob or to advertising audiences.</li>
+    <li><strong>Your age band never becomes a statistic</strong>: it is not sent, it is not a dimension
+        and it appears in no event.</li>
+    <li><strong>No text you write enters an event</strong> — not a name, not an e-mail, not your
+        feedback message.</li>
+  </ul>
+  <p>What is recorded are game events, such as a run started or finished, the Premium screen being
+     seen, a purchase completed, a Petal obtained by ad, by purchase or for free, and a subscription
+     starting or lapsing. The events are the same for every player. Alongside them go those services'
+     standard technical data: the device model, the system version, the country and the language.</p>
+  <p><strong>What changes with age, and only this.</strong> Before the first ad, the game asks your age
+     (section 6) and keeps only the band.</p>
+  <ul>
+    <li><strong>If you did not answer, skipped, or answered under 18</strong>: the events go
+        <strong>without any identifier</strong>. Firebase Analytics runs in consent mode with every
+        storage denied, so it sends no device or installation identifier with them.</li>
+    <li><strong>If you answered 18 or over</strong>: Firebase Analytics keeps a per-installation
+        identifier, which it generates itself and which disappears when you uninstall the game.</li>
+  </ul>
+  <p><strong>Crash reports are the same for everyone.</strong> Whatever your age, and whether or not
+     you answered, when the game fails Crashlytics sends a crash report: the error's stack trace, the
+     state of the game at that moment and the device's technical data above. The only identifier it
+     carries is an <strong>installation identifier</strong>, made of a random number Crashlytics
+     generates itself and Firebase's installation number; it identifies this installation of the game,
+     not you. It carries no name, no e-mail, no text you wrote and not your age band.</p>
+  <p>Your age band decides what analytics keeps on your device and is not sent.
+     <strong>Settings → Delete my data</strong> also reaches Firebase: it stops sending the game's
+     errors to Crashlytics at once, erases Firebase's installation number (on the device and on
+     Firebase's servers), denies every storage again and erases from the device the analytics data,
+     before erasing the rest. Crashlytics stays off until you close the game. The next time the game
+     opens, it first erases any crash report still waiting on the device, unsent; then Crashlytics works
+     again as for everyone, with a new installation identifier. If a report had to be erased, Crashlytics
+     stays off in that opening, and each later opening checks again; it works again from the first one that
+     finds nothing waiting. Erasing the installation number needs an internet connection: without
+     one, the game tells you the deletion was not complete, and you can try again. After it, the game
+     treats you as someone who has not answered.</p>
+  <p><strong>What this does not erase.</strong> What had already been sent stays with Google, tied to
+     identifiers that no longer exist on your device, and is erased by the retention period:
+     <strong>2 months</strong> for analytics data and <strong>90 days</strong> for crash reports.</p>
+
+  <h2 id="feedback">11. Feedback and support</h2>
+  <p>The game has a <strong>Send feedback</strong> screen (Settings ▸ Account) and a per-word report on
+     the results screen. They exist so you can tell us about a problem, a wrong word, an idea or a
+     compliment. <strong>There is no automatic sending</strong>: nothing leaves the device until you
+     tap “Send”.</p>
+  <p><strong>What is sent</strong>, and nothing beyond it: the category you chose (one of four fixed
+     labels), <strong>your message</strong> as free text, and a <strong>technical block</strong> the
+     app assembles and <strong>shows you on screen before you send</strong> — the app version and build
+     type, the platform and the operating-system version string cut at 40 characters (on Android this
+     is usually a kernel line, not the device model), the interface language, the tap mode, the screen
+     you were on, and a list of up to 20 recent actions as internal game codes. Errors appear as a
+     label from a closed list, never the error message and never the stack. A per-word report also
+     carries the category, subcategory, secret count, phase and the word's internal identifier.</p>
+  <p><strong>Important: the message field is free text and reaches us exactly as you wrote it. Do not
+     write your name, e-mail, phone number, address or any other personal information there — yours or
+     a child's.</strong> We do not need it to fix the game, and the app says so under the field.</p>
+  <p><strong>Where it goes.</strong> The report is sent over HTTPS to a Google Apps Script service
+     operated by Melbee Games, which appends it as a row in a Google Sheets spreadsheet of ours, with
+     access restricted to us. Google acts only as a hosting provider, under its own terms. Nothing is
+     sold, shared with third parties, used for advertising or used to build profiles.</p>
+  <p><strong>The row carries no identifier tied to you.</strong> There is no account, no device id, and
+     we do not keep your IP address — in practice we cannot link a report to a person, or join two
+     reports from the same person, except by what is written in them.</p>
+  <p><strong>If sending fails</strong>, the app says so (it never says “sent” when it did not) and
+     offers two ways out, both started by you: opening your e-mail app with a pre-filled message — if
+     you send it, we come to know your address, because it is ordinary e-mail — or copying everything
+     to the clipboard.</p>
+  <p><strong>How long we keep it, and how to delete it.</strong> We keep the row while it is useful for
+     fixing what it describes and, in any case, for at most <strong>24 months</strong>. You can ask for
+     it to be deleted sooner by writing to
+     <a href="mailto:melbees.games@gmail.com">melbees.games@gmail.com</a>. Because the rows carry no
+     identifier, we need your help to find yours: tell us <strong>the date you sent it and an excerpt
+     of what you wrote</strong>. We delete the matching rows and confirm by e-mail. Without those two
+     details we cannot locate your report — not out of refusal, but because the spreadsheet stores
      nothing that ties a row to a person.</p>
-  <p><strong>“Delete my data” inside the game erases device data only</strong> (progress, settings and
-     the age choice). It does <strong>not</strong> reach reports you have already sent — use the
-     e-mail route above for those.</p>
 
-  <h2>9. Your choices and rights</h2>
+  <h2 id="parents">12. For parents and guardians</h2>
+  <p>Inside the game, under <strong>Settings</strong>, there is a <strong>For parents and
+     guardians</strong> page. It asks for no age, sits behind no purchase, and shows:</p>
   <ul>
-    <li><strong>Delete my data:</strong> Settings → “Delete my data” erases all local game data
-        <strong>on the device</strong> and returns the app to the age screen. That covers everything
-        the game stores; feedback reports already sent are deleted via the e-mail route in
-        <a href="#feedback">section 8.7</a>.</li>
-    <li><strong>Send nothing:</strong> feedback is optional and always started by you. If you never
-        use the feedback screen, we receive nothing.</li>
-    <li><strong>Uninstall:</strong> removing the app also deletes the local data.</li>
-    <li><strong>Requests:</strong> contact
-        <a href="mailto:melbees.games@gmail.com">melbees.games@gmail.com</a>.</li>
+    <li><strong>Play time on this device</strong>, measured by the game itself. That counter stays on
+        the device and is not sent to us.</li>
+    <li><strong>Where the parental controls are</strong> — they are the platform's, not ours: Google
+        <strong>Family Link</strong>, which can set time limits, and Google Play's
+        <strong>purchase approval</strong>, which can require authorisation before any purchase.</li>
   </ul>
-  <p>Melbees is offered first in <strong>Brazil</strong>, and data handling follows Brazil’s
-     <strong>General Data Protection Law (Law No. 13.709/2018 — LGPD)</strong>, which grants you rights
-     including confirmation, access, correction, anonymization, portability and deletion. Because
-     Melbees keeps game data only on your device, you exercise those rights directly in the app
-     (“Delete my data”); for a feedback report you sent us, use the e-mail address above with the
-     date and an excerpt of the message (<a href="#feedback">section 8.7</a>). The legal basis for
-     handling that report is our <strong>legitimate interest</strong> in fixing and improving the
-     game from a contact you started yourself (LGPD art. 7, IX). If the game is later offered in the
-     EU/UK or California, the applicable GDPR/CCPA rights and legal bases will be added here
-     beforehand.</p>
+  <p>The game <strong>measures and shows</strong> time of use and <strong>never interrupts a
+     run</strong>. It also sends no notifications, gives no reward for time spent connected, and has
+     no daily streak that is lost by missing a day.</p>
 
-  <h2>10. Data retention</h2>
-  <p>On-device data is kept until you delete it (via “Delete my data”) or uninstall the app; we keep no
-     copies of it. Feedback reports you send us stay in our spreadsheet for <strong>no more than 24
-     months</strong>, or less if you ask us to delete them (<a href="#feedback">section 8.7</a>).</p>
+  <h2>13. Who the data is shared with</h2>
+  <p><strong>We do not sell your data and we do not give it to data brokers.</strong> The services
+     below are the only ones that receive anything, each for one purpose:</p>
+  <ul>
+    <li><strong>Google Play (Google)</strong> — charges for purchases and tells us their state
+        (<a href="#purchases">section 7</a>).</li>
+    <li><strong>Google AdMob (Google)</strong> — serves the rewarded ads
+        (<a href="#ads">section 6</a>).</li>
+    <li><strong>Firebase (Google)</strong> — analytics and crash reports
+        (<a href="#analytics">section 10</a>).</li>
+    <li><strong>Supabase</strong> — authenticates the Google account and hosts the leaderboard database
+        (sections <a href="#account">8</a> and <a href="#leaderboard">9</a>), as our processor.</li>
+    <li><strong>Google Cloud</strong> — hosts our server, as our processor.</li>
+    <li><strong>Google Apps Script and Google Sheets</strong> — receive and store the feedback reports
+        (<a href="#feedback">section 11</a>), as our processors.</li>
+  </ul>
+  <p>We may also disclose data where the law requires it, to comply with an order from a competent
+     authority, or to investigate fraud and abuse of the leaderboard.</p>
 
-  <h2>11. Changes to this policy</h2>
-  <p>We may update this policy; the “Last updated” date will change, and for material changes we will
-     provide notice in the app. Features that involve sending data — advertising, accounts, online
-     leaderboards — will only be enabled after this policy has been updated.</p>
+  <h2>14. International transfers and retention</h2>
+  <p>The services above run servers outside Brazil, so the data described here may be processed in
+     other countries, under those providers' contractual safeguards — including the standard
+     contractual clauses that apply to transfers out of the European Union and the United Kingdom.</p>
+  <ul>
+    <li><strong>On the device</strong>: until you delete it or uninstall the game.</li>
+    <li><strong>Account and leaderboard</strong>: for as long as the account exists. The raw list of
+        moves is deleted after <strong>60 days</strong>.</li>
+    <li><strong>Feedback reports</strong>: at most <strong>24 months</strong>.</li>
+    <li><strong>Analytics (Firebase)</strong>: <strong>2 months</strong>. <strong>Crash reports
+        (Crashlytics)</strong>: <strong>90 days</strong> (<a href="#analytics">section 10</a>).</li>
+    <li><strong>Purchase audit record</strong>: kept as a defence against fraud, and
+        <strong>without the account identifier</strong> from the moment you delete your account
+        (<a href="#deletion">section 15</a>).</li>
+  </ul>
 
-  <h2>12. Contact</h2>
+  <h2 id="rights">15. Your rights, and how to use them</h2>
+  <p>The LGPD gives you, among others, the rights of confirmation, access, correction, anonymisation,
+     portability, erasure, information about sharing, and withdrawal of consent. Where the GDPR
+     applies, you also have the rights to object, to restrict processing and to portability, and the
+     right to complain to your country's data-protection authority — in Brazil, the ANPD.</p>
+  <p id="deletion">In practice:</p>
+  <ul>
+    <li><strong>Delete the device data</strong>: Settings → <strong>Delete my data</strong>. It erases
+        progress, settings and the age band you answered. It does not reach the account.</li>
+    <li><strong>Delete the account</strong>: Settings → Account → <strong>Delete my account</strong>,
+        which immediately deletes the account, the display name and the runs submitted to the
+        leaderboard. Without the game installed, use the
+        <a href="delete-account.en.html">Delete your account</a> page, and we act within
+        <strong>30 days</strong>. <strong>These are two different actions</strong>: deleting the
+        account erases nothing on the device, and deleting the device data erases nothing on the
+        account.</li>
+    <li><strong>Delete a feedback report</strong>: by e-mail, with the date and an excerpt
+        (<a href="#feedback">section 11</a>).</li>
+    <li><strong>Ads</strong>: change your consent answer in Google's own dialog inside the game, or
+        reset the advertising identifier under
+        <em>Android Settings → Google → Ads</em>.</li>
+    <li><strong>Any other request</strong>:
+        <a href="mailto:melbees.games@gmail.com">melbees.games@gmail.com</a>. We answer within 30
+        days.</li>
+  </ul>
+  <p><strong>The legal bases.</strong> We perform the contract of using the game in order to make the
+     game work, deliver what you bought, and keep your account and the leaderboard (LGPD art. 7 V;
+     GDPR art. 6(1)(b)). We rely on <strong>legitimate interests</strong> to fix defects, to measure
+     whether the game works, and to defend the leaderboard against cheating (LGPD art. 7 IX; GDPR
+     art. 6(1)(f)). We rely on your <strong>consent</strong> for personalised advertising where it is
+     required (LGPD art. 7 I; GDPR art. 6(1)(a)), and you may withdraw it at any time. We also comply
+     with <strong>legal obligations</strong>, such as those of Brazil's Law 15.211/2025, the Digital
+     Statute of the Child and Adolescent (LGPD art. 7 II; GDPR art. 6(1)(c)).</p>
+
+  <h2>16. Security</h2>
+  <p>Everything that leaves the device travels over <strong>HTTPS</strong>. Access to the leaderboard
+     database and to the feedback spreadsheet is restricted to us. No system is perfect and we cannot
+     promise absolute security — but we hold no password of yours, no payment data and no IP address,
+     which sharply limits what an incident could expose.</p>
+
+  <h2>17. Changes to this policy</h2>
+  <p>We may update this policy; the “Last updated” date will change and, for material changes, we will
+     say so inside the app. <strong>A new feature that sends data is only switched on after this page
+     has been updated</strong>, never before.</p>
+
+  <h2>18. Contact</h2>
   <p>Melbee Games — Brazil<br>
      <a href="mailto:melbees.games@gmail.com">melbees.games@gmail.com</a></p>
 </body>

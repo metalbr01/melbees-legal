@@ -11,209 +11,400 @@
   <p class="lang"><a href="privacy.en.html">English</a> · <strong>Português</strong></p>
 
   <h1>Política de Privacidade — Melbees: The Secret of Bees</h1>
-  <p class="muted">Data de vigência: 27/07/2026 · Última atualização: 06/09/2026</p>
+  <p class="muted">Data de vigência: 27/07/2026 · Última atualização: 23/09/2026</p>
+
+  <!--
+    VERSÃO 2 — a política do jogo MONETIZADO. Escrita pela missão P1 do
+    launch-director-plan.md, contra o código que G5 (Play Billing), G6 (AdMob + UMP),
+    M1 (Firebase) e S3 (conta Google) landaram.
+
+    PUBLICAR SÓ JUNTO COM O BUILD MONETIZADO (o trem R1), e não antes: enquanto a
+    faixa de teste fechado estiver no ar, esta página descreve um aplicativo que
+    ainda não está publicado, o que é tão errado quanto o contrário.
+
+    ANTES DE PUBLICAR, CONFERIR TRÊS CHAVES do build que sobe. Cada seção abaixo
+    depende de uma; se o R1 subir com a chave DESLIGADA, apague a seção em vez de
+    publicá-la:
+      - realAdsEnabled ......... seção 6 (Anúncios)
+      - purchasePathEnabled .... seção 7 (Compras)
+      - supabaseUrl + apiBaseUrl + supabaseAnonKey + googleServerClientId (as quatro
+        juntas, hasSupabaseAuth) e kRankingServiceLive/kServerTicket ... seções 8 e 9
+      - firebaseAnalyticsEnabled ... seção 10 (Análises). O SDK do Firebase embarcou
+        (F1, F2) e está ligado no build do R1 (tag validated/2026-09-25-2): a seção 10
+        e a linha do Firebase na seção 13 ficam. Conferido pelo R2 em 25/09/2026.
+
+    NÃO REMOVA A ÂNCORA id="feedback": ela é a URL de exclusão de dados já salva no
+    Play Console. A âncora id="exclusao" é a nova, para a exclusão de conta.
+  -->
 
   <h2>1. Quem somos</h2>
-  <p>O Melbees (“o aplicativo”, “nós”) é fornecido por <strong>Melbee Games</strong>, Brasil.
-     Para qualquer dúvida ou solicitação sobre privacidade, escreva para
+  <p>O Melbees (“o aplicativo”, “nós”) é fornecido por <strong>Melbee Games</strong>, Brasil, que é o
+     <strong>controlador</strong> dos dados descritos nesta política. Para qualquer dúvida ou
+     solicitação sobre privacidade, escreva para
      <a href="mailto:melbees.games@gmail.com">melbees.games@gmail.com</a>.</p>
 
   <h2>2. Abrangência</h2>
-  <p>Esta política explica quais informações o Melbees trata, como, e quais são suas escolhas. Aplica-se
-     ao jogo Melbees distribuído no <strong>Google Play</strong>. Se o jogo passar a ser distribuído em
-     outras lojas, esta política será atualizada antes.</p>
+  <p>Esta política explica quais informações o Melbees trata, como, e quais são suas escolhas.
+     Aplica-se ao jogo Melbees distribuído no <strong>Google Play</strong>, em todos os países em que
+     ele está disponível. Se o jogo passar a ser distribuído em outras lojas, esta política será
+     atualizada antes.</p>
+  <p>Conforme o seu país, além da <strong>LGPD</strong> brasileira (Lei nº 13.709/2018) podem se
+     aplicar a você o <strong>RGPD</strong> da União Europeia e do Reino Unido, a
+     <strong>COPPA</strong> dos Estados Unidos e outras leis locais. A <a href="#direitos">seção
+     15</a> descreve os direitos que cada uma assegura e como exercê-los.</p>
 
-  <h2>3. Informações que tratamos</h2>
+  <h2>3. O resumo, em cinco linhas</h2>
+  <ul>
+    <li><strong>Jogar é offline.</strong> Todo o seu progresso fica no aparelho e nunca é enviado
+        para nós.</li>
+    <li><strong>Nós não pedimos a sua idade para deixar você jogar</strong>, e não há tela de data de
+        nascimento. Perguntamos a idade <strong>uma vez, antes do primeiro anúncio</strong>, e só
+        guardamos a faixa — nunca o número (<a href="#criancas">seção 5</a>).</li>
+    <li><strong>A conta é opcional</strong> e só é pedida quando você resolve entrar no ranking
+        online ou restaurar a assinatura em outro aparelho (<a href="#conta">seção 8</a>).</li>
+    <li><strong>Não vendemos os seus dados</strong>, não os trocamos com corretores de dados e não
+        criamos perfis de publicidade a partir do que você joga.</li>
+    <li><strong>Você pode apagar tudo</strong>: os dados do aparelho pelo próprio jogo, e a conta
+        pelo jogo ou por uma página na web, sem precisar tê-lo instalado
+        (<a href="#exclusao">seção 15</a>).</li>
+  </ul>
+
+  <h2>4. O que fica somente no seu aparelho</h2>
   <p>O Melbees guarda o seguinte <strong>somente no seu aparelho</strong>, para o jogo funcionar; nada
      disso é enviado para nós nem para um servidor:</p>
   <ul>
-    <li>Progresso de jogo: segredos resolvidos (seu Vault), melhores tempos, desbloqueios e
-        configurações.</li>
-    <li>Sua <strong>faixa etária</strong> (13 anos ou mais / menor de 13), calculada no seu aparelho a
-        partir da data de nascimento que você digita. A data de nascimento em si é
-        <strong>usada apenas para esse cálculo e descartada imediatamente</strong> — nunca é
-        armazenada nem transmitida.</li>
-    <li>Sua <strong>escolha de consentimento</strong> para anúncios/análises (jogadores 13+).</li>
-    <li>O idioma escolhido.</li>
+    <li><strong>Progresso de jogo</strong>: segredos descobertos (o seu Apiário), melhores tempos,
+        fases, façanhas, itens e desbloqueios.</li>
+    <li><strong>Configurações</strong>: idioma, som, modo de toque, tema e o que mais você escolher
+        nos ajustes.</li>
+    <li><strong>A faixa de idade que você respondeu antes do anúncio</strong> — apenas
+        <em>menor de 13</em>, <em>13 a 17</em> ou <em>18 ou mais</em>
+        (<a href="#criancas">seção 5</a>).</li>
+    <li><strong>A sua resposta ao pedido de consentimento de anúncios</strong>, quando ele é exibido
+        (<a href="#anuncios">seção 6</a>). Quem a guarda é o próprio SDK do Google.</li>
+    <li><strong>O tempo de jogo neste aparelho</strong>, que a página “Para pais e responsáveis”
+        mostra (<a href="#pais">seção 12</a>). Esse contador nunca sai do aparelho.</li>
   </ul>
-  <p>Não coletamos seu nome, e-mail, telefone, localização precisa, contatos, nem qualquer
-     identificador de conta.</p>
-  <p><strong>A única informação que sai do seu aparelho é o relatório que você mesmo decide nos
-     enviar</strong> pela tela de feedback do jogo, descrita na <a href="#feedback">seção 8</a>. Se
-     você nunca usar essa tela, nada é transmitido. O aplicativo não contém SDK de anúncios, de
-     análise nem de pagamento, e não faz nenhum outro envio de dados — nem para nós, nem para
-     terceiros.</p>
+  <p>Apagar o jogo, ou usar <strong>Ajustes → Apagar meus dados</strong>, remove tudo isso.</p>
 
-  <h2>4. Crianças e a porta de idade</h2>
-  <p>O Melbees é adequado para a família e mostra uma tela de idade neutra no primeiro uso. Jogadores
-     menores de 13 anos ficam no <strong>modo Kids-safe</strong>, no qual:</p>
+  <h2 id="criancas">5. Crianças, adolescentes e a pergunta de idade</h2>
+  <p>O Melbees é um jogo de público geral, adequado para a família, e sabemos que
+     <strong>crianças e adolescentes jogam</strong>. Por isso a versão do jogo que todo mundo recebe
+     já é a versão permitida para um menor de idade: não há bate-papo, não há mensagens entre
+     jogadores, não há nome escolhido por você no ranking, não há recompensa aleatória paga e não há
+     perfil de publicidade montado a partir do que você joga.</p>
+  <p><strong>Não há tela de idade na entrada e não há portão de pais.</strong> Um formulário de data
+     de nascimento é contornado por qualquer criança, e um controle fraco dá aos pais uma segurança
+     que não existe. O controle forte é o dos pais, na plataforma: o
+     <strong>Family Link</strong> do Google e a <strong>aprovação de compras</strong> do Google Play.
+     A <a href="#pais">seção 12</a> diz onde eles ficam.</p>
+  <p><strong>A única coisa que precisa de idade é o anúncio</strong>, porque a regra de publicidade é
+     diferente para cada faixa. Então, <strong>na primeira vez em que um anúncio vai ser exibido</strong>,
+     o jogo pergunta a sua idade uma única vez:</p>
   <ul>
-    <li>Nenhum dado pessoal é coletado e não há análises com identificador persistente.</li>
-    <li><strong>Nada é transmitido.</strong> O formulário de feedback com campo de texto livre
-        (<a href="#feedback">seção 8</a>) não é oferecido: a tela de suporte mostra apenas o nosso
-        e-mail, para que um adulto responsável entre em contato por conta própria. Nesse modo o
-        aplicativo também não monta nenhum bloco técnico.</li>
-    <li>Não são exibidos anúncios.</li>
-    <li>Compras não são oferecidas.</li>
-    <li>Login de conta e recursos sociais não são oferecidos.</li>
+    <li>É <strong>um campo livre</strong>, sem nenhum valor marcado, e com um botão
+        <strong>Pular</strong> do mesmo tamanho. Não dizemos qual resposta muda o quê, para não
+        induzir ninguém a mentir.</li>
+    <li><strong>Guardamos apenas a faixa</strong> — <em>menor de 13</em>, <em>13 a 17</em> ou
+        <em>18 ou mais</em>. <strong>O número que você digitou é descartado</strong> e nunca é
+        gravado nem transmitido.</li>
+    <li><strong>Pular não bloqueia nada.</strong> Você continua jogando e continua ganhando a pétala
+        do anúncio; a faixa fica desconhecida, e uma faixa desconhecida recebe
+        <strong>o tratamento mais restrito</strong>, o mesmo de uma criança.</li>
+    <li><strong>A faixa serve para duas coisas, as duas no seu aparelho</strong>: escolher o
+        tratamento do pedido de anúncio (<a href="#anuncios">seção 6</a>) e decidir se as análises
+        podem guardar um identificador de instalação, o que só acontece com 18 ou mais
+        (<a href="#analises">seção 10</a>). Os relatórios de falha não dependem dela: são enviados
+        para todos. Ela <strong>não</strong> entra em
+        nenhuma estatística, <strong>não</strong> vai para nenhum servidor nosso nem do Google,
+        <strong>não</strong> muda preço, oferta ou conteúdo, e <strong>não</strong> é usada para
+        montar perfil de ninguém.</li>
+    <li><strong>Não perguntamos à plataforma.</strong> O Google oferece um sinal de idade da conta
+        (<em>Play Age Signals</em>) e nós <strong>não o consultamos</strong>: os termos dele proíbem
+        usar a informação em publicidade, que é a única coisa para a qual precisaríamos de idade.</li>
   </ul>
-  <p>Jogadores com 13 anos ou mais usam o <strong>modo Padrão</strong>. Caso anúncios ou análises
-     personalizados venham a existir, serão usados <strong>somente com consentimento</strong>
-     (desligado por padrão), e esta política será atualizada antes.</p>
+  <p><strong>Estados Unidos.</strong> Não coletamos conscientemente dados pessoais de crianças
+     menores de 13 anos para os fins que a COPPA restringe. <strong>União Europeia e Reino
+     Unido.</strong> Alguns países fixam entre 13 e 16 anos a idade a partir da qual um adolescente
+     pode consentir sozinho; onde esse limite for maior que o nosso, a personalização de anúncios
+     depende do consentimento válido descrito na <a href="#anuncios">seção 6</a>.</p>
+  <p>Se você é pai, mãe ou responsável e acredita que uma criança nos enviou dados pessoais — pela
+     tela de feedback, por exemplo —, escreva para
+     <a href="mailto:melbees.games@gmail.com">melbees.games@gmail.com</a> e nós apagamos.</p>
 
-  <h2>5. Anúncios</h2>
-  <p>Esta versão <strong>não exibe anúncios</strong> de terceiros. Não há SDK de anúncios no
-     aplicativo. Se isso mudar, atualizaremos esta política e a ficha da loja antes.</p>
-
-  <h2>6. Compras no aplicativo</h2>
-  <p>Esta versão <strong>não oferece compras no aplicativo</strong>. Se isso mudar, as compras serão
-     processadas pela loja da plataforma, não por nós — não receberíamos seus dados de pagamento — e
-     esta política será atualizada antes.</p>
-
-  <h2>7. Análises e serviços de terceiros</h2>
-  <p>Não usamos análises de terceiros nem SDKs de rastreamento. O aplicativo não registra o que você
-     joga, não cria perfis de jogadores e não faz nenhuma conexão de rede automática ou em segundo
-     plano. A <strong>única</strong> conexão de rede que o aplicativo abre é o envio de um relatório
-     de feedback iniciado por você, descrito a seguir.</p>
-
-  <h2 id="feedback">8. Feedback e suporte</h2>
-  <p>O jogo tem uma tela <strong>Enviar feedback</strong> (Configurações ▸ Conta) e um
-     <strong>relatório por palavra</strong> na tela de resultados. Eles existem para você nos contar
-     um problema, uma palavra errada, uma ideia ou um elogio.</p>
-
-  <h3>8.1 Quem pode enviar</h3>
-  <p>Somente jogadores no <strong>modo Padrão</strong> (13 anos ou mais na porta de idade). No modo
-     Kids-safe o formulário não aparece e o aplicativo <em>não chega a montar</em> um envio, mesmo
-     que a tela seja alcançada de outra forma (seção 4).</p>
-
-  <h3>8.2 Quando um envio acontece</h3>
-  <p><strong>Só quando você toca em “Enviar”.</strong> Não há envio automático, agendado ou em
-     segundo plano, e nada é enviado quando o jogo trava ou é fechado.</p>
-
-  <h3>8.3 O que é enviado</h3>
-  <p>Exatamente estes itens, e nada além deles:</p>
+  <h2 id="anuncios">6. Anúncios</h2>
+  <p>O jogo exibe <strong>anúncios recompensados</strong>, e só eles. Não há banner, não há anúncio
+     entre telas e <strong>nenhum anúncio aparece sozinho</strong>: ele só é exibido depois que você
+     toca para ganhar uma pétala a mais quando perde a última. Se você nunca tocar, nunca verá um
+     anúncio.</p>
+  <p>Quem serve os anúncios é o <strong>Google AdMob</strong>, que atua como controlador independente
+     dos dados que recebe. O tratamento do pedido depende da faixa da
+     <a href="#criancas">seção 5</a>:</p>
   <ul>
-    <li><strong>A categoria escolhida</strong> — um entre quatro rótulos fixos: <code>Problem</code>,
-        <code>Word</code>, <code>Idea</code>, <code>Praise</code>.</li>
-    <li><strong>A sua mensagem</strong> — o texto livre que você digitar, até 5.000 caracteres. É o
-        único campo em que você escreve, e chega até nós exatamente como você o escreveu.</li>
-    <li><strong>Um bloco técnico</strong> (até 3.000 caracteres), montado pelo aplicativo e
-        <strong>exibido na tela antes de você enviar</strong>. Ele contém somente:
-      <ul>
-        <li>a versão e o número de build do aplicativo (ex.: <code>1.0.0+3</code>) e o tipo de build
-            (<code>release</code> / <code>debug</code> / <code>profile</code>);</li>
-        <li>a plataforma (ex.: <code>android</code>) e a <strong>string de versão do sistema
-            operacional exatamente como o sistema a informa, cortada nos primeiros 40
-            caracteres</strong> — no Android isso costuma ser uma linha técnica de kernel
-            (<code>Linux 5.10.…</code>), não “Android 14”, e <strong>não</strong> inclui o modelo do
-            aparelho;</li>
-        <li>o idioma da interface (ex.: <code>pt-BR</code>) e o modo de toque escolhido nas
-            configurações;</li>
-        <li>a tela em que você estava e uma lista das <strong>até 20 ações recentes</strong>, cada
-            uma como um código interno do jogo (por exemplo, a ativação de uma carta) ou, quando
-            ocorre um erro, um <strong>rótulo de uma lista fechada</strong> (<code>range</code>,
-            <code>argument</code>, <code>format</code>, <code>state</code>, <code>unsupported</code>,
-            <code>unimplemented</code>, <code>assertion</code>, <code>type</code>,
-            <code>exception</code>, <code>other</code>). Nunca a mensagem do erro, nunca a pilha de
-            execução, nunca um texto que você digitou;</li>
-        <li><strong>somente no relatório por palavra:</strong> a categoria e a subcategoria da
-            partida, a quantidade de segredos (K), a fase e o identificador interno da palavra
-            (<code>wordId</code>) — para sabermos qual verbete corrigir.</li>
-      </ul>
-    </li>
-    <li><strong>Um token fixo antisspam</strong> que acompanha o aplicativo. Ele é
-        <strong>idêntico para todas as instalações</strong>: identifica o aplicativo, não você.</li>
+    <li><strong>Menor de 13, ou faixa desconhecida (você pulou, ou ainda não respondeu):</strong> o
+        pedido é marcado como <em>dirigido a crianças</em>, o anúncio é limitado à classificação
+        mais baixa, a personalização é desligada e <strong>o identificador de publicidade do
+        aparelho (AAID) não é enviado</strong>.</li>
+    <li><strong>13 a 17:</strong> anúncio <strong>não personalizado</strong>.</li>
+    <li><strong>18 ou mais:</strong> o anúncio <strong>pode</strong> ser personalizado — e só é se
+        você consentir. O pedido de consentimento é a caixa do próprio Google
+        (<em>User Messaging Platform</em>), exibida conforme as regras do seu país; na União Europeia
+        e no Reino Unido nada é personalizado sem o seu consentimento, e você pode mudá-lo depois
+        pela mesma caixa.</li>
   </ul>
-  <p><strong>Não são enviados</strong> — porque o aplicativo não os coleta em momento algum: seu
-     nome, e-mail, telefone, endereço, localização, contatos, identificador de anúncios ou do
-     aparelho, modelo do aparelho, número de série, caminhos de arquivo, sua data de nascimento, seu
-     progresso de jogo, seu Vault ou seus melhores tempos.</p>
-  <p><strong>Importante:</strong> o campo de mensagem é texto livre e chega até nós como você o
-     escreveu. <strong>Não escreva ali o seu nome, e-mail, telefone, endereço nem qualquer outra
-     informação pessoal — sua ou de uma criança.</strong> Não precisamos dessa informação para
-     corrigir o jogo.</p>
+  <p>Para um anúncio personalizado, o AdMob recebe o <strong>identificador de publicidade</strong> do
+     seu aparelho — um identificador que você mesmo pode zerar ou apagar nas configurações do
+     Android, em <em>Google → Anúncios</em>. <strong>Nós não recebemos esse identificador, não o
+     guardamos e não o usamos em nenhuma outra parte do jogo</strong>, inclusive nas análises
+     (<a href="#analises">seção 10</a>).</p>
 
-  <h3>8.4 Para onde vai, e quem tem acesso</h3>
-  <p>O relatório é enviado por <strong>HTTPS</strong> a um serviço Google Apps Script operado pela
-     Melbee Games, que o acrescenta como <strong>uma linha em uma planilha do Google Sheets de
-     propriedade da Melbee Games</strong>, com acesso restrito a nós. O Google atua apenas como
-     provedor de hospedagem (operador), sob os termos dele. <strong>Nada é vendido, compartilhado
-     com terceiros, usado para publicidade ou para criar perfis.</strong> Usamos os relatórios apenas
-     para corrigir defeitos, corrigir palavras e decidir o que melhorar.</p>
-  <p>A linha da planilha <strong>não carrega nenhum identificador</strong> ligado a você ou ao seu
-     aparelho: não há conta, não há id de dispositivo e não guardamos o seu endereço IP. Na prática,
-     não conseguimos ligar um relatório a uma pessoa, nem juntar dois relatórios da mesma pessoa —
-     exceto pelo que estiver escrito neles.</p>
-
-  <h3>8.5 Se o envio falhar</h3>
-  <p>Sem internet, ou se o serviço não responder, o aplicativo <strong>avisa que falhou</strong>
-     (nunca diz “enviado” quando não enviou) e oferece duas alternativas, ambas iniciadas por você:</p>
+  <h2 id="compras">7. Compras no aplicativo</h2>
+  <p>O jogo oferece três itens, e nenhum deles é obrigatório para jogar: dois
+     <strong>pacotes de pétalas</strong> (compra avulsa) e a assinatura mensal
+     <strong>Premium</strong>. <strong>Não existe caixa de recompensa</strong>: você sempre sabe
+     exatamente o que está comprando, e nada comprado vira sorteio.</p>
   <ul>
-    <li><strong>Enviar por e-mail</strong> — abre o <em>seu</em> aplicativo de e-mail com uma
-        mensagem curta já preenchida (a sua mensagem, a versão do aplicativo, a plataforma, o idioma,
-        a categoria e, se for o caso, o <code>wordId</code>). Você decide se envia. Se enviar,
-        <strong>passamos a conhecer o seu endereço de e-mail</strong>, porque é um e-mail comum — e
-        aí sim conseguimos ligar aquela mensagem a você. Guardamos essa correspondência como qualquer
-        contato de suporte, e você pode pedir a exclusão respondendo ao próprio e-mail.</li>
-    <li><strong>Copiar</strong> — copia a sua mensagem e o bloco técnico para a área de transferência
-        do aparelho. Nada é enviado; você envia por onde quiser.</li>
+    <li><strong>Quem cobra é o Google Play</strong>, pelo sistema de faturamento dele.
+        <strong>Nós nunca vemos nem recebemos os seus dados de pagamento</strong> — cartão, endereço
+        de cobrança ou qualquer parte deles.</li>
+    <li>O que chega até nós é o <strong>comprovante da compra</strong> que o Google emite: um código
+        de compra, o identificador do produto e, no caso da assinatura, o estado dela (ativa,
+        cancelada, em período de testes, estornada). Usamos isso para liberar o que você comprou,
+        para confirmar a compra ao Google e para impedir que um mesmo comprovante seja usado em
+        várias contas.</li>
+    <li><strong>Comprar não exige conta.</strong> Se você tiver entrado com uma conta
+        (<a href="#conta">seção 8</a>), a assinatura fica vinculada a ela, para que você possa
+        restaurá-la em outro aparelho.</li>
+    <li><strong>Cancelamento e reembolso são do Google Play</strong>, nas assinaturas da sua conta
+        Google. Apagar a sua conta do Melbees <strong>não</strong> cancela a assinatura.</li>
+    <li><strong>Direito de arrependimento (União Europeia e Reino Unido).</strong> Você tem 14 dias
+        para desistir de uma compra digital, salvo se aceitou expressamente começar a usá-la de
+        imediato e reconheceu a perda desse direito — o que a própria tela de compra do Google Play
+        apresenta. O pedido é feito pelo Google Play, que é o vendedor.</li>
   </ul>
 
-  <h3>8.6 O bloco técnico antes do envio</h3>
-  <p>As informações do bloco técnico ficam <strong>apenas na memória do aplicativo</strong> enquanto
-     ele está aberto, nunca são gravadas no aparelho e desaparecem quando o jogo é fechado. No modo
-     Kids-safe esse registro fica <strong>desligado e é apagado</strong>.</p>
+  <h2 id="conta">8. A conta, e quando ela é pedida</h2>
+  <p><strong>A conta é opcional e não é preciso ter uma para jogar nem para comprar.</strong> O jogo
+     nunca pede login na abertura. Ele pede em dois momentos, e os dois começam com uma ação sua:
+     quando você entra no <strong>ranking online</strong>, e quando você quer
+     <strong>restaurar a assinatura</strong> em outro aparelho.</p>
+  <p>A conta é <strong>só o Google</strong>: não há cadastro com e-mail e senha, não há login
+     anônimo. Ao entrar, o Google nos confirma que é você, e do que ele nos envia
+     <strong>guardamos apenas um identificador opaco da conta</strong> — uma sequência de
+     caracteres sem significado, que serve para reconhecer você na próxima vez.</p>
+  <p><strong>Não guardamos o seu nome, a sua foto nem o seu endereço de e-mail.</strong></p>
+  <p>A sessão fica <strong>somente na memória do aplicativo</strong> e desaparece quando você o
+     fecha: nada que permita entrar na sua conta é gravado no aparelho, justamente para que uma cópia
+     de segurança do Android não leve a sua sessão para um aparelho em que você nunca entrou.</p>
 
-  <h3>8.7 Por quanto tempo guardamos, e como apagar</h3>
-  <p>Guardamos a linha do relatório enquanto ela for útil para corrigir o que ela descreve e, em
-     qualquer caso, por <strong>no máximo 24 meses</strong> a contar do recebimento; depois disso ela
-     é apagada.</p>
-  <p>Você pode pedir a exclusão antes disso a qualquer momento, escrevendo para
-     <a href="mailto:melbees.games@gmail.com">melbees.games@gmail.com</a>. Como as linhas
-     <strong>não têm identificador</strong>, precisamos que você nos ajude a achar a sua:
-     <strong>informe a data (e, se lembrar, o horário aproximado) do envio e um trecho do que você
-     escreveu</strong>. Apagamos as linhas correspondentes e confirmamos por e-mail. Sem esses dois
-     dados não temos como localizar o seu relatório — não por recusa, mas porque a planilha não
-     guarda nada que ligue uma linha a uma pessoa.</p>
-  <p><strong>“Apagar meus dados”, dentro do jogo, apaga somente os dados do aparelho</strong>
-     (progresso, configurações e a escolha de idade). Ele <strong>não</strong> alcança relatórios que
-     você já enviou — para esses, use o e-mail acima.</p>
-
-  <h2>9. Suas escolhas e direitos</h2>
+  <h2 id="ranking">9. O ranking online</h2>
+  <p>Se — e somente se — você entrar no ranking online, estes dados saem do seu aparelho:</p>
   <ul>
-    <li><strong>Apagar meus dados:</strong> Configurações → “Apagar meus dados” apaga todos os dados
-        locais do jogo <strong>no aparelho</strong> e retorna o aplicativo à tela de idade. Isso
-        cobre tudo o que o jogo guarda; relatórios de feedback já enviados são apagados pelo e-mail
-        descrito na <a href="#feedback">seção 8.7</a>.</li>
-    <li><strong>Não enviar nada:</strong> o feedback é opcional e sempre iniciado por você. Se não
-        usar a tela de feedback, não recebemos nada.</li>
-    <li><strong>Desinstalar:</strong> remover o aplicativo também elimina os dados locais.</li>
-    <li><strong>Solicitações:</strong> escreva para
-        <a href="mailto:melbees.games@gmail.com">melbees.games@gmail.com</a>.</li>
+    <li><strong>A sua partida</strong>: o tempo total, a categoria, o idioma, a dificuldade, a data e
+        <strong>a lista de jogadas</strong> (o que você revelou, quando, e quais cartas usou). Nós a
+        reexecutamos no servidor para confirmar que o tempo é real — é assim que o ranking se defende
+        de trapaça. Ela não contém nada sobre você, só sobre a partida.</li>
+    <li><strong>Um nome de exibição gerado por nós</strong>, do tipo “Abelha Curiosa”. Você não
+        escolhe um apelido e não há campo de texto livre: assim, nenhum nome pode conter dado pessoal
+        e nenhum jogador pode escrever para outro.</li>
   </ul>
-  <p>O primeiro mercado do Melbees é o <strong>Brasil</strong>, e o tratamento de dados observa a
-     <strong>Lei Geral de Proteção de Dados (Lei nº 13.709/2018 — LGPD)</strong>. A LGPD assegura a
-     você, entre outros, os direitos de confirmação, acesso, correção, anonimização, portabilidade e
-     eliminação dos seus dados. Como o Melbees mantém os dados de jogo apenas no seu aparelho, você
-     exerce esses direitos diretamente pelo próprio aplicativo (“Apagar meus dados”); para um
-     relatório de feedback que você nos enviou, use o e-mail acima com a data e um trecho da
-     mensagem (<a href="#feedback">seção 8.7</a>). A base legal para tratar esse relatório é o
-     <strong>legítimo interesse</strong> em corrigir e melhorar o jogo a partir de um contato que
-     você mesmo iniciou (art. 7º, IX). Se o jogo passar a ser oferecido na UE/Reino Unido ou na
-     Califórnia, os direitos e bases legais aplicáveis (GDPR/CCPA) serão acrescentados aqui antes.</p>
+  <p><strong>O que o público vê</strong> é apenas a lista das cinquenta melhores marcas de cada
+     quadro: posição, nome gerado e tempo. <strong>Nenhuma identificação de quem jogou aparece
+     ali</strong>, nem para os outros jogadores nem para quem olhar de fora.</p>
+  <p>A lista de jogadas crua é apagada <strong>60 dias</strong> depois do envio; o tempo e a posição
+     ficam enquanto a sua conta existir. Nós <strong>não guardamos o seu endereço IP</strong>: o
+     servidor o usa apenas em memória, no instante da chamada, para limitar o número de pedidos, e
+     não o grava, não o registra em log nem o guarda em coluna nenhuma.</p>
 
-  <h2>10. Retenção de dados</h2>
-  <p>Os dados no aparelho ficam até você apagá-los (via “Apagar meus dados”) ou desinstalar o
-     aplicativo; não mantemos cópias deles. Os relatórios de feedback que você nos enviar ficam na
-     nossa planilha por <strong>no máximo 24 meses</strong>, ou menos, se você pedir a exclusão
-     (<a href="#feedback">seção 8.7</a>).</p>
+  <h2 id="analises">10. Análises e relatórios de falha</h2>
+  <p>Usamos o <strong>Google Analytics para Firebase</strong> e o <strong>Firebase Crashlytics</strong>
+     para saber se o jogo funciona e onde ele quebra. Eles são configurados
+     <strong>como operação interna</strong>, e essa configuração é a razão pela qual podemos usá-los
+     com todos os jogadores:</p>
+  <ul>
+    <li><strong>A coleta do identificador de publicidade está desligada</strong>, explicitamente, para
+        todo mundo.</li>
+    <li><strong>Os sinais de personalização de anúncios estão desligados</strong> e o
+        <em>Google Signals</em> está desligado. Nada disso é ligado ao AdMob nem a públicos de
+        publicidade.</li>
+    <li><strong>A sua faixa de idade nunca vira estatística</strong>: ela não é enviada, não é uma
+        dimensão e não aparece em nenhum evento.</li>
+    <li><strong>Nenhum texto que você escreve entra num evento</strong> — nem nome, nem e-mail, nem a
+        sua mensagem de feedback.</li>
+  </ul>
+  <p>O que é registrado são acontecimentos do jogo, como uma partida iniciada ou terminada, a tela de
+     Premium vista, uma compra concluída, uma pétala obtida por anúncio, por compra ou de graça, e o
+     início ou o fim de uma assinatura. Os acontecimentos são os mesmos para todo jogador. Junto vão
+     os dados técnicos padrão desses serviços: o modelo do aparelho, a versão do sistema, o país e o
+     idioma.</p>
+  <p><strong>O que muda com a idade, e só isto.</strong> Antes do primeiro anúncio, o jogo pergunta a
+     sua idade (seção 6) e guarda só a faixa.</p>
+  <ul>
+    <li><strong>Se você não respondeu, pulou, ou respondeu menos de 18</strong>: os acontecimentos vão
+        <strong>sem nenhum identificador</strong>. O Firebase Analytics funciona no modo de
+        consentimento com todo armazenamento negado, então não envia com eles identificador do
+        aparelho ou da instalação.</li>
+    <li><strong>Se você respondeu 18 ou mais</strong>: o Firebase Analytics guarda um identificador por
+        instalação, gerado por ele e que desaparece quando você desinstala o jogo.</li>
+  </ul>
+  <p><strong>Os relatórios de falha são iguais para todos.</strong> Qualquer que seja a sua idade, e
+     tendo você respondido ou não, quando o jogo falha o Crashlytics envia um relatório de falha: a
+     pilha de execução do erro, o estado do jogo naquele momento e os dados técnicos do aparelho
+     citados acima. O único identificador que ele leva é um <strong>identificador de
+     instalação</strong>, feito de um número aleatório que o próprio Crashlytics gera e do número de
+     instalação do Firebase; ele identifica esta instalação do jogo, e não você. Não leva nome,
+     e-mail, texto que você escreveu nem a sua faixa de idade.</p>
+  <p>A sua faixa de idade decide o que as análises guardam no seu aparelho e não é enviada.
+     <strong>Ajustes → Apagar meus dados</strong> também chega ao Firebase: para na hora de mandar ao
+     Crashlytics as falhas do jogo, apaga o número de instalação do Firebase (no aparelho e nos
+     servidores do Firebase), nega de novo todo armazenamento e apaga do aparelho os dados de análise,
+     antes de apagar o resto. O Crashlytics fica desligado até você fechar o jogo. Na próxima vez que o
+     jogo abrir, ele primeiro apaga, sem enviar, qualquer relatório de falha que ainda esteja esperando
+     no aparelho; depois o Crashlytics volta a funcionar como para todos, com um identificador de
+     instalação novo. Se algum relatório precisou ser apagado, o Crashlytics fica desligado naquela
+     abertura, e cada abertura seguinte confere de novo; ele volta a partir da primeira que não encontrar
+     nenhum esperando. Apagar o
+     número de instalação precisa de internet: sem ela, o jogo avisa que a exclusão não ficou completa,
+     e você pode tentar de novo. Depois disso o jogo volta a tratar você como quem não respondeu.</p>
+  <p><strong>O que isso não apaga.</strong> O que já tinha sido enviado continua no Google, ligado a
+     identificadores que não existem mais no seu aparelho, e é apagado pelo prazo de guarda: <strong>2
+     meses</strong> para os dados de análise e <strong>90 dias</strong> para os relatórios de falha.</p>
 
-  <h2>11. Alterações nesta política</h2>
+  <h2 id="feedback">11. Feedback e suporte</h2>
+  <p>O jogo tem uma tela <strong>Enviar feedback</strong> (Configurações ▸ Conta) e um relatório por
+     palavra na tela de resultados. Eles existem para você nos contar um problema, uma palavra errada,
+     uma ideia ou um elogio. <strong>Não há envio automático</strong>: nada sai do aparelho até você
+     tocar em “Enviar”.</p>
+  <p><strong>O que é enviado</strong>, e nada além disso: a categoria escolhida (um entre quatro
+     rótulos fixos), a <strong>sua mensagem</strong> em texto livre, e um <strong>bloco
+     técnico</strong> que o aplicativo monta e <strong>mostra na tela antes de você enviar</strong> —
+     a versão e o tipo do build, a plataforma e a string de versão do sistema cortada em 40
+     caracteres (no Android costuma ser uma linha de kernel, não o modelo do aparelho), o idioma da
+     interface, o modo de toque, a tela em que você estava e uma lista de até 20 ações recentes como
+     códigos internos do jogo. Erros entram como um rótulo de uma lista fechada, nunca a mensagem do
+     erro e nunca a pilha. No relatório por palavra vão também a categoria, a subcategoria, a
+     quantidade de segredos, a fase e o identificador interno da palavra.</p>
+  <p><strong>Importante: o campo de mensagem é texto livre e chega até nós como você o escreveu. Não
+     escreva ali o seu nome, e-mail, telefone, endereço nem qualquer outra informação pessoal — sua
+     ou de uma criança.</strong> Não precisamos dessa informação para corrigir o jogo, e o aplicativo
+     avisa isso embaixo do campo.</p>
+  <p><strong>Para onde vai.</strong> O relatório é enviado por HTTPS a um serviço Google Apps Script
+     operado pela Melbee Games, que o acrescenta como uma linha numa planilha do Google Sheets nossa,
+     de acesso restrito. O Google atua apenas como provedor de hospedagem, sob os termos dele. Nada é
+     vendido, compartilhado com terceiros, usado para publicidade ou para criar perfis.</p>
+  <p><strong>A linha não carrega identificador nenhum ligado a você.</strong> Não há conta, não há id
+     de dispositivo e não guardamos o seu endereço IP — na prática não conseguimos ligar um relatório
+     a uma pessoa, nem juntar dois relatórios da mesma pessoa, exceto pelo que estiver escrito
+     neles.</p>
+  <p><strong>Se o envio falhar</strong>, o aplicativo avisa (nunca diz “enviado” quando não enviou) e
+     oferece duas saídas, ambas iniciadas por você: abrir o seu aplicativo de e-mail com uma mensagem
+     já preenchida — se você enviar, passamos a conhecer o seu endereço, porque é um e-mail comum — ou
+     copiar tudo para a área de transferência.</p>
+  <p><strong>Por quanto tempo, e como apagar.</strong> Guardamos a linha enquanto ela for útil para
+     corrigir o que descreve e, em qualquer caso, por no máximo <strong>24 meses</strong>. Você pode
+     pedir a exclusão antes disso escrevendo para
+     <a href="mailto:melbees.games@gmail.com">melbees.games@gmail.com</a>. Como as linhas não têm
+     identificador, precisamos que você nos ajude a achar a sua: informe
+     <strong>a data do envio e um trecho do que você escreveu</strong>. Apagamos as linhas
+     correspondentes e confirmamos por e-mail. Sem esses dois dados não temos como localizar o seu
+     relatório — não por recusa, mas porque a planilha não guarda nada que ligue uma linha a uma
+     pessoa.</p>
+
+  <h2 id="pais">12. Para pais e responsáveis</h2>
+  <p>Dentro do jogo, em <strong>Ajustes</strong>, há uma página <strong>Para pais e
+     responsáveis</strong>. Ela não pede idade, não está atrás de compra nenhuma e mostra:</p>
+  <ul>
+    <li><strong>O tempo de jogo neste aparelho</strong>, medido pelo próprio jogo. Esse contador fica
+        só no aparelho e não é enviado para nós.</li>
+    <li><strong>Onde ficam os controles dos pais</strong>, que são da plataforma e não nossos: o
+        <strong>Family Link</strong> do Google, que permite definir limites de tempo, e a
+        <strong>aprovação de compras</strong> do Google Play, que permite exigir autorização antes de
+        qualquer compra.</li>
+  </ul>
+  <p>O jogo <strong>mede e mostra</strong> o tempo de uso e <strong>nunca interrompe uma
+     partida</strong>. Também não envia notificações, não recompensa o jogador por tempo conectado e
+     não tem sequência diária que se perca por faltar um dia.</p>
+
+  <h2>13. Com quem os dados são compartilhados</h2>
+  <p><strong>Não vendemos os seus dados e não os fornecemos a corretores de dados.</strong> Os
+     serviços abaixo são os únicos que recebem alguma coisa, cada um para uma finalidade:</p>
+  <ul>
+    <li><strong>Google Play (Google)</strong> — cobra as compras e nos informa o estado delas
+        (<a href="#compras">seção 7</a>).</li>
+    <li><strong>Google AdMob (Google)</strong> — serve os anúncios recompensados
+        (<a href="#anuncios">seção 6</a>).</li>
+    <li><strong>Firebase (Google)</strong> — análises e relatórios de falha
+        (<a href="#analises">seção 10</a>).</li>
+    <li><strong>Supabase</strong> — faz a autenticação da conta Google e hospeda o banco do ranking
+        (seções <a href="#conta">8</a> e <a href="#ranking">9</a>), como nosso operador.</li>
+    <li><strong>Google Cloud</strong> — hospeda o nosso servidor, como nosso operador.</li>
+    <li><strong>Google Apps Script e Google Sheets</strong> — recebem e guardam os relatórios de
+        feedback (<a href="#feedback">seção 11</a>), como nossos operadores.</li>
+  </ul>
+  <p>Podemos ainda divulgar dados se a lei exigir, para cumprir ordem de autoridade competente, ou
+     para apurar fraude e abuso do ranking.</p>
+
+  <h2>14. Transferência internacional e retenção</h2>
+  <p>Os serviços acima operam servidores fora do Brasil, então os dados descritos aqui podem ser
+     tratados em outros países, sob as salvaguardas contratuais desses fornecedores — inclusive as
+     cláusulas-padrão aplicáveis a transferências a partir da União Europeia e do Reino Unido.</p>
+  <ul>
+    <li><strong>No aparelho</strong>: até você apagar ou desinstalar o jogo.</li>
+    <li><strong>Conta e ranking</strong>: enquanto a conta existir. A lista de jogadas crua é apagada
+        em <strong>60 dias</strong>.</li>
+    <li><strong>Relatórios de feedback</strong>: no máximo <strong>24 meses</strong>.</li>
+    <li><strong>Análises (Firebase)</strong>: <strong>2 meses</strong>. <strong>Relatórios de falha
+        (Crashlytics)</strong>: <strong>90 dias</strong> (<a href="#analises">seção 10</a>).</li>
+    <li><strong>Registro de auditoria da compra</strong>: mantido para defesa contra fraude, e
+        <strong>sem o identificador da conta</strong> a partir do momento em que você apaga a conta
+        (<a href="#exclusao">seção 15</a>).</li>
+  </ul>
+
+  <h2 id="direitos">15. Seus direitos, e como exercê-los</h2>
+  <p>A LGPD assegura a você, entre outros, os direitos de confirmação, acesso, correção,
+     anonimização, portabilidade, eliminação, informação sobre compartilhamento e revogação do
+     consentimento. Onde o RGPD se aplica, você tem também os direitos de oposição, limitação e
+     portabilidade, e o direito de reclamar à autoridade de proteção de dados do seu país — no
+     Brasil, a ANPD.</p>
+  <p id="exclusao">Na prática:</p>
+  <ul>
+    <li><strong>Apagar os dados do aparelho</strong>: Ajustes → <strong>Apagar meus dados</strong>.
+        Apaga progresso, configurações e a faixa de idade respondida. Não alcança a conta.</li>
+    <li><strong>Apagar a conta</strong>: Ajustes → Conta → <strong>Apagar minha conta</strong>, que
+        apaga na hora a conta, o nome de exibição e as partidas enviadas ao ranking. Sem o jogo
+        instalado, use a página <a href="delete-account.pt-BR.html">Apagar sua conta</a>, e nós
+        atendemos em até <strong>30 dias</strong>. <strong>São duas ações diferentes</strong>: apagar
+        a conta não apaga nada do aparelho, e apagar os dados do aparelho não apaga a conta.</li>
+    <li><strong>Apagar um relatório de feedback</strong>: pelo e-mail, com a data e um trecho
+        (<a href="#feedback">seção 11</a>).</li>
+    <li><strong>Anúncios</strong>: mude a sua resposta de consentimento na própria caixa do Google
+        dentro do jogo, ou zere o identificador de publicidade em
+        <em>Configurações do Android → Google → Anúncios</em>.</li>
+    <li><strong>Qualquer outro pedido</strong>:
+        <a href="mailto:melbees.games@gmail.com">melbees.games@gmail.com</a>. Respondemos em até 30
+        dias.</li>
+  </ul>
+  <p><strong>As bases legais.</strong> Executamos o contrato de uso do jogo para fazer o jogo
+     funcionar, entregar o que você comprou e manter a sua conta e o ranking (LGPD art. 7º, V; RGPD
+     art. 6(1)(b)). Apoiamo-nos no <strong>legítimo interesse</strong> em corrigir defeitos, medir se
+     o jogo funciona, e defender o ranking contra trapaça (LGPD art. 7º, IX; RGPD art. 6(1)(f)).
+     Usamos o seu <strong>consentimento</strong> para o anúncio personalizado, onde ele é exigido
+     (LGPD art. 7º, I; RGPD art. 6(1)(a)), e você pode revogá-lo a qualquer momento. Cumprimos
+     ainda <strong>obrigações legais</strong>, como as da Lei nº 15.211/2025, o Estatuto Digital da
+     Criança e do Adolescente (LGPD art. 7º, II; RGPD art. 6(1)(c)).</p>
+
+  <h2>16. Segurança</h2>
+  <p>Tudo o que sai do aparelho vai por <strong>HTTPS</strong>. O acesso ao banco do ranking e à
+     planilha de feedback é restrito a nós. Nenhum sistema é perfeito, e não podemos prometer
+     segurança absoluta — mas não guardamos senha nenhuma sua, não guardamos dado de pagamento e não
+     guardamos o seu endereço IP, o que reduz bastante o que um incidente poderia expor.</p>
+
+  <h2>17. Alterações nesta política</h2>
   <p>Podemos atualizar esta política; a data de “Última atualização” mudará e, para alterações
-     relevantes, avisaremos dentro do aplicativo. Recursos que envolvam envio de dados — anúncios,
-     conta, ranking online — só serão ativados após esta política ser atualizada.</p>
+     relevantes, avisaremos dentro do aplicativo. <strong>Um recurso novo que envie dados só é
+     ativado depois desta página ser atualizada</strong>, nunca antes.</p>
 
-  <h2>12. Contato</h2>
+  <h2>18. Contato</h2>
   <p>Melbee Games — Brasil<br>
      <a href="mailto:melbees.games@gmail.com">melbees.games@gmail.com</a></p>
 </body>
