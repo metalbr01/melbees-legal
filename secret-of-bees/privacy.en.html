@@ -11,7 +11,7 @@
   <p class="lang"><strong>English</strong> · <a href="privacy.pt-BR.html">Português</a></p>
 
   <h1>Privacy Policy — Melbees: The Secret of Bees</h1>
-  <p class="muted">Effective date: 2026-07-27 · Last updated: 2026-09-25</p>
+  <p class="muted">Effective date: 2026-07-27 · Last updated: 2026-10-03</p>
 
   <!--
     VERSION 2 — the policy for the MONETIZED game. Written by mission P1 of
@@ -34,6 +34,12 @@
         (F1, F2) and is on in the R1 build (tag validated/2026-09-25-2): section 10 and
         the Firebase line in section 13 stay. Checked by R2 on 2026-09-25.
 
+    WINDOWS (2026-10-03): section 2.1 (id="windows") describes the Microsoft Store
+    version, and sections 3, 5, 6, 7, 8, 10, 12, 13 and 15 point to it. BEFORE THE GAME IS
+    PUBLISHED ON THE MICROSOFT STORE, check 2.1 against the build going up: if the server does
+    not yet confirm Microsoft purchases (windows-billing-plan.md), drop the receipt sentence;
+    if the account reaches Windows, rewrite the account item first.
+
     DO NOT REMOVE THE id="feedback" ANCHOR: it is the data-deletion URL already saved
     in the Play Console. The id="deletion" anchor is the new one, for account deletion.
   -->
@@ -45,14 +51,46 @@
 
   <h2>2. Scope</h2>
   <p>This policy explains what information Melbees handles, how, and what your choices are. It applies
-     to the Melbees game distributed on <strong>Google Play</strong>, in every country where it is
-     available. If the game is ever distributed through another store, this policy will be updated
-     first.</p>
+     to the Melbees game distributed on <strong>Google Play</strong> (Android) and on the
+     <strong>Microsoft Store</strong> (Windows), in every country where it is available. The Windows
+     version handles less data than the Android one, and <a href="#windows">section 2.1</a> gathers
+     every difference; where it says nothing, the rest of this policy applies. If the game is ever
+     distributed through another store, this policy will be updated first.</p>
   <p>Depending on where you live, besides Brazil's <strong>LGPD</strong> (Law 13.709/2018) the
      <strong>GDPR</strong> of the European Union and the United Kingdom, the United States'
      <strong>COPPA</strong> and other local laws may apply to you.
      <a href="#rights">Section 15</a> describes the rights each of them gives you and how to use
      them.</p>
+
+  <h3 id="windows">2.1 The Windows version (Microsoft Store)</h3>
+  <p>The Windows version is the same game, and it handles less data. What changes in it:</p>
+  <ul>
+    <li><strong>There are no ads at all.</strong> That is why the game <strong>never asks your
+        age</strong>: the question in <a href="#children">section 5</a> exists only because of the ad.
+        Nothing in <a href="#ads">section 6</a> happens on Windows.</li>
+    <li><strong>There is no Firebase.</strong> The Windows version has neither Google Analytics for
+        Firebase nor Firebase Crashlytics: no game event and no crash report is sent
+        (<a href="#analytics">section 10</a> applies to Android only).</li>
+    <li><strong>Microsoft does the charging</strong>, through the Microsoft Store purchase system, on your
+        Microsoft account. The items are those of <a href="#purchases">section 7</a> plus a 1-Petal
+        pack. <strong>We never see or receive your payment details.</strong> What reaches us is the
+        receipt Microsoft issues for the purchase: the product identifier, a purchase code and, for the
+        subscription, its state. We use it to unlock what you bought and to confirm the purchase with
+        Microsoft, against fraud. Cancellations, refunds and the right of withdrawal are requested from
+        Microsoft, on your Microsoft account, because Microsoft is the seller.</li>
+    <li><strong>There is no account or online leaderboard yet.</strong> The Google sign-in and the online
+        leaderboard of sections <a href="#account">8</a> and <a href="#leaderboard">9</a> do not exist in
+        this version, and nothing is sent to them. When they arrive, signing in will happen in the
+        browser, and this policy will be updated first.</li>
+    <li><strong>Feedback works as on Android</strong> (<a href="#feedback">section 11</a>); in the
+        technical block, the platform shows as Windows.</li>
+    <li><strong>On the computer</strong>, your progress and settings stay in your Windows user and are
+        never sent to us. <strong>Settings → Delete my data</strong> deletes all of it, as on
+        Android.</li>
+    <li><strong>The parental controls are Microsoft's</strong>: <strong>Microsoft Family Safety</strong>
+        can limit screen time and require approval before a purchase on the Microsoft Store
+        (<a href="#parents">section 12</a>).</li>
+  </ul>
 
   <h2>3. The summary, in five lines</h2>
   <ul>
@@ -60,10 +98,12 @@
         sent to us.</li>
     <li><strong>We do not ask your age in order to let you play</strong>, and there is no date-of-birth
         screen. We ask your age <strong>once, before the first ad</strong>, and we keep only the
-        band — never the number (<a href="#children">section 5</a>).</li>
+        band — never the number (<a href="#children">section 5</a>). On Windows there is no
+        ad, and your age is never asked (<a href="#windows">section 2.1</a>).</li>
     <li><strong>An account is optional</strong> and is only asked for when you choose to enter the
         online leaderboard or to restore your subscription on another device
-        (<a href="#account">section 8</a>).</li>
+        (<a href="#account">section 8</a>). On Windows there is no account yet
+        (<a href="#windows">section 2.1</a>).</li>
     <li><strong>We do not sell your data</strong>, we do not trade it with data brokers, and we do not
         build advertising profiles out of what you play.</li>
     <li><strong>You can delete everything</strong>: the device data from inside the game, and the
@@ -99,7 +139,8 @@
      trivially bypassed by a child, and a weak control gives parents a safety that does not exist. The
      strong control is the parents', at the platform: Google <strong>Family Link</strong> and Google
      Play's <strong>purchase approval</strong>. <a href="#parents">Section 12</a> says where they
-     are.</p>
+     are. On Windows, the control is <strong>Microsoft Family Safety</strong>
+     (<a href="#windows">section 2.1</a>).</p>
   <p><strong>The one thing that needs an age is the ad</strong>, because the advertising rule is
      different for each band. So, <strong>the first time an ad is about to be shown</strong>, the game
      asks your age once:</p>
@@ -137,7 +178,9 @@
   <h2 id="ads">6. Ads</h2>
   <p>The game shows <strong>rewarded ads</strong>, and only those. There is no banner, no interstitial,
      and <strong>no ad ever appears by itself</strong>: one is shown only after you tap to earn an
-     extra Petal when you lose your last one. If you never tap, you will never see an ad.</p>
+     extra Petal when you lose your last one. If you never tap, you will never see an ad.
+     <strong>The Windows version has no ads at all</strong> (<a href="#windows">section 2.1</a>): this
+     section applies to Android only.</p>
   <p>Ads are served by <strong>Google AdMob</strong>, which acts as an independent controller of the
      data it receives. The treatment of each request depends on the band from
      <a href="#children">section 5</a>:</p>
@@ -162,7 +205,8 @@
   <p>The game offers three items, and none of them is required to play: two <strong>Petal packs</strong>
      (one-off purchases) and the monthly <strong>Premium</strong> subscription. <strong>There is no
      loot box</strong>: you always know exactly what you are buying, and nothing bought turns into a
-     draw.</p>
+     draw. On Windows the Microsoft Store does the charging, and there is also a 1-Petal pack
+     (<a href="#windows">section 2.1</a>); the list below describes Google Play.</p>
   <ul>
     <li><strong>Google Play does the charging</strong>, through its own billing system.
         <strong>We never see or receive your payment details</strong> — card, billing address or any
@@ -190,6 +234,7 @@
      subscription</strong> on another device. A subscriber who has not signed in also sees that offer as
      a quiet line before a game, saying it will not reach the online leaderboard without the account,
      and as a button on the screen that celebrates the subscription. Neither stops you from playing.</p>
+  <p>The account does not exist yet in the Windows version (<a href="#windows">section 2.1</a>).</p>
   <p>The account is <strong>Google only</strong>: no e-mail-and-password sign-up, no anonymous login.
      When you sign in, Google confirms to us that it is you, and of what it sends us
      <strong>we keep only an opaque account identifier</strong> — a meaningless string that lets us
@@ -224,6 +269,8 @@
      written to a log or to any column.</p>
 
   <h2 id="analytics">10. Analytics and crash reports</h2>
+  <p><strong>This section applies to Android only</strong>: the Windows version does not use Firebase
+     (<a href="#windows">section 2.1</a>).</p>
   <p>We use <strong>Google Analytics for Firebase</strong> and <strong>Firebase Crashlytics</strong> to
      know whether the game works and where it breaks. They are configured as
      <strong>internal operations</strong>, and that configuration is the reason we can use them with
@@ -317,6 +364,9 @@
         <strong>Family Link</strong>, which can set time limits, and Google Play's
         <strong>purchase approval</strong>, which can require authorisation before any purchase.</li>
   </ul>
+  <p><strong>On Windows</strong>, the matching controls are Microsoft's, in
+     <strong>Microsoft Family Safety</strong>: screen-time limits and approval before a purchase on
+     the Microsoft Store.</p>
   <p>The game <strong>measures and shows</strong> time of use and <strong>never interrupts a
      run</strong>. It also sends no notifications, gives no reward for time spent connected, and has
      no daily streak that is lost by missing a day.</p>
@@ -325,11 +375,13 @@
   <p><strong>We do not sell your data and we do not give it to data brokers.</strong> The services
      below are the only ones that receive anything, each for one purpose:</p>
   <ul>
-    <li><strong>Google Play (Google)</strong> — charges for purchases and tells us their state
+    <li><strong>Google Play (Google)</strong>, on Android — charges for purchases and tells us their state
         (<a href="#purchases">section 7</a>).</li>
-    <li><strong>Google AdMob (Google)</strong> — serves the rewarded ads
+    <li><strong>Microsoft Store (Microsoft)</strong>, on Windows: charges for purchases and tells us
+        their state (<a href="#windows">section 2.1</a>).</li>
+    <li><strong>Google AdMob (Google)</strong>, on Android — serves the rewarded ads
         (<a href="#ads">section 6</a>).</li>
-    <li><strong>Firebase (Google)</strong> — analytics and crash reports
+    <li><strong>Firebase (Google)</strong>, on Android — analytics and crash reports
         (<a href="#analytics">section 10</a>).</li>
     <li><strong>Supabase</strong> — authenticates the Google account and hosts the leaderboard database
         (sections <a href="#account">8</a> and <a href="#leaderboard">9</a>), as our processor.</li>
@@ -376,7 +428,7 @@
         account.</li>
     <li><strong>Delete a feedback report</strong>: by e-mail, with the date and an excerpt
         (<a href="#feedback">section 11</a>).</li>
-    <li><strong>Ads</strong>: change your consent answer in Google's own dialog inside the game, or
+    <li><strong>Ads</strong> (Android only): change your consent answer in Google's own dialog inside the game, or
         reset the advertising identifier under
         <em>Android Settings → Google → Ads</em>.</li>
     <li><strong>Any other request</strong>:
