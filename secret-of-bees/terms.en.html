@@ -11,7 +11,7 @@
   <p class="lang"><strong>English</strong> · <a href="terms.pt-BR.html">Português</a></p>
 
   <h1>Terms of Use of Melbees: The Secret of Bees</h1>
-  <p class="muted">Effective date: 2026-07-27 · Last updated: 2026-10-03</p>
+  <p class="muted">Effective date: 2026-07-27 · Last updated: 2026-10-04</p>
 
   <!--
     VERSION 2: the terms of the MONETIZED game. Draft of 2026-09-25, written against
@@ -29,6 +29,15 @@
     WINDOWS (2026-10-03): section 2.1 (id="windows") gathers what changes in the Microsoft
     Store version; sections 2, 6, 7, 8 and 10 point to it. Check it against the
     windows-billing build before the game is published on the Microsoft Store.
+
+    WINDOWS WITH AN ACCOUNT (2026-10-04, windows-termos-21): the PC has the Google account
+    (windows-login-google) and the online leaderboard, and Premium follows the account
+    between Google Play and the Microsoft Store (premium-multiplataforma,
+    windows-premium-servidor): 2.1, section 4 and section 5 say so. Before the Windows
+    package is sent, check that the live server has the Microsoft path on
+    (MSSTORE_CLIENT_SECRET, provisioning-runbook step 17), and that the player-card text
+    (nickname, portrait, number; sections 4, 9 and 10) is already live: the Windows build
+    has the card too.
 
     v1 had no anchors (id). The anchors below are new and follow the policy's names.
   -->
@@ -64,12 +73,13 @@
     <li><strong>The automatic 3-day refund of section 6 is Google Play's</strong> and does not apply on
         Windows. If a Petal purchase does not reach the match, ask Microsoft for a refund or write to
         <a href="mailto:melbees.games@gmail.com">melbees.games@gmail.com</a>.</li>
-    <li><strong>There is no account or online leaderboard on Windows yet</strong> (sections
-        <a href="#account">4</a> and <a href="#leaderboard">9</a>). So Premium on Windows gives the
-        Premium categories, the skins and themes and the free continues of
-        <a href="#premium">section 5</a>, without the online leaderboard. The free trial, the renewal
-        and cancelling follow what the Microsoft Store shows. When the account reaches Windows, these
-        Terms will be updated first.</li>
+    <li><strong>The Google account and the online leaderboard also exist on Windows</strong> (sections
+        <a href="#account">4</a> and <a href="#leaderboard">9</a>), with the same account as on
+        Android. Your progress does not follow the account: it stays on each device
+        (<a href="#free">section 3</a>). Premium on Windows gives the four benefits of <a href="#premium">section 5</a>, the
+        online leaderboard included. The free trial, the renewal and cancelling follow what the
+        Microsoft Store shows. Under Settings → Account, <strong>Manage subscription</strong> opens the
+        services and subscriptions page of your Microsoft account.</li>
     <li><strong>Parental control is Microsoft's</strong>: <strong>Microsoft Family Safety</strong> can
         require approval before a purchase on the Microsoft Store and limit screen time
         (<a href="#children">section 10</a>).</li>
@@ -90,11 +100,12 @@
   <h2 id="account">4. The Google account, which is optional</h2>
   <ul>
     <li><strong>An account is not required to play or to buy.</strong> It is for the online
-        leaderboard (<a href="#leaderboard">section 9</a>) and for restoring your subscription on
-        another device (<a href="#premium">section 5</a>).</li>
+        leaderboard (<a href="#leaderboard">section 9</a>) and for taking your subscription to another
+        device, from the same store or the other one (<a href="#premium">section 5</a>).</li>
     <li>The account is <strong>Google only</strong>: there is no e-mail-and-password sign-up. You sign
         in under Settings → Account → <strong>Sign in with Google</strong>, or when the online
-        leaderboard asks. The game never asks you to sign in on launch.</li>
+        leaderboard asks. The game never asks you to sign in on launch. On Windows, Sign in with Google
+        opens your browser, where Google asks for the account.</li>
     <li>What we keep from the account is in the <a href="privacy.en.html#account">Privacy
         Policy</a>.</li>
     <li><strong>Deleting the account</strong>: under Settings → Account → <strong>Delete my
@@ -133,9 +144,19 @@
     <li><strong>Subscribing needs no account.</strong> To recover the subscription, use
         <strong>Restore purchases</strong>, on the Premium screen or under Settings → Account. On
         another device, the game asks for the Google account.</li>
-    <li><strong>Cancelling</strong>: whenever you like, in your Google Play account's subscriptions.
-        Under Settings → Account, <strong>Manage subscription</strong> opens that page. The game never
-        cancels the subscription for you, and deleting your Melbees account does not cancel it.</li>
+    <li><strong>Premium follows your Google account, between Android and Windows.</strong> A Google
+        Play subscription counts on Windows, and a Microsoft Store one counts on Android, when you sign
+        in with the same Google account on both. For that, the subscription must be linked to the
+        account: sign in with it on the device where you subscribed. Managing, cancelling, refunds and
+        the free trial always belong to the store where you subscribed: the game names that store and
+        does not open the other store's page. Using a Microsoft Store subscription on Android may be
+        turned off if either store requires it; it then still counts on Windows.</li>
+    <li><strong>Cancelling</strong>: whenever you like, in the store where you subscribed: in your
+        Google Play account's subscriptions or, if you subscribed on the Microsoft Store, in your
+        Microsoft account's services and subscriptions. Under Settings → Account, <strong>Manage
+        subscription</strong> opens that page when you subscribed in this device's store. The game
+        never cancels the subscription for you, and deleting your Melbees account does not cancel
+        it.</li>
   </ul>
   <p><strong>When the subscription stops being active:</strong></p>
   <ul>
@@ -293,13 +314,14 @@
     <li>We may update the game and change rules, content and features, and we may suspend or end the
         game or a feature of it.</li>
     <li><strong>If a Premium benefit or the game itself ends</strong>, we will give notice in advance,
-        the subscription will stop renewing, and refunds follow Google Play's rules and the law.</li>
+        the subscription will stop renewing, and refunds follow the rules of the store where you
+        subscribed and the law.</li>
     <li>The Premium screen lists a benefit only once the version of the game you have already delivers
         it. Nothing is promised for the future.</li>
     <li>The online leaderboard, purchases and ads depend on the internet and on third-party services,
         such as Google's, and may be down for a while. Playing keeps working offline.</li>
-    <li>If a change does not suit you, you can cancel the subscription at any time in Google Play
-        (<a href="#premium">section 5</a>), and your consumer rights still apply
+    <li>If a change does not suit you, you can cancel the subscription at any time in the store where
+        you subscribed (<a href="#premium">section 5</a>), and your consumer rights still apply
         (<a href="#consumer">section 18</a>).</li>
   </ul>
 
@@ -315,7 +337,8 @@
   <p>You can stop using the game whenever you like. <strong>Delete my data</strong> (Settings) erases
      what is on the device. <strong>Delete my account</strong> (Settings → Account), or the
      <a href="delete-account.en.html">Delete your account</a> page, deletes the account. The
-     subscription is cancelled in Google Play (<a href="#premium">section 5</a>).</p>
+     subscription is cancelled in the store where you subscribed (<a href="#premium">section
+     5</a>).</p>
 
   <h2>17. Changes to these Terms</h2>
   <p>We may update these Terms; the “Last updated” date will change and, for material changes, we will

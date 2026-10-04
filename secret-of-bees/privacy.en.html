@@ -11,7 +11,7 @@
   <p class="lang"><strong>English</strong> · <a href="privacy.pt-BR.html">Português</a></p>
 
   <h1>Privacy Policy — Melbees: The Secret of Bees</h1>
-  <p class="muted">Effective date: 2026-07-27 · Last updated: 2026-10-03</p>
+  <p class="muted">Effective date: 2026-07-27 · Last updated: 2026-10-04</p>
 
   <!--
     VERSION 2 — the policy for the MONETIZED game. Written by mission P1 of
@@ -36,9 +36,16 @@
 
     WINDOWS (2026-10-03): section 2.1 (id="windows") describes the Microsoft Store
     version, and sections 3, 5, 6, 7, 8, 10, 12, 13 and 15 point to it. BEFORE THE GAME IS
-    PUBLISHED ON THE MICROSOFT STORE, check 2.1 against the build going up: if the server does
-    not yet confirm Microsoft purchases (windows-billing-plan.md), drop the receipt sentence;
-    if the account reaches Windows, rewrite the account item first.
+    PUBLISHED ON THE MICROSOFT STORE, check 2.1 against the build going up.
+
+    WINDOWS WITH AN ACCOUNT (2026-10-04, windows-termos-21): 2.1 describes the sign-in in the
+    browser and the Windows vault (account-and-deletion.md §3.3) and what the Microsoft
+    Store subscription sends the server (purchase-routes.md §2.5); sections 3, 7, 8, 13, 14
+    and 15 say Premium follows the account across stores (premium-subscription.md §5.2).
+    Before the Windows package is sent, check that the live server has the Microsoft path on
+    (MSSTORE_CLIENT_SECRET, provisioning-runbook step 17), and that the player-card text
+    (nickname, portrait, number; sections 5, 9 and 15) is already live: the Windows build
+    has the card too.
 
     DO NOT REMOVE THE id="feedback" ANCHOR: it is the data-deletion URL already saved
     in the Play Console. The id="deletion" anchor is the new one, for account deletion.
@@ -73,15 +80,44 @@
         (<a href="#analytics">section 10</a> applies to Android only).</li>
     <li><strong>Microsoft does the charging</strong>, through the Microsoft Store purchase system, on your
         Microsoft account. The items are those of <a href="#purchases">section 7</a> plus a 1-Petal
-        pack. <strong>We never see or receive your payment details.</strong> What reaches us is the
-        receipt Microsoft issues for the purchase: the product identifier, a purchase code and, for the
-        subscription, its state. We use it to unlock what you bought and to confirm the purchase with
-        Microsoft, against fraud. Cancellations, refunds and the right of withdrawal are requested from
-        Microsoft, on your Microsoft account, because Microsoft is the seller.</li>
-    <li><strong>There is no account or online leaderboard yet.</strong> The Google sign-in and the online
-        leaderboard of sections <a href="#account">8</a> and <a href="#leaderboard">9</a> do not exist in
-        this version, and nothing is sent to them. When they arrive, signing in will happen in the
-        browser, and this policy will be updated first.</li>
+        pack. <strong>We never see or receive your payment details.</strong> From Petal purchases,
+        <strong>nothing reaches us</strong>. From the Premium subscription, <strong>something reaches us
+        only if you signed in with the account</strong> (<a href="#account">section 8</a>), and it is
+        this:
+        <ul>
+          <li><strong>The Microsoft Store ID key.</strong> The game asks our server for a single-use
+              authorization and, with it, asks the Microsoft Store for a key: a code Microsoft issues for
+              your Microsoft account that lets our server look up the Melbees subscriptions on that
+              account. Microsoft receives with it a code we derive from your Melbees account that does
+              not reveal who you are; it makes the key good for that account only. The computer where
+              you subscribed sends a new key each time it checks the subscription with the account
+              signed in.</li>
+          <li><strong>What we keep from the subscription</strong>, together with the key and the link to
+              your account: the subscription's identifier at Microsoft, its state (active, with a payment
+              pending, or ended) and the date it ends. On each check we also read whether it renews by
+              itself and whether it is in the free trial, and we pass that on to the game without
+              keeping it. <strong>The country of purchase and the rest of what Microsoft answers are
+              never kept.</strong> Each link also writes a line to the purchase audit log
+              (<a href="#retention">section 14</a>).</li>
+          <li><strong>For how long.</strong> The key lasts 30 days, and the server renews it before it
+              ends while it checks the subscription; an expired key is deleted. The key and the link are
+              deleted when you delete the account (<a href="#deletion">section 15</a>).</li>
+        </ul>
+        We use this to unlock Premium on your devices and to confirm the subscription with Microsoft,
+        against fraud. Cancellations, refunds and the right of withdrawal are requested from Microsoft,
+        on your Microsoft account, because Microsoft is the seller.</li>
+    <li><strong>The account and the online leaderboard work as on Android</strong> (sections
+        <a href="#account">8</a> and <a href="#leaderboard">9</a>), with the same Google account. What
+        changes is the sign-in: <strong>Sign in with Google</strong> opens your browser, where Google
+        asks for the account; the browser hands the game a single-use code, which the game exchanges for
+        the session at Supabase, our authentication processor (<a href="#sharing">section 13</a>). The
+        session stays in your Windows user, in the computer's local folder (never the folder that
+        travels between computers), and <strong>encrypted twice by Windows</strong>: one layer only your
+        Windows user opens and one layer only this computer opens. A copy taken to another computer or
+        another user does not open, and the game deletes it. The session is erased when you tap
+        <strong>Sign out</strong>, <strong>Delete my data</strong> or <strong>Delete my
+        account</strong>. The Google session inside the browser belongs to the browser: the game neither
+        reads nor erases it.</li>
     <li><strong>Feedback works as on Android</strong> (<a href="#feedback">section 11</a>); in the
         technical block, the platform shows as Windows.</li>
     <li><strong>On the computer</strong>, your progress and settings stay in your Windows user and are
@@ -101,9 +137,9 @@
         band — never the number (<a href="#children">section 5</a>). On Windows there is no
         ad, and your age is never asked (<a href="#windows">section 2.1</a>).</li>
     <li><strong>An account is optional</strong> and is only asked for when you choose to enter the
-        online leaderboard or to restore your subscription on another device
-        (<a href="#account">section 8</a>). On Windows there is no account yet
-        (<a href="#windows">section 2.1</a>).</li>
+        online leaderboard or to restore your subscription on another device, the other platform
+        included (<a href="#account">section 8</a>). On Windows the account is the same, and signing in
+        happens in the browser (<a href="#windows">section 2.1</a>).</li>
     <li><strong>We do not sell your data</strong>, we do not trade it with data brokers, and we do not
         build advertising profiles out of what you play.</li>
     <li><strong>You can delete everything</strong>: the device data from inside the game, and the
@@ -217,7 +253,10 @@
         to stop one receipt being used on several accounts.</li>
     <li><strong>Buying does not require an account.</strong> If you have signed in
         (<a href="#account">section 8</a>), the subscription is bound to your account so that you can
-        restore it on another device.</li>
+        restore it on another device, from the same store or the other one: with the same account, a
+        Google Play subscription also counts on Windows, and a Microsoft Store one also counts on
+        Android, unless that use is turned off (<a href="terms.en.html#premium">Terms, section
+        5</a>).</li>
     <li><strong>Cancellation and refunds belong to Google Play</strong>, under the subscriptions of
         your Google account. Deleting your Melbees account does <strong>not</strong> cancel the
         subscription.</li>
@@ -231,10 +270,11 @@
   <p><strong>The account is optional, and you need none to play or to buy.</strong> The game never
      asks you to sign in on launch. It offers the sign-in for two things only, and signing in is always
      an action of yours: the <strong>online leaderboard</strong> and <strong>restoring a
-     subscription</strong> on another device. A subscriber who has not signed in also sees that offer as
+     subscription</strong> on another device, the other platform included. A subscriber who has not signed in also sees that offer as
      a quiet line before a game, saying it will not reach the online leaderboard without the account,
      and as a button on the screen that celebrates the subscription. Neither stops you from playing.</p>
-  <p>The account does not exist yet in the Windows version (<a href="#windows">section 2.1</a>).</p>
+  <p>On Windows the account is the same, and signing in opens the browser;
+     <a href="#windows">section 2.1</a> describes that sign-in and where Windows keeps the session.</p>
   <p>The account is <strong>Google only</strong>: no e-mail-and-password sign-up, no anonymous login.
      When you sign in, Google confirms to us that it is you, and of what it sends us
      <strong>we keep only an opaque account identifier</strong> — a meaningless string that lets us
@@ -242,12 +282,22 @@
   <p><strong>We do not store your name, your picture or your e-mail address.</strong></p>
   <p>So that you do not have to sign in again every time you open the game, <strong>the session is
      kept on this device</strong>: only the credential that renews it, never your name or your e-mail.
-     It is <strong>encrypted</strong>, with a key Android creates and that never leaves the device, and
-     it sits in a place Android <strong>keeps out of backups and out of transfers to another
-     device</strong>, so your session never shows up on a device you did not sign in on. It is erased
-     when you tap <strong>Sign out</strong>, <strong>Delete my data</strong> or <strong>Delete my
-     account</strong>, or when you uninstall the game. Opening the game does not connect to the account:
-     the session is used only when something needs it, such as the online leaderboard.</p>
+     On Android, it is <strong>encrypted</strong>, with a key Android creates and that never leaves the
+     device, and it sits in a place Android <strong>keeps out of backups and out of transfers to
+     another device</strong>, so your session never shows up on a device you did not sign in on. It is
+     erased when you tap <strong>Sign out</strong>, <strong>Delete my data</strong> or <strong>Delete
+     my account</strong>, or when you uninstall the game. On Windows, <a href="#windows">section
+     2.1</a> says where it is kept. The session is used only when something needs it, such as the
+     online leaderboard. Opening the game does not connect to the account, with one exception: when the
+     device holds the answer about the account's Premium (below) and its date has passed, the game
+     renews the session by itself, with no screen, to ask again.</p>
+  <p><strong>Premium follows the account.</strong> With the account signed in, and when this device's
+     store has no subscription, the game asks our server whether the account has Premium, bought on
+     Google Play or on the Microsoft Store. The server answers which store it is from and until when it
+     lasts. The device keeps that answer for that account, and it counts until that date, so you can
+     play as Premium even offline. A newer answer from the server replaces it, and it is erased when
+     you tap <strong>Sign out</strong>, <strong>Delete my data</strong> or <strong>Delete my
+     account</strong>, or when another account signs in on this device.</p>
 
   <h2 id="leaderboard">9. The online leaderboard</h2>
   <p>If — and only if — you enter the online leaderboard, this leaves your device:</p>
@@ -371,14 +421,15 @@
      run</strong>. It also sends no notifications, gives no reward for time spent connected, and has
      no daily streak that is lost by missing a day.</p>
 
-  <h2>13. Who the data is shared with</h2>
+  <h2 id="sharing">13. Who the data is shared with</h2>
   <p><strong>We do not sell your data and we do not give it to data brokers.</strong> The services
      below are the only ones that receive anything, each for one purpose:</p>
   <ul>
     <li><strong>Google Play (Google)</strong>, on Android — charges for purchases and tells us their state
         (<a href="#purchases">section 7</a>).</li>
-    <li><strong>Microsoft Store (Microsoft)</strong>, on Windows: charges for purchases and tells us
-        their state (<a href="#windows">section 2.1</a>).</li>
+    <li><strong>Microsoft Store (Microsoft)</strong>, on Windows: charges for purchases, issues the
+        Microsoft Store ID key and, through it, tells us the subscription's state
+        (<a href="#windows">section 2.1</a>).</li>
     <li><strong>Google AdMob (Google)</strong>, on Android — serves the rewarded ads
         (<a href="#ads">section 6</a>).</li>
     <li><strong>Firebase (Google)</strong>, on Android — analytics and crash reports
@@ -392,15 +443,21 @@
   <p>We may also disclose data where the law requires it, to comply with an order from a competent
      authority, or to investigate fraud and abuse of the leaderboard.</p>
 
-  <h2>14. International transfers and retention</h2>
+  <h2 id="retention">14. International transfers and retention</h2>
   <p>The services above run servers outside Brazil, so the data described here may be processed in
      other countries, under those providers' contractual safeguards — including the standard
      contractual clauses that apply to transfers out of the European Union and the United Kingdom.</p>
   <ul>
     <li><strong>On the device</strong>: until you delete it or uninstall the game. The account session,
-        until you sign out (<a href="#account">section 8</a>).</li>
+        until you sign out (<a href="#account">section 8</a>). The server's answer about the account's
+        Premium, until a newer answer replaces it or until you sign out
+        (<a href="#account">section 8</a>).</li>
     <li><strong>Account and leaderboard</strong>: for as long as the account exists. The raw list of
         moves is deleted after <strong>60 days</strong>.</li>
+    <li><strong>The subscription link</strong> (the purchase code or, on Windows, the subscription's
+        identifier at Microsoft, with the state and the end date): for as long as the account exists.
+        <strong>The Microsoft Store ID key</strong>: until it expires, in 30 days unless renewed, and
+        never beyond the account (<a href="#windows">section 2.1</a>).</li>
     <li><strong>Feedback reports</strong>: at most <strong>24 months</strong>.</li>
     <li><strong>Analytics (Firebase)</strong>: <strong>2 months</strong>. <strong>Crash reports
         (Crashlytics)</strong>: <strong>90 days</strong> (<a href="#analytics">section 10</a>).</li>
@@ -420,8 +477,9 @@
         progress, settings and the age band you answered, and removes the account session from this
         device. It does not reach the account.</li>
     <li><strong>Delete the account</strong>: Settings → Account → <strong>Delete my account</strong>,
-        which immediately deletes the account, the display name and the runs submitted to the
-        leaderboard. Without the game installed, use the
+        which immediately deletes the account, the display name, the runs submitted to the
+        leaderboard and the subscription link (on Windows, with the Microsoft Store ID key). Without
+        the game installed, use the
         <a href="delete-account.en.html">Delete your account</a> page, and we act within
         <strong>30 days</strong>. <strong>These are two different actions</strong>: deleting the
         account erases nothing on the device, and deleting the device data erases nothing on the

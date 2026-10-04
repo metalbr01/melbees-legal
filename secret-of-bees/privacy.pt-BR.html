@@ -11,7 +11,7 @@
   <p class="lang"><a href="privacy.en.html">English</a> · <strong>Português</strong></p>
 
   <h1>Política de Privacidade — Melbees: The Secret of Bees</h1>
-  <p class="muted">Data de vigência: 27/07/2026 · Última atualização: 03/10/2026</p>
+  <p class="muted">Data de vigência: 27/07/2026 · Última atualização: 04/10/2026</p>
 
   <!--
     VERSÃO 2 — a política do jogo MONETIZADO. Escrita pela missão P1 do
@@ -35,9 +35,16 @@
 
     WINDOWS (03/10/2026): a seção 2.1 (id="windows") descreve a versão da Microsoft
     Store, e as seções 3, 5, 6, 7, 8, 10, 12, 13 e 15 apontam para ela. ANTES DE PUBLICAR
-    O JOGO NA MICROSOFT STORE, conferir a 2.1 contra o build que sobe: se o servidor ainda
-    não confirmar compras da Microsoft (windows-billing-plan.md), tirar a frase do
-    comprovante; se a conta chegar ao Windows, reescrever o item da conta antes.
+    O JOGO NA MICROSOFT STORE, conferir a 2.1 contra o build que sobe.
+
+    WINDOWS COM CONTA (04/10/2026, windows-termos-21): a 2.1 descreve o login pelo
+    navegador e o cofre do Windows (account-and-deletion.md §3.3) e o que a assinatura da
+    Microsoft Store manda ao servidor (purchase-routes.md §2.5); as seções 3, 7, 8, 13, 14
+    e 15 dizem que o Premium acompanha a conta entre as lojas (premium-subscription.md
+    §5.2). Antes de enviar o pacote do Windows, conferir que o servidor no ar tem o caminho
+    da Microsoft ligado (MSSTORE_CLIENT_SECRET, provisioning-runbook passo 17), e que o
+    texto do cartão do jogador (apelido, retrato, número; seções 5, 9 e 15) já está no ar:
+    o build do Windows também tem o cartão.
 
     NÃO REMOVA A ÂNCORA id="feedback": ela é a URL de exclusão de dados já salva no
     Play Console. A âncora id="exclusao" é a nova, para a exclusão de conta.
@@ -72,15 +79,42 @@
         (a <a href="#analises">seção 10</a> vale só para o Android).</li>
     <li><strong>Quem cobra é a Microsoft</strong>, pelo sistema de compras da Microsoft Store, na sua
         conta Microsoft. Os itens são os da <a href="#compras">seção 7</a> mais um pacote de 1 pétala.
-        <strong>Nós nunca vemos nem recebemos os seus dados de pagamento.</strong> O que chega até nós é
-        o comprovante que a Microsoft emite para a compra: o identificador do produto, um código da
-        compra e, na assinatura, o estado dela. Usamos isso para liberar o que você comprou e para
-        confirmar a compra com a Microsoft, contra fraude. Cancelamento, reembolso e o direito de
-        arrependimento são pedidos à Microsoft, na sua conta Microsoft, porque ela é a vendedora.</li>
-    <li><strong>Ainda não há conta nem ranking online.</strong> O login com o Google e o ranking online
-        das seções <a href="#conta">8</a> e <a href="#ranking">9</a> não existem nesta versão, e nada é
-        enviado para eles. Quando chegarem, o login será feito pelo navegador, e esta política será
-        atualizada antes.</li>
+        <strong>Nós nunca vemos nem recebemos os seus dados de pagamento.</strong> Das compras de
+        pétalas, <strong>nada chega até nós</strong>. Da assinatura Premium, <strong>algo chega até nós
+        só se você entrou com a conta</strong> (<a href="#conta">seção 8</a>), e é isto:
+        <ul>
+          <li><strong>A chave de ID da Microsoft Store.</strong> O jogo pede ao nosso servidor uma
+              autorização de uso único e, com ela, pede à Microsoft Store uma chave: um código que a
+              Microsoft emite para a sua conta Microsoft e que permite ao nosso servidor consultar as
+              assinaturas do Melbees nessa conta. A Microsoft recebe junto um código que derivamos da
+              sua conta do Melbees e que não revela quem você é; ele faz a chave valer só para essa
+              conta. O computador em que você assinou envia uma chave nova cada vez que confere a
+              assinatura com a conta entrada.</li>
+          <li><strong>O que guardamos da assinatura</strong>, junto com a chave e o vínculo com a sua
+              conta: o identificador da assinatura na Microsoft, o estado dela (ativa, com a cobrança
+              pendente ou encerrada) e a data em que ela termina. A cada consulta lemos também se ela
+              se renova sozinha e se está no teste grátis, e repassamos isso ao jogo sem guardar.
+              <strong>O país da compra e o resto do que a Microsoft responde nunca são
+              guardados.</strong> Cada vínculo também gera uma linha no registro de auditoria da compra
+              (<a href="#retencao">seção 14</a>).</li>
+          <li><strong>Por quanto tempo.</strong> A chave vale 30 dias, e o servidor a renova antes de
+              vencer enquanto consulta a assinatura; uma chave vencida é apagada. A chave e o vínculo
+              são apagados quando você apaga a conta (<a href="#exclusao">seção 15</a>).</li>
+        </ul>
+        Usamos isso para liberar o Premium nos seus aparelhos e para confirmar a assinatura com a
+        Microsoft, contra fraude. Cancelamento, reembolso e o direito de arrependimento são pedidos à
+        Microsoft, na sua conta Microsoft, porque ela é a vendedora.</li>
+    <li><strong>A conta e o ranking online funcionam como no Android</strong> (seções
+        <a href="#conta">8</a> e <a href="#ranking">9</a>), com a mesma conta Google. O que muda é o
+        login: <strong>Entrar com o Google</strong> abre o seu navegador, onde o Google pede a conta; o
+        navegador devolve ao jogo um código de uso único, que o jogo troca pela sessão no Supabase, o
+        nosso operador de autenticação (<a href="#compartilhamento">seção 13</a>). A sessão fica no seu
+        usuário do Windows, na pasta local do computador (nunca na pasta que viaja entre computadores),
+        e <strong>cifrada duas vezes pelo Windows</strong>: uma cifra que só o seu usuário do Windows
+        abre e outra que só este computador abre. Uma cópia levada para outro computador ou para outro
+        usuário não abre, e o jogo a apaga. A sessão é apagada quando você toca <strong>Sair da
+        conta</strong>, <strong>Apagar meus dados</strong> ou <strong>Apagar minha conta</strong>. A
+        sessão do Google dentro do navegador é do navegador: o jogo não a lê nem a apaga.</li>
     <li><strong>O feedback funciona como no Android</strong> (<a href="#feedback">seção 11</a>); no bloco
         técnico, a plataforma aparece como Windows.</li>
     <li><strong>No computador</strong>, o progresso e as configurações ficam no seu usuário do Windows e
@@ -100,8 +134,9 @@
         guardamos a faixa — nunca o número (<a href="#criancas">seção 5</a>). No Windows não há
         anúncio, e a idade nunca é perguntada (<a href="#windows">seção 2.1</a>).</li>
     <li><strong>A conta é opcional</strong> e só é pedida quando você resolve entrar no ranking
-        online ou restaurar a assinatura em outro aparelho (<a href="#conta">seção 8</a>). No
-        Windows ainda não há conta (<a href="#windows">seção 2.1</a>).</li>
+        online ou restaurar a assinatura em outro aparelho, inclusive na outra plataforma
+        (<a href="#conta">seção 8</a>). No Windows a conta é a mesma, e o login é feito pelo navegador
+        (<a href="#windows">seção 2.1</a>).</li>
     <li><strong>Não vendemos os seus dados</strong>, não os trocamos com corretores de dados e não
         criamos perfis de publicidade a partir do que você joga.</li>
     <li><strong>Você pode apagar tudo</strong>: os dados do aparelho pelo próprio jogo, e a conta
@@ -220,7 +255,9 @@
         várias contas.</li>
     <li><strong>Comprar não exige conta.</strong> Se você tiver entrado com uma conta
         (<a href="#conta">seção 8</a>), a assinatura fica vinculada a ela, para que você possa
-        restaurá-la em outro aparelho.</li>
+        restaurá-la em outro aparelho, da mesma loja ou da outra: com a mesma conta, uma assinatura do
+        Google Play vale também no Windows, e uma da Microsoft Store vale também no Android, enquanto
+        esse uso não for desligado (<a href="terms.pt-BR.html#premium">Termos, seção 5</a>).</li>
     <li><strong>Cancelamento e reembolso são do Google Play</strong>, nas assinaturas da sua conta
         Google. Apagar a sua conta do Melbees <strong>não</strong> cancela a assinatura.</li>
     <li><strong>Direito de arrependimento (União Europeia e Reino Unido).</strong> Você tem 14 dias
@@ -232,24 +269,36 @@
   <h2 id="conta">8. A conta, e quando ela é pedida</h2>
   <p><strong>A conta é opcional e não é preciso ter uma para jogar nem para comprar.</strong> O jogo
      nunca pede login na abertura. Ele oferece o login só para duas coisas, e entrar é sempre uma ação
-     sua: o <strong>ranking online</strong> e <strong>restaurar a assinatura</strong> em outro aparelho.
+     sua: o <strong>ranking online</strong> e <strong>restaurar a assinatura</strong> em outro aparelho,
+     inclusive na outra plataforma.
      Quem é assinante e ainda não entrou vê essa oferta também como uma linha discreta antes de uma
      partida, avisando que ela não vai para o ranking online sem a conta, e como um botão na tela que
      comemora a assinatura. Nenhuma das duas impede de jogar.</p>
-  <p>A conta ainda não existe na versão para Windows (<a href="#windows">seção 2.1</a>).</p>
+  <p>No Windows a conta é a mesma, e entrar abre o navegador; a <a href="#windows">seção 2.1</a>
+     descreve esse login e onde o Windows guarda a sessão.</p>
   <p>A conta é <strong>só o Google</strong>: não há cadastro com e-mail e senha, não há login
      anônimo. Ao entrar, o Google nos confirma que é você, e do que ele nos envia
      <strong>guardamos apenas um identificador opaco da conta</strong> — uma sequência de
      caracteres sem significado, que serve para reconhecer você na próxima vez.</p>
   <p><strong>Não guardamos o seu nome, a sua foto nem o seu endereço de e-mail.</strong></p>
   <p>Para você não precisar entrar de novo cada vez que abre o jogo, <strong>a sessão fica guardada
-     neste aparelho</strong>: só a credencial que a renova, nunca o seu nome nem o seu e-mail. Ela fica
-     <strong>cifrada</strong>, com uma chave que o Android cria e que não sai do aparelho, e num lugar
-     que o Android <strong>deixa fora da cópia de segurança e da transferência para outro
-     aparelho</strong>, para que a sua sessão nunca apareça num aparelho em que você não entrou. Ela
-     é apagada quando você toca <strong>Sair da conta</strong>, <strong>Apagar meus dados</strong> ou
-     <strong>Apagar minha conta</strong>, ou quando você desinstala o jogo. Abrir o jogo não se conecta
-     à conta: a sessão só é usada quando algo precisa dela, como o ranking online.</p>
+     neste aparelho</strong>: só a credencial que a renova, nunca o seu nome nem o seu e-mail. No
+     Android, ela fica <strong>cifrada</strong>, com uma chave que o Android cria e que não sai do
+     aparelho, e num lugar que o Android <strong>deixa fora da cópia de segurança e da transferência
+     para outro aparelho</strong>, para que a sua sessão nunca apareça num aparelho em que você não
+     entrou. Ela é apagada quando você toca <strong>Sair da conta</strong>, <strong>Apagar meus
+     dados</strong> ou <strong>Apagar minha conta</strong>, ou quando você desinstala o jogo. No
+     Windows, a <a href="#windows">seção 2.1</a> diz onde ela fica. A sessão só é usada quando algo
+     precisa dela, como o ranking online. Abrir o jogo não se conecta à conta, com uma exceção: quando
+     o aparelho guarda a resposta sobre o Premium da conta (abaixo) e a data dela já passou, o jogo
+     renova a sessão sozinho, sem nenhuma tela, para perguntar de novo.</p>
+  <p><strong>O Premium acompanha a conta.</strong> Com a conta entrada, e quando a loja deste aparelho
+     não tem uma assinatura, o jogo pergunta ao nosso servidor se a conta tem o Premium, comprado no
+     Google Play ou na Microsoft Store. O servidor responde de qual loja ele é e até quando vale. O
+     aparelho guarda essa resposta para essa conta, e ela vale até essa data, para você jogar como
+     Premium mesmo sem internet. Uma resposta nova do servidor a substitui, e ela é apagada quando você
+     toca <strong>Sair da conta</strong>, <strong>Apagar meus dados</strong> ou <strong>Apagar minha
+     conta</strong>, ou quando outra conta entra neste aparelho.</p>
 
   <h2 id="ranking">9. O ranking online</h2>
   <p>Se — e somente se — você entrar no ranking online, estes dados saem do seu aparelho:</p>
@@ -384,14 +433,15 @@
      partida</strong>. Também não envia notificações, não recompensa o jogador por tempo conectado e
      não tem sequência diária que se perca por faltar um dia.</p>
 
-  <h2>13. Com quem os dados são compartilhados</h2>
+  <h2 id="compartilhamento">13. Com quem os dados são compartilhados</h2>
   <p><strong>Não vendemos os seus dados e não os fornecemos a corretores de dados.</strong> Os
      serviços abaixo são os únicos que recebem alguma coisa, cada um para uma finalidade:</p>
   <ul>
     <li><strong>Google Play (Google)</strong>, no Android — cobra as compras e nos informa o estado delas
         (<a href="#compras">seção 7</a>).</li>
-    <li><strong>Microsoft Store (Microsoft)</strong>, no Windows: cobra as compras e nos informa o
-        estado delas (<a href="#windows">seção 2.1</a>).</li>
+    <li><strong>Microsoft Store (Microsoft)</strong>, no Windows: cobra as compras, emite a chave de ID
+        da Microsoft Store e, com ela, nos informa o estado da assinatura
+        (<a href="#windows">seção 2.1</a>).</li>
     <li><strong>Google AdMob (Google)</strong>, no Android — serve os anúncios recompensados
         (<a href="#anuncios">seção 6</a>).</li>
     <li><strong>Firebase (Google)</strong>, no Android — análises e relatórios de falha
@@ -405,15 +455,20 @@
   <p>Podemos ainda divulgar dados se a lei exigir, para cumprir ordem de autoridade competente, ou
      para apurar fraude e abuso do ranking.</p>
 
-  <h2>14. Transferência internacional e retenção</h2>
+  <h2 id="retencao">14. Transferência internacional e retenção</h2>
   <p>Os serviços acima operam servidores fora do Brasil, então os dados descritos aqui podem ser
      tratados em outros países, sob as salvaguardas contratuais desses fornecedores — inclusive as
      cláusulas-padrão aplicáveis a transferências a partir da União Europeia e do Reino Unido.</p>
   <ul>
     <li><strong>No aparelho</strong>: até você apagar ou desinstalar o jogo. A sessão da conta, até você
-        sair da conta (<a href="#conta">seção 8</a>).</li>
+        sair da conta (<a href="#conta">seção 8</a>). A resposta do servidor sobre o Premium da conta,
+        até uma resposta nova a substituir ou até você sair da conta (<a href="#conta">seção 8</a>).</li>
     <li><strong>Conta e ranking</strong>: enquanto a conta existir. A lista de jogadas crua é apagada
         em <strong>60 dias</strong>.</li>
+    <li><strong>O vínculo da assinatura</strong> (o código da compra ou, no Windows, o identificador da
+        assinatura na Microsoft, com o estado e a data de fim): enquanto a conta existir. <strong>A
+        chave de ID da Microsoft Store</strong>: até vencer, em 30 dias se não for renovada, e nunca
+        além da conta (<a href="#windows">seção 2.1</a>).</li>
     <li><strong>Relatórios de feedback</strong>: no máximo <strong>24 meses</strong>.</li>
     <li><strong>Análises (Firebase)</strong>: <strong>2 meses</strong>. <strong>Relatórios de falha
         (Crashlytics)</strong>: <strong>90 dias</strong> (<a href="#analises">seção 10</a>).</li>
@@ -434,7 +489,8 @@
         Apaga progresso, configurações e a faixa de idade respondida, e tira deste aparelho a sessão da
         conta. Não alcança a conta.</li>
     <li><strong>Apagar a conta</strong>: Configurações → Conta → <strong>Apagar minha conta</strong>, que
-        apaga na hora a conta, o nome de exibição e as partidas enviadas ao ranking. Sem o jogo
+        apaga na hora a conta, o nome de exibição, as partidas enviadas ao ranking e o vínculo da
+        assinatura (no Windows, com a chave de ID da Microsoft Store). Sem o jogo
         instalado, use a página <a href="delete-account.pt-BR.html">Apagar sua conta</a>, e nós
         atendemos em até <strong>30 dias</strong>. <strong>São duas ações diferentes</strong>: apagar
         a conta não apaga nada do aparelho, e apagar os dados do aparelho não apaga a conta.</li>
