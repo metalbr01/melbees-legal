@@ -11,7 +11,7 @@
   <p class="lang"><strong>English</strong> · <a href="privacy.pt-BR.html">Português</a></p>
 
   <h1>Privacy Policy — Melbees: The Secret of Bees</h1>
-  <p class="muted">Effective date: 2026-07-27 · Last updated: 2026-10-04</p>
+  <p class="muted">Effective date: 2026-07-27 · Last updated: 2026-10-10</p>
 
   <!--
     VERSION 2 — the policy for the MONETIZED game. Written by mission P1 of
@@ -54,7 +54,7 @@
   <h2>1. Who we are</h2>
   <p>Melbees (“the app”, “we”) is provided by <strong>Melbees Games</strong>, Brazil, which is the
      <strong>controller</strong> of the data described in this policy. For any privacy question or
-     request, write to <a href="mailto:melbees.games@gmail.com">melbees.games@gmail.com</a>.</p>
+     request, write to <a href="mailto:contact@melbees.games">contact@melbees.games</a>.</p>
 
   <h2>2. Scope</h2>
   <p>This policy explains what information Melbees handles, how, and what your choices are. It applies
@@ -160,6 +160,8 @@
         (<a href="#ads">section 6</a>). It is Google's own SDK that stores it.</li>
     <li><strong>Your play time on this device</strong>, which the “For parents and guardians” page
         shows (<a href="#parents">section 12</a>). That counter never leaves the device.</li>
+    <li><strong>Which of the game team's messages you have read</strong> in Hug's Mail
+        (<a href="#parents">section 12</a>). The game never tells us what was read.</li>
   </ul>
   <p>Deleting the game, or using <strong>Settings → Delete my data</strong>, removes all of it.</p>
   <p>If you signed in with Google, the device also keeps your account session, as
@@ -170,7 +172,9 @@
      <strong>children and teenagers play it</strong>. That is why the version of the game everyone
      gets is already the version a minor is allowed to have: there is no chat, no messaging between
      players, no nickname you type on the leaderboard, no paid random reward, and no advertising
-     profile built out of what you play.</p>
+     profile built out of what you play. The <strong>game team's messages</strong>
+     (<a href="#parents">section 12</a>) are one-way: nobody answers them and no player writes
+     one.</p>
   <p><strong>There is no age screen at the door and no parental gate.</strong> A date-of-birth form is
      trivially bypassed by a child, and a weak control gives parents a safety that does not exist. The
      strong control is the parents', at the platform: Google <strong>Family Link</strong> and Google
@@ -209,7 +213,7 @@
      in <a href="#ads">section 6</a>.</p>
   <p>If you are a parent or guardian and believe a child has sent us personal information — through
      the feedback screen, for instance — write to
-     <a href="mailto:melbees.games@gmail.com">melbees.games@gmail.com</a> and we will delete it.</p>
+     <a href="mailto:contact@melbees.games">contact@melbees.games</a> and we will delete it.</p>
 
   <h2 id="ads">6. Ads</h2>
   <p>The game shows <strong>rewarded ads</strong>, and only those. There is no banner, no interstitial,
@@ -276,10 +280,32 @@
   <p>On Windows the account is the same, and signing in opens the browser;
      <a href="#windows">section 2.1</a> describes that sign-in and where Windows keeps the session.</p>
   <p>The account is <strong>Google only</strong>: no e-mail-and-password sign-up, no anonymous login.
-     When you sign in, Google confirms to us that it is you, and of what it sends us
-     <strong>we keep only an opaque account identifier</strong> — a meaningless string that lets us
-     recognise you next time.</p>
-  <p><strong>We do not store your name, your picture or your e-mail address.</strong></p>
+     The sign-in is run by <strong>Supabase</strong>, our authentication processor
+     (<a href="#sharing">section 13</a>). When you sign in, Google confirms to Supabase that it is you,
+     and Supabase keeps, on the sign-in server, with your account:</p>
+  <ul>
+    <li><strong>an opaque account identifier</strong>, a meaningless string. It is the only thing the
+        game and the leaderboard use to recognise you;</li>
+    <li>the <strong>e-mail address</strong> of your Google account, and the <strong>name</strong> and the
+        <strong>profile picture link</strong> Google sends with it (the picture stays at Google;
+        Supabase keeps only the link);</li>
+    <li>the date the account was created and the date of the last sign-in;</li>
+    <li>for the account's security, the <strong>IP address</strong> and the <strong>kind of device and
+        browser</strong> of each sign-in and of each session renewal, in an access record.</li>
+  </ul>
+  <p>The game reads none of this except the identifier. Your name, e-mail and picture never appear on
+     the leaderboard or to another player, never go into analytics or ads, and are not sold or shared.
+     We look at the e-mail only to answer a request of yours: to find your account when you ask by
+     e-mail to delete it (<a href="delete-account.en.html">Delete your account</a>) or when you ask for
+     a courtesy Premium. <strong>All of it is deleted when you delete the account</strong>
+     (<a href="#deletion">section 15</a>). Supabase also keeps a copy of the access record in its own
+     technical logs, which it deletes by itself within a few days.</p>
+  <p><strong>Courtesy Premium.</strong> If you ask us for a courtesy Premium and send us the e-mail
+     of your Google account, we use it only to find your account, in our administration panel, when
+     we grant or renew the courtesy. The courtesy does not keep the e-mail: we keep only its start,
+     end and reason, tied to the account's opaque identifier, and we delete them when you delete the
+     account. The message in which you sent us the e-mail stays in our mailbox, like any message you
+     send us.</p>
   <p>So that you do not have to sign in again every time you open the game, <strong>the session is
      kept on this device</strong>: only the credential that renews it, never your name or your e-mail.
      On Android, it is <strong>encrypted</strong>, with a key Android creates and that never leaves the
@@ -298,6 +324,10 @@
      play as Premium even offline. A newer answer from the server replaces it, and it is erased when
      you tap <strong>Sign out</strong>, <strong>Delete my data</strong> or <strong>Delete my
      account</strong>, or when another account signs in on this device.</p>
+  <p><strong>A message from the team addressed to your account</strong> (<a href="#parents">section
+     12</a>) is kept on our server, tied only to the account's opaque identifier, and is deleted with
+     the account. The game asks for it only with your session open; when you sign out, it stops
+     showing.</p>
 
   <h2 id="leaderboard">9. The online leaderboard</h2>
   <p>If — and only if — you enter the online leaderboard, this leaves your device:</p>
@@ -319,9 +349,13 @@
      number, portrait and time. <strong>No identification of who played appears there</strong>, neither to other
      players nor to anyone looking from outside.</p>
   <p>The raw list of moves is deleted <strong>60 days</strong> after submission; the time and the rank
-     stay for as long as your account exists. We <strong>do not store your IP address</strong>: the
-     server uses it in memory only, at the instant of the call, to rate-limit requests, and it is never
-     written to a log or to any column.</p>
+     stay for as long as your account exists. Our game server <strong>does not store your IP
+     address</strong> in any table: it uses it in memory, at the instant of the call, to rate-limit
+     requests. Google Cloud, which hosts the server as our processor, records each request made to it
+     (the IP address, the kind of device, the time and the address called) in a technical log that it
+     deletes by itself after <strong>30 days</strong>; we look at it only to investigate a failure or an
+     attack. The sign-in keeps the IP separately, in the account's access record
+     (<a href="#account">section 8</a>).</p>
 
   <h2 id="analytics">10. Analytics and crash reports</h2>
   <p><strong>This section applies to Android only</strong>: the Windows version does not use Firebase
@@ -403,7 +437,7 @@
   <p><strong>How long we keep it, and how to delete it.</strong> We keep the row while it is useful for
      fixing what it describes and, in any case, for at most <strong>24 months</strong>. You can ask for
      it to be deleted sooner by writing to
-     <a href="mailto:melbees.games@gmail.com">melbees.games@gmail.com</a>. Because the rows carry no
+     <a href="mailto:contact@melbees.games">contact@melbees.games</a>. Because the rows carry no
      identifier, we need your help to find yours: tell us <strong>the date you sent it and an excerpt
      of what you wrote</strong>. We delete the matching rows and confirm by e-mail. Without those two
      details we cannot locate your report — not out of refusal, but because the spreadsheet stores
@@ -425,6 +459,16 @@
   <p>The game <strong>measures and shows</strong> time of use and <strong>never interrupts a
      run</strong>. It also sends no notifications, gives no reward for time spent connected, and has
      no daily streak that is lost by missing a day.</p>
+  <p><strong>Messages from the game team, only inside the app, with no notification and no
+     conversation.</strong> The team writes short messages, signed by the Melbees, kept in
+     <strong>Hug's Mail</strong> inside the game and read when the player chooses. Nobody answers
+     them and no other player ever writes one; they never appear during a match and are never chosen
+     by age or by how the player plays. Those about the Premium subscription are marked as such and go
+     to everyone, never to one player alone. To fetch the messages for everyone, the game sends our
+     server a request that <strong>carries no identifier at all</strong> and is the same for every
+     player; what was read stays on the device (<a href="#account">section 8</a> covers a message to
+     one account). A row in <strong>Settings &gt; General &gt; Hug brings new messages</strong> turns off
+     Hug's arrival with the message; the messages stay in the Mail.</p>
 
   <h2 id="sharing">13. Who the data is shared with</h2>
   <p><strong>We do not sell your data and we do not give it to data brokers.</strong> The services
@@ -457,8 +501,11 @@
         until you sign out (<a href="#account">section 8</a>). The server's answer about the account's
         Premium, until a newer answer replaces it or until you sign out
         (<a href="#account">section 8</a>).</li>
-    <li><strong>Account and leaderboard</strong>: for as long as the account exists. The raw list of
-        moves is deleted after <strong>60 days</strong>.</li>
+    <li><strong>Account and leaderboard</strong>: for as long as the account exists, including the
+        e-mail, the name, the picture link and the access record the sign-in keeps
+        (<a href="#account">section 8</a>). The raw list of moves is deleted after
+        <strong>60 days</strong>. Supabase's technical logs, within a few days; Google Cloud's request
+        log, after <strong>30 days</strong> (<a href="#leaderboard">section 9</a>).</li>
     <li><strong>The subscription link</strong> (the purchase code or, on Windows, the subscription's
         identifier at Microsoft, with the state and the end date): for as long as the account exists.
         <strong>The Microsoft Store ID key</strong>: until it expires, in 30 days unless renewed, and
@@ -482,7 +529,8 @@
         progress, settings and the age band you answered, and removes the account session from this
         device. It does not reach the account.</li>
     <li><strong>Delete the account</strong>: Settings → Account → <strong>Delete my account</strong>,
-        which immediately deletes the account, the nickname, the portrait, the runs submitted to the
+        which immediately deletes the account (with the e-mail, the name, the picture link and the
+        access record the sign-in keeps), the nickname, the portrait, the runs submitted to the
         leaderboard and the subscription link (on Windows, with the Microsoft Store ID key). Without
         the game installed, use the
         <a href="delete-account.en.html">Delete your account</a> page, and we act within
@@ -495,7 +543,7 @@
         reset the advertising identifier under
         <em>Android Settings → Google → Ads</em>.</li>
     <li><strong>Any other request</strong>:
-        <a href="mailto:melbees.games@gmail.com">melbees.games@gmail.com</a>. We answer within 30
+        <a href="mailto:contact@melbees.games">contact@melbees.games</a>. We answer within 30
         days.</li>
   </ul>
   <p><strong>The legal bases.</strong> We perform the contract of using the game in order to make the
@@ -510,8 +558,9 @@
   <h2>16. Security</h2>
   <p>Everything that leaves the device travels over <strong>HTTPS</strong>. Access to the leaderboard
      database and to the feedback spreadsheet is restricted to us. No system is perfect and we cannot
-     promise absolute security — but we hold no password of yours, no payment data and no IP address,
-     which sharply limits what an incident could expose.</p>
+     promise absolute security. We hold no password of yours and no payment data, and the game server
+     keeps no IP address, which sharply limits what an incident could expose. What the sign-in keeps
+     about your account is in <a href="#account">section 8</a>.</p>
 
   <h2>17. Changes to this policy</h2>
   <p>We may update this policy; the “Last updated” date will change and, for material changes, we will
@@ -519,7 +568,7 @@
      has been updated</strong>, never before.</p>
 
   <h2>18. Contact</h2>
-  <p>Melbees Games — Brazil<br>
-     <a href="mailto:melbees.games@gmail.com">melbees.games@gmail.com</a></p>
+  <p>Melbees Games, Brazil<br>
+     <a href="mailto:contact@melbees.games">contact@melbees.games</a></p>
 </body>
 </html>

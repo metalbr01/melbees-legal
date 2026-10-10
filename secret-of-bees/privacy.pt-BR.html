@@ -11,7 +11,7 @@
   <p class="lang"><a href="privacy.en.html">English</a> · <strong>Português</strong></p>
 
   <h1>Política de Privacidade — Melbees: The Secret of Bees</h1>
-  <p class="muted">Data de vigência: 27/07/2026 · Última atualização: 04/10/2026</p>
+  <p class="muted">Data de vigência: 27/07/2026 · Última atualização: 10/10/2026</p>
 
   <!--
     VERSÃO 2 — a política do jogo MONETIZADO. Escrita pela missão P1 do
@@ -54,7 +54,7 @@
   <p>O Melbees (“o aplicativo”, “nós”) é fornecido por <strong>Melbees Games</strong>, Brasil, que é o
      <strong>controlador</strong> dos dados descritos nesta política. Para qualquer dúvida ou
      solicitação sobre privacidade, escreva para
-     <a href="mailto:melbees.games@gmail.com">melbees.games@gmail.com</a>.</p>
+     <a href="mailto:contact@melbees.games">contact@melbees.games</a>.</p>
 
   <h2>2. Abrangência</h2>
   <p>Esta política explica quais informações o Melbees trata, como, e quais são suas escolhas.
@@ -159,6 +159,8 @@
         (<a href="#anuncios">seção 6</a>). Quem a guarda é o próprio SDK do Google.</li>
     <li><strong>O tempo de jogo neste aparelho</strong>, que a página “Para pais e responsáveis”
         mostra (<a href="#pais">seção 12</a>). Esse contador nunca sai do aparelho.</li>
+    <li><strong>Quais recados do time do jogo você já leu</strong> no Correio do Hug
+        (<a href="#pais">seção 12</a>). O jogo nunca nos conta o que foi lido.</li>
   </ul>
   <p>Apagar o jogo, ou usar <strong>Configurações → Apagar meus dados</strong>, remove tudo isso.</p>
   <p>Se você entrou com o Google, o aparelho guarda também a sessão da sua conta, do jeito que a
@@ -169,7 +171,9 @@
      <strong>crianças e adolescentes jogam</strong>. Por isso a versão do jogo que todo mundo recebe
      já é a versão permitida para um menor de idade: não há bate-papo, não há mensagens entre
      jogadores, não há nome digitado por você no ranking, não há recompensa aleatória paga e não há
-     perfil de publicidade montado a partir do que você joga.</p>
+     perfil de publicidade montado a partir do que você joga. Os <strong>recados do time do
+     jogo</strong> (<a href="#pais">seção 12</a>) são de mão única: ninguém responde a eles e nenhum
+     jogador escreve um.</p>
   <p><strong>Não há tela de idade na entrada e não há portão de pais.</strong> Um formulário de data
      de nascimento é contornado por qualquer criança, e um controle fraco dá aos pais uma segurança
      que não existe. O controle forte é o dos pais, na plataforma: o
@@ -208,7 +212,7 @@
      depende do consentimento válido descrito na <a href="#anuncios">seção 6</a>.</p>
   <p>Se você é pai, mãe ou responsável e acredita que uma criança nos enviou dados pessoais — pela
      tela de feedback, por exemplo —, escreva para
-     <a href="mailto:melbees.games@gmail.com">melbees.games@gmail.com</a> e nós apagamos.</p>
+     <a href="mailto:contact@melbees.games">contact@melbees.games</a> e nós apagamos.</p>
 
   <h2 id="anuncios">6. Anúncios</h2>
   <p>O jogo exibe <strong>anúncios recompensados</strong>, e só eles. Não há banner, não há anúncio
@@ -277,10 +281,32 @@
   <p>No Windows a conta é a mesma, e entrar abre o navegador; a <a href="#windows">seção 2.1</a>
      descreve esse login e onde o Windows guarda a sessão.</p>
   <p>A conta é <strong>só o Google</strong>: não há cadastro com e-mail e senha, não há login
-     anônimo. Ao entrar, o Google nos confirma que é você, e do que ele nos envia
-     <strong>guardamos apenas um identificador opaco da conta</strong> — uma sequência de
-     caracteres sem significado, que serve para reconhecer você na próxima vez.</p>
-  <p><strong>Não guardamos o seu nome, a sua foto nem o seu endereço de e-mail.</strong></p>
+     anônimo. Quem faz o login é o <strong>Supabase</strong>, o nosso operador de autenticação
+     (<a href="#compartilhamento">seção 13</a>). Ao entrar, o Google confirma ao Supabase que é você, e
+     o Supabase guarda, no servidor de login, junto da sua conta:</p>
+  <ul>
+    <li><strong>um identificador opaco da conta</strong>, uma sequência de caracteres sem significado.
+        É só ele que o jogo e o ranking usam para reconhecer você;</li>
+    <li>o <strong>endereço de e-mail</strong> da sua conta Google, e o <strong>nome</strong> e o
+        <strong>link da foto do perfil</strong> que o Google envia junto (a foto fica no Google; o
+        Supabase guarda só o link);</li>
+    <li>a data em que a conta foi criada e a do último login;</li>
+    <li>para a segurança da conta, o <strong>endereço IP</strong> e o <strong>tipo de aparelho e de
+        navegador</strong> de cada login e de cada renovação da sessão, num registro de acesso.</li>
+  </ul>
+  <p>O jogo não lê nada disso além do identificador. O seu nome, o seu e-mail e a sua foto nunca
+     aparecem no ranking nem para outro jogador, não entram em análises nem em anúncios, e não são
+     vendidos nem compartilhados. Nós só olhamos o e-mail para atender um pedido seu: achar a sua
+     conta quando você pede por e-mail para apagá-la (<a href="delete-account.pt-BR.html">Apagar sua
+     conta</a>) ou quando pede uma cortesia do Premium. <strong>Tudo isso é apagado quando você apaga a
+     conta</strong> (<a href="#exclusao">seção 15</a>). O Supabase guarda ainda uma cópia do registro de
+     acesso nos registros técnicos dele, que ele mesmo apaga em poucos dias.</p>
+  <p><strong>Premium de cortesia.</strong> Se você nos pedir uma cortesia do Premium e nos mandar o
+     e-mail da sua conta Google, nós o usamos só para encontrar a sua conta, no nosso painel de
+     administração, quando damos ou renovamos a cortesia. A cortesia não guarda o e-mail: guardamos só
+     o início, o fim e o motivo dela, ligados ao identificador opaco da conta, e apagamos isso quando
+     você apaga a conta. A mensagem em que você nos mandou o e-mail fica no nosso e-mail, como
+     qualquer mensagem que você nos envia.</p>
   <p>Para você não precisar entrar de novo cada vez que abre o jogo, <strong>a sessão fica guardada
      neste aparelho</strong>: só a credencial que a renova, nunca o seu nome nem o seu e-mail. No
      Android, ela fica <strong>cifrada</strong>, com uma chave que o Android cria e que não sai do
@@ -299,6 +325,9 @@
      Premium mesmo sem internet. Uma resposta nova do servidor a substitui, e ela é apagada quando você
      toca <strong>Sair da conta</strong>, <strong>Apagar meus dados</strong> ou <strong>Apagar minha
      conta</strong>, ou quando outra conta entra neste aparelho.</p>
+  <p><strong>Um recado do time endereçado à sua conta</strong> (<a href="#pais">seção 12</a>) fica
+     guardado no nosso servidor, ligado só ao identificador opaco da conta, e é apagado junto com a
+     conta. O jogo só o pede com a sua sessão aberta; ao sair da conta, ele deixa de aparecer.</p>
 
   <h2 id="ranking">9. O ranking online</h2>
   <p>Se — e somente se — você entrar no ranking online, estes dados saem do seu aparelho:</p>
@@ -320,9 +349,13 @@
      posição, apelido, número, retrato e tempo. <strong>Nenhuma identificação de quem jogou aparece
      ali</strong>, nem para os outros jogadores nem para quem olhar de fora.</p>
   <p>A lista de jogadas crua é apagada <strong>60 dias</strong> depois do envio; o tempo e a posição
-     ficam enquanto a sua conta existir. Nós <strong>não guardamos o seu endereço IP</strong>: o
-     servidor o usa apenas em memória, no instante da chamada, para limitar o número de pedidos, e
-     não o grava, não o registra em log nem o guarda em coluna nenhuma.</p>
+     ficam enquanto a sua conta existir. O nosso servidor do jogo <strong>não guarda o seu endereço
+     IP</strong> em tabela nenhuma: ele o usa em memória, no instante da chamada, para limitar o número
+     de pedidos. O Google Cloud, que hospeda o servidor como nosso operador, registra cada pedido feito
+     a ele (o endereço IP, o tipo de aparelho, a hora e o endereço chamado) num registro técnico que ele
+     apaga sozinho em <strong>30 dias</strong>; nós só o consultamos para investigar uma falha ou um
+     ataque. O login guarda o IP à parte, no registro de acesso da conta (<a href="#conta">seção
+     8</a>).</p>
 
   <h2 id="analises">10. Análises e relatórios de falha</h2>
   <p><strong>Esta seção vale só para o Android</strong>: a versão para Windows não usa Firebase
@@ -413,7 +446,7 @@
   <p><strong>Por quanto tempo, e como apagar.</strong> Guardamos a linha enquanto ela for útil para
      corrigir o que descreve e, em qualquer caso, por no máximo <strong>24 meses</strong>. Você pode
      pedir a exclusão antes disso escrevendo para
-     <a href="mailto:melbees.games@gmail.com">melbees.games@gmail.com</a>. Como as linhas não têm
+     <a href="mailto:contact@melbees.games">contact@melbees.games</a>. Como as linhas não têm
      identificador, precisamos que você nos ajude a achar a sua: informe
      <strong>a data do envio e um trecho do que você escreveu</strong>. Apagamos as linhas
      correspondentes e confirmamos por e-mail. Sem esses dois dados não temos como localizar o seu
@@ -437,6 +470,16 @@
   <p>O jogo <strong>mede e mostra</strong> o tempo de uso e <strong>nunca interrompe uma
      partida</strong>. Também não envia notificações, não recompensa o jogador por tempo conectado e
      não tem sequência diária que se perca por faltar um dia.</p>
+  <p><strong>Recados do time do jogo, só dentro do app, sem notificação e sem conversa.</strong> O
+     time escreve recados curtos, assinados pelos Melbees, que ficam no <strong>Correio do
+     Hug</strong>, dentro do jogo, e são lidos quando o jogador quiser. Ninguém responde a eles e
+     nenhum outro jogador escreve um; eles nunca aparecem no meio de uma partida e nunca são
+     escolhidos pela idade ou pelo jeito de jogar. Os que falam da assinatura Premium vêm marcados e
+     vão para todos, nunca para um jogador só. Para buscar os recados de todos, o jogo faz um pedido
+     ao nosso servidor que <strong>não leva identificação nenhuma</strong> e é igual para qualquer
+     jogador; o que foi lido fica só no aparelho (<a href="#conta">seção 8</a> trata do recado para
+     uma conta). Uma linha em <strong>Ajustes &gt; Geral &gt; Hug avisa recado novo</strong> desliga a
+     chegada do Hug com o recado; os recados continuam no Correio.</p>
 
   <h2 id="compartilhamento">13. Com quem os dados são compartilhados</h2>
   <p><strong>Não vendemos os seus dados e não os fornecemos a corretores de dados.</strong> Os
@@ -468,8 +511,11 @@
     <li><strong>No aparelho</strong>: até você apagar ou desinstalar o jogo. A sessão da conta, até você
         sair da conta (<a href="#conta">seção 8</a>). A resposta do servidor sobre o Premium da conta,
         até uma resposta nova a substituir ou até você sair da conta (<a href="#conta">seção 8</a>).</li>
-    <li><strong>Conta e ranking</strong>: enquanto a conta existir. A lista de jogadas crua é apagada
-        em <strong>60 dias</strong>.</li>
+    <li><strong>Conta e ranking</strong>: enquanto a conta existir, inclusive o e-mail, o nome, o link
+        da foto e o registro de acesso que o login guarda (<a href="#conta">seção 8</a>). A lista de
+        jogadas crua é apagada em <strong>60 dias</strong>. Os registros técnicos do Supabase, em poucos
+        dias; o registro de pedidos do Google Cloud, em <strong>30 dias</strong>
+        (<a href="#ranking">seção 9</a>).</li>
     <li><strong>O vínculo da assinatura</strong> (o código da compra ou, no Windows, o identificador da
         assinatura na Microsoft, com o estado e a data de fim): enquanto a conta existir. <strong>A
         chave de ID da Microsoft Store</strong>: até vencer, em 30 dias se não for renovada, e nunca
@@ -494,8 +540,8 @@
         Apaga progresso, configurações e a faixa de idade respondida, e tira deste aparelho a sessão da
         conta. Não alcança a conta.</li>
     <li><strong>Apagar a conta</strong>: Configurações → Conta → <strong>Apagar minha conta</strong>, que
-        apaga na hora a conta, o apelido, o retrato, as partidas enviadas ao ranking e o vínculo da
-        assinatura (no Windows, com a chave de ID da Microsoft Store). Sem o jogo
+        apaga na hora a conta (com o e-mail, o nome, o link da foto e o registro de acesso que o login
+        guarda), o apelido, o retrato, as partidas enviadas ao ranking e o vínculo da assinatura (no Windows, com a chave de ID da Microsoft Store). Sem o jogo
         instalado, use a página <a href="delete-account.pt-BR.html">Apagar sua conta</a>, e nós
         atendemos em até <strong>30 dias</strong>. <strong>São duas ações diferentes</strong>: apagar
         a conta não apaga nada do aparelho, e apagar os dados do aparelho não apaga a conta.</li>
@@ -505,7 +551,7 @@
         dentro do jogo, ou zere o identificador de publicidade em
         <em>Configurações do Android → Google → Anúncios</em>.</li>
     <li><strong>Qualquer outro pedido</strong>:
-        <a href="mailto:melbees.games@gmail.com">melbees.games@gmail.com</a>. Respondemos em até 30
+        <a href="mailto:contact@melbees.games">contact@melbees.games</a>. Respondemos em até 30
         dias.</li>
   </ul>
   <p><strong>As bases legais.</strong> Executamos o contrato de uso do jogo para fazer o jogo
@@ -520,8 +566,9 @@
   <h2>16. Segurança</h2>
   <p>Tudo o que sai do aparelho vai por <strong>HTTPS</strong>. O acesso ao banco do ranking e à
      planilha de feedback é restrito a nós. Nenhum sistema é perfeito, e não podemos prometer
-     segurança absoluta — mas não guardamos senha nenhuma sua, não guardamos dado de pagamento e não
-     guardamos o seu endereço IP, o que reduz bastante o que um incidente poderia expor.</p>
+     segurança absoluta. Não guardamos senha nenhuma sua nem dado de pagamento, e o servidor do jogo não
+     guarda o seu endereço IP, o que reduz bastante o que um incidente poderia expor. O que o login
+     guarda da sua conta está na <a href="#conta">seção 8</a>.</p>
 
   <h2>17. Alterações nesta política</h2>
   <p>Podemos atualizar esta política; a data de “Última atualização” mudará e, para alterações
@@ -529,7 +576,7 @@
      ativado depois desta página ser atualizada</strong>, nunca antes.</p>
 
   <h2>18. Contato</h2>
-  <p>Melbees Games — Brasil<br>
-     <a href="mailto:melbees.games@gmail.com">melbees.games@gmail.com</a></p>
+  <p>Melbees Games, Brasil<br>
+     <a href="mailto:contact@melbees.games">contact@melbees.games</a></p>
 </body>
 </html>
