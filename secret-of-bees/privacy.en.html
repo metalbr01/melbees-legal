@@ -11,7 +11,7 @@
   <p class="lang"><strong>English</strong> · <a href="privacy.pt-BR.html">Português</a></p>
 
   <h1>Privacy Policy — Melbees: The Secret of Bees</h1>
-  <p class="muted">Effective date: 2026-07-27 · Last updated: 2026-10-11</p>
+  <p class="muted">Effective date: 2026-07-27 · Last updated: 2026-10-15</p>
 
   <!--
     VERSION 2 — the policy for the MONETIZED game. Written by mission P1 of
@@ -47,6 +47,15 @@
     (nickname, portrait, number; sections 5, 9 and 15) is already live: the Windows build
     has the card too.
 
+    BROWSER (2026-10-12, jogar-criadores, #120): section 2.2 (id="browser") describes the
+    browser edition, by invitation only, behind Cloudflare Access. No public text gives its
+    address, and the list of invited e-mails lives only in Cloudflare Access. Publish only on
+    the Owner's word (launch/README.md).
+
+    BROWSER DAILY (2026-10-14, diario-web, #157): section 2.3 (id="browser-daily") describes the
+    public Daily Challenge in the browser (specs/50-architecture/web-daily.md §8). Publish only on
+    the Owner's word (launch/README.md), and not before its address is live.
+
     DO NOT REMOVE THE id="feedback" ANCHOR: it is the data-deletion URL already saved
     in the Play Console. The id="deletion" anchor is the new one, for account deletion.
   -->
@@ -61,8 +70,11 @@
      to the Melbees game distributed on <strong>Google Play</strong> (Android) and on the
      <strong>Microsoft Store</strong> (Windows), in every country where it is available. The Windows
      version handles less data than the Android one, and <a href="#windows">section 2.1</a> gathers
-     every difference; where it says nothing, the rest of this policy applies. If the game is ever
-     distributed through another store, this policy will be updated first.</p>
+     every difference; where it says nothing, the rest of this policy applies. It also applies to the
+     game's browser edition, closed and by invitation only, described in
+     <a href="#browser">section 2.2</a>, and to the Daily Challenge open to everyone in the browser,
+     described in <a href="#browser-daily">section 2.3</a>. If the game is ever distributed through another store, this
+     policy will be updated first.</p>
   <p>Depending on where you live, besides Brazil's <strong>LGPD</strong> (Law 13.709/2018) the
      <strong>GDPR</strong> of the European Union and the United Kingdom, the United States'
      <strong>COPPA</strong> and other local laws may apply to you.
@@ -126,6 +138,60 @@
     <li><strong>The parental controls are Microsoft's</strong>: <strong>Microsoft Family Safety</strong>
         can limit screen time and require approval before a purchase on the Microsoft Store
         (<a href="#parents">section 12</a>).</li>
+  </ul>
+
+  <h3 id="browser">2.2 The browser edition (by invitation only)</h3>
+  <p>There is also an edition of the game that runs in the browser (Chrome or Edge). It is closed: only
+     the people we invite can get in. What changes in it:</p>
+  <ul>
+    <li><strong>Entry goes through Cloudflare Access.</strong> You type your e-mail on a Cloudflare page,
+        and Cloudflare sends an access code to it. Cloudflare is the one that receives that e-mail and
+        sends the code, and its own privacy policy applies. The list of invited e-mails lives only in
+        Cloudflare Access: <strong>never in the game or on our servers</strong>.</li>
+    <li><strong>There is no account, no purchase and no ad.</strong> Premium comes unlocked in this
+        edition, with no payment. Because there is no ad, the game <strong>does not ask your
+        age</strong> (<a href="#children">section 5</a>), and nothing in sections
+        <a href="#ads">6</a>, <a href="#purchases">7</a>, <a href="#account">8</a> and
+        <a href="#leaderboard">9</a> happens in it.</li>
+    <li><strong>There is no Firebase</strong> (<a href="#analytics">section 10</a>), and the game
+        <strong>makes no request to our servers</strong>.</li>
+    <li><strong>Progress and settings stay in the browser's storage</strong>, on this device and in
+        this browser, and are never sent to us. Clearing the site's data in the browser's settings
+        erases everything.</li>
+    <li><strong>The hosting is Cloudflare's</strong>, which logs the visits to the pages (such as the
+        IP address, the date and time and the browser used), like any hosting service.</li>
+    <li><strong>To draw emoji and some symbols, the browser may download fonts from Google
+        Fonts</strong> (<code>fonts.gstatic.com</code>); in that request Google receives the device's IP
+        address, and nothing from the game.</li>
+  </ul>
+
+  <h3 id="browser-daily">2.3 The Daily Challenge in the browser (open to everyone)</h3>
+  <p>The Daily Challenge also opens in the browser (Chrome, Edge or Safari), from a public address, with
+     nothing to install and no invitation. It is only the day's Challenge; the rest of the game is in the
+     apps. What changes in it:</p>
+  <ul>
+    <li><strong>There is no account, no purchase and no ad</strong>, and Premium is not unlocked. Because
+        there is no ad, the game <strong>does not ask your age</strong> (<a href="#children">section
+        5</a>), and nothing in sections <a href="#ads">6</a>, <a href="#purchases">7</a>,
+        <a href="#account">8</a> and <a href="#leaderboard">9</a> happens in it: your time goes to no
+        ranking.</li>
+    <li><strong>The game makes no request to our servers.</strong> It counts game events (such as
+        opening the Daily, finishing a phase, tapping the store button) in <strong>Google
+        Analytics</strong>, with every consent denied: <strong>no cookie and no identifier</strong>, nothing
+        that says who you are or links one visit to another. There is no Firebase Crashlytics in this
+        edition.</li>
+    <li><strong>Attempts, times, the lessons taken and the settings stay in the browser's
+        storage</strong>, on this device and in this browser, and are never sent to us. Clearing the
+        site's data in the browser's settings erases everything.</li>
+    <li><strong>The hosting is Cloudflare's</strong>, which logs the visits to the pages (such as the IP
+        address, the date and time and the browser used), like any hosting service, and counts the visits
+        with no cookie and without identifying who visits (Cloudflare Web Analytics).</li>
+    <li><strong>To draw emoji and some symbols, the browser may download fonts from Google
+        Fonts</strong> (<code>fonts.gstatic.com</code>); in that request Google receives the device's IP
+        address, and nothing from the game.</li>
+    <li><strong>The Google Play and Microsoft Store buttons</strong> open the store with a campaign tag in
+        the address, which tells the store only that the visit came from the Daily in the browser. What the
+        store does next follows its own privacy policy.</li>
   </ul>
 
   <h2>3. The summary, in five lines</h2>

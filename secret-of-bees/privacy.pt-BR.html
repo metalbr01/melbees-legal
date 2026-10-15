@@ -11,7 +11,7 @@
   <p class="lang"><a href="privacy.en.html">English</a> · <strong>Português</strong></p>
 
   <h1>Política de Privacidade — Melbees: The Secret of Bees</h1>
-  <p class="muted">Data de vigência: 27/07/2026 · Última atualização: 11/10/2026</p>
+  <p class="muted">Data de vigência: 27/07/2026 · Última atualização: 15/10/2026</p>
 
   <!--
     VERSÃO 2 — a política do jogo MONETIZADO. Escrita pela missão P1 do
@@ -51,6 +51,15 @@
     Premium) e para quê. Publicar só com o "sim" do Owner ao texto, e no máximo junto com o
     servidor que responde a lista (leaderboard-v2.md §12).
 
+    NAVEGADOR (12/10/2026, jogar-criadores, #120): a seção 2.2 (id="navegador") descreve a
+    edição para navegador, só para convidados, atrás do Cloudflare Access. Nenhum texto público
+    dá o endereço dela, e a lista de e-mails convidados fica só no Cloudflare Access. Publicar
+    só com a palavra do Owner (launch/README.md).
+
+    DESAFIO NO NAVEGADOR (14/10/2026, diario-web, #157): a seção 2.3 (id="desafio-navegador")
+    descreve o Desafio diário público no navegador (specs/50-architecture/web-daily.md §8).
+    Publicar só com a palavra do Owner (launch/README.md), e não antes de o endereço estar no ar.
+
     NÃO REMOVA A ÂNCORA id="feedback": ela é a URL de exclusão de dados já salva no
     Play Console. A âncora id="exclusao" é a nova, para a exclusão de conta.
   -->
@@ -66,8 +75,11 @@
      Aplica-se ao jogo Melbees distribuído no <strong>Google Play</strong> (Android) e na
      <strong>Microsoft Store</strong> (Windows), em todos os países em que ele está disponível. A
      versão para Windows trata menos dados que a do Android, e a <a href="#windows">seção 2.1</a>
-     reúne todas as diferenças; onde ela não diz nada, vale o resto desta política. Se o jogo passar
-     a ser distribuído em outras lojas, esta política será atualizada antes.</p>
+     reúne todas as diferenças; onde ela não diz nada, vale o resto desta política. Aplica-se também
+     à edição do jogo para navegador, fechada e só para convidados, descrita na
+     <a href="#navegador">seção 2.2</a>, e ao Desafio diário aberto a todos no navegador, descrito na
+     <a href="#desafio-navegador">seção 2.3</a>. Se o jogo passar a ser distribuído em outras lojas, esta
+     política será atualizada antes.</p>
   <p>Conforme o seu país, além da <strong>LGPD</strong> brasileira (Lei nº 13.709/2018) podem se
      aplicar a você o <strong>RGPD</strong> da União Europeia e do Reino Unido, a
      <strong>COPPA</strong> dos Estados Unidos e outras leis locais. A <a href="#direitos">seção
@@ -128,6 +140,58 @@
     <li><strong>Os controles dos pais são os da Microsoft</strong>: o <strong>Microsoft Family
         Safety</strong> permite limitar o tempo de tela e exigir aprovação antes de uma compra na
         Microsoft Store (<a href="#pais">seção 12</a>).</li>
+  </ul>
+
+  <h3 id="navegador">2.2 A edição para navegador (só para convidados)</h3>
+  <p>Existe também uma edição do jogo que roda no navegador (Chrome ou Edge). Ela é fechada: só entra
+     quem foi convidado por nós. O que muda nela:</p>
+  <ul>
+    <li><strong>A entrada passa pelo Cloudflare Access.</strong> Você digita o seu e-mail numa página da
+        Cloudflare, e a Cloudflare manda para ele um código de acesso. Quem recebe esse e-mail e envia o
+        código é a Cloudflare, e vale a política de privacidade dela. A lista dos e-mails convidados fica
+        só no Cloudflare Access: <strong>nunca no jogo nem nos nossos servidores</strong>.</li>
+    <li><strong>Não há conta, compra nem anúncio.</strong> O Premium já vem liberado nesta edição, sem
+        pagamento. Por não haver anúncio, o jogo <strong>não pergunta a sua idade</strong>
+        (<a href="#criancas">seção 5</a>), e nada das seções <a href="#anuncios">6</a>,
+        <a href="#compras">7</a>, <a href="#conta">8</a> e <a href="#ranking">9</a> acontece nela.</li>
+    <li><strong>Não há Firebase</strong> (<a href="#analises">seção 10</a>), e o jogo <strong>não faz
+        nenhuma requisição aos nossos servidores</strong>.</li>
+    <li><strong>O progresso e as configurações ficam no armazenamento do navegador</strong>, neste
+        aparelho e neste navegador, e nunca são enviados para nós. Apagar os dados do site nas
+        configurações do navegador apaga tudo.</li>
+    <li><strong>A hospedagem é da Cloudflare</strong>, que registra os acessos às páginas (como o
+        endereço IP, a data e a hora e o navegador usado), como qualquer serviço de hospedagem.</li>
+    <li><strong>Para desenhar emojis e alguns símbolos, o navegador pode baixar fontes do Google
+        Fonts</strong> (<code>fonts.gstatic.com</code>); nesse pedido o Google recebe o endereço IP do
+        aparelho, e nada do jogo.</li>
+  </ul>
+
+  <h3 id="desafio-navegador">2.3 O Desafio diário no navegador (aberto a todos)</h3>
+  <p>O Desafio diário também abre no navegador (Chrome, Edge ou Safari), por um endereço público, sem
+     instalar nada e sem convite. É só o Desafio do dia; o resto do jogo está nos aplicativos. O que muda
+     nele:</p>
+  <ul>
+    <li><strong>Não há conta, compra nem anúncio</strong>, e o Premium não vem liberado. Por não haver
+        anúncio, o jogo <strong>não pergunta a sua idade</strong> (<a href="#criancas">seção 5</a>), e
+        nada das seções <a href="#anuncios">6</a>, <a href="#compras">7</a>, <a href="#conta">8</a> e
+        <a href="#ranking">9</a> acontece nele: o seu tempo não vai para nenhum ranking.</li>
+    <li><strong>O jogo não faz nenhuma requisição aos nossos servidores.</strong> Ele conta
+        acontecimentos de jogo (como abrir o Desafio, terminar uma fase, tocar no botão da loja) no
+        <strong>Google Analytics</strong>, com todos os consentimentos negados: <strong>sem cookies e sem
+        identificador</strong>, nada que diga quem você é ou ligue uma visita a outra. Não há Firebase
+        Crashlytics nesta edição.</li>
+    <li><strong>As tentativas, os tempos, as aulas feitas e as configurações ficam no armazenamento do
+        navegador</strong>, neste aparelho e neste navegador, e nunca são enviados para nós. Apagar os
+        dados do site nas configurações do navegador apaga tudo.</li>
+    <li><strong>A hospedagem é da Cloudflare</strong>, que registra os acessos às páginas (como o
+        endereço IP, a data e a hora e o navegador usado), como qualquer serviço de hospedagem, e conta
+        as visitas sem cookies e sem identificar quem visita (Cloudflare Web Analytics).</li>
+    <li><strong>Para desenhar emojis e alguns símbolos, o navegador pode baixar fontes do Google
+        Fonts</strong> (<code>fonts.gstatic.com</code>); nesse pedido o Google recebe o endereço IP do
+        aparelho, e nada do jogo.</li>
+    <li><strong>Os botões da Google Play e da Microsoft Store</strong> abrem a loja com uma marca de
+        campanha no endereço, que diz à loja só que a visita veio do Desafio no navegador. O que a loja
+        faz depois segue a política de privacidade dela.</li>
   </ul>
 
   <h2>3. O resumo, em cinco linhas</h2>
