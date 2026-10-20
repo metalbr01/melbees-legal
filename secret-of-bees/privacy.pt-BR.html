@@ -11,7 +11,7 @@
   <p class="lang"><a href="privacy.en.html">English</a> · <strong>Português</strong></p>
 
   <h1>Política de Privacidade — Melbees: The Secret of Bees</h1>
-  <p class="muted">Data de vigência: 27/07/2026 · Última atualização: 16/10/2026</p>
+  <p class="muted">Data de vigência: 27/07/2026 · Última atualização: 20/10/2026</p>
 
   <!--
     VERSÃO 2 — a política do jogo MONETIZADO. Escrita pela missão P1 do
@@ -67,6 +67,38 @@
     no Game Jolt e no Addicting Games (specs/50-architecture/web-daily.md §6.1, §8); a frase sobre o que
     chega ao Google Analytics segue a #233 (16/10/2026, só o site). Publicar só com a palavra do Owner.
 
+    IPHONE (17/10/2026, ios-conta-apple-servidor, #171): a seção 8 diz que no iPhone a conta
+    também pode ser Entrar com a Apple, o que o Supabase guarda dela, que uma conta pode ter as
+    duas identidades e que o painel acha a conta pelo e-mail de qualquer uma
+    (account-and-deletion.md §1, §2.2). Publicar só com a palavra do Owner, junto com o build
+    do iPhone que traz o botão (#172), e não antes. A #172 (17/10/2026, ios-conta-apple-app) acrescentou
+    à seção 4 e à seção 8 a sessão do iPhone nas Chaves do iPhone (account-and-deletion.md §3), com a
+    mesma regra de publicação. A linha de abrangência da seção 2 e a seção
+    própria do iPhone são da missão do site legal do iPhone (#181). Ao publicar, a data de
+    "Última atualização" passa a ser a da publicação.
+
+    IPHONE B' (19/10/2026, iphone-b-linha, #341): o Owner escolheu o caminho B' para a primeira
+    revisão da App Store (docs/decisions/2026-10-19-iphone-b-linha.md): o iPhone é gratuito e não tem
+    conta até o StoreKit (#340) e a #173. A linha de abrangência da seção 2 nomeia a App Store, e a
+    seção 2.4 (id="iphone") diz o que o iPhone coleta: só o feedback que o jogador envia, ligado a
+    ninguém (launch/store-listing/app-store.md §3, §9). O texto do iPhone nas seções 4 e 8 (#171,
+    #172) fica, para a atualização que trouxer a conta, e a seção 2.4 diz que ele não vale até lá.
+    Publicar só com a palavra do Owner, junto com o primeiro build da App Store, e não antes.
+
+    APPLE REVOGADA NA EXCLUSÃO (20/10/2026, apple-revoga-token, #173): a seção 8 (id="apple") diz que
+    o servidor guarda o refresh token da Apple só para revogar a ligação quando a conta é apagada
+    (account-and-deletion.md §4.6). Publicar com a regra do iPhone acima: junto com a atualização
+    que trouxer a conta do iPhone, e não antes.
+
+    IPHONE COMPLETO (20/10/2026, #210): o Owner pediu o iPhone completo, com conta, compras e o anúncio
+    ("quero o IOS completo: com Ads, com compras"), e ele vai à primeira revisão da App Store
+    (launch/store-listing/app-store.md §11). A seção 2.4 foi reescrita para ele: a conta com o Google ou
+    a Apple, a cobrança da Apple e o que chega da assinatura (purchase-routes.md §2.8), o anúncio com a
+    pergunta da ATT, sem Firebase. A abertura da seção 7 e as seções 12 e 13 nomeiam a App Store e a
+    Apple. Este bloco substitui o B' acima na seção 2.4; se o interruptor da #341 trouxer o B' de volta,
+    a 2.4 volta ao texto do B' (histórico do git). Publicar só com a palavra do Owner, junto com o build
+    da App Store que vende (kAppStoreSells true), e não antes.
+
     NÃO REMOVA A ÂNCORA id="feedback": ela é a URL de exclusão de dados já salva no
     Play Console. A âncora id="exclusao" é a nova, para a exclusão de conta.
   -->
@@ -85,7 +117,8 @@
      reúne todas as diferenças; onde ela não diz nada, vale o resto desta política. Aplica-se também
      à edição do jogo para navegador, fechada e só para convidados, descrita na
      <a href="#navegador">seção 2.2</a>, e ao Desafio diário aberto a todos no navegador, descrito na
-     <a href="#desafio-navegador">seção 2.3</a>. Se o jogo passar a ser distribuído em outras lojas, esta
+     <a href="#desafio-navegador">seção 2.3</a>, e à versão para iPhone na <strong>App Store</strong>,
+     descrita na <a href="#iphone">seção 2.4</a>. Se o jogo passar a ser distribuído em outras lojas, esta
      política será atualizada antes.</p>
   <p>Conforme o seu país, além da <strong>LGPD</strong> brasileira (Lei nº 13.709/2018) podem se
      aplicar a você o <strong>RGPD</strong> da União Europeia e do Reino Unido, a
@@ -217,6 +250,55 @@
         dos dois sites a visita veio.</li>
   </ul>
 
+  <h3 id="iphone">2.4 A versão para iPhone (App Store)</h3>
+  <p>A versão para iPhone é o mesmo jogo, gratuita para baixar, e trata menos dados que a do Android. O que
+     muda nela:</p>
+  <ul>
+    <li><strong>A conta é opcional e funciona como no Android</strong> (seções <a href="#conta">8</a> e
+        <a href="#ranking">9</a>), com o Google ou, só no iPhone, com <strong>Entrar com a Apple</strong>
+        (<a href="#apple">seção 8</a>). A sessão fica nas Chaves do iPhone (<a href="#conta">seção
+        8</a>).</li>
+    <li><strong>Quem cobra é a Apple</strong>, pelo sistema de compras da App Store, na sua conta Apple. Os
+        itens são os da <a href="#compras">seção 7</a>. <strong>Nós nunca vemos nem recebemos os seus dados
+        de pagamento.</strong> Das compras de pétalas, <strong>nada chega até nós</strong>. Da assinatura
+        Premium, <strong>algo chega até nós só se você entrou com a conta</strong>, e é isto:
+        <ul>
+          <li><strong>O registro da compra, assinado pela Apple.</strong> Ele traz o identificador da
+              assinatura na Apple (o mesmo durante toda a vida dela), o produto, as datas e se ela está no
+              teste grátis ou foi reembolsada. Na compra, o jogo entrega à Apple um código que derivamos da
+              sua conta do Melbees e que não revela quem você é; ele volta no registro e liga a assinatura a
+              essa conta.</li>
+          <li><strong>O que guardamos da assinatura</strong>, junto com o vínculo com a sua conta: o
+              identificador da assinatura na Apple, o estado dela (ativa, em período de carência, com a
+              cobrança pendente ou encerrada) e a data em que ela termina. Para manter esse estado em dia, o
+              nosso servidor também pergunta à Apple o estado atual da assinatura. Cada vínculo também gera
+              uma linha no registro de auditoria da compra (<a href="#retencao">seção 14</a>). O vínculo é
+              apagado quando você apaga a conta (<a href="#exclusao">seção 15</a>).</li>
+        </ul>
+        Usamos isso para liberar o Premium nos seus aparelhos e para confirmar a assinatura com a Apple,
+        contra fraude. Com a mesma conta, um Premium comprado no iPhone vale também no Android e no Windows, e
+        um comprado no Google Play ou na Microsoft Store vale também no iPhone, com a mesma ressalva da
+        <a href="#compras">seção 7</a>. Cancelamento, reembolso e o direito de arrependimento são pedidos à
+        Apple, nas assinaturas da sua conta Apple, porque ela é a vendedora. Apagar a sua conta do Melbees
+        <strong>não</strong> cancela a assinatura.</li>
+    <li><strong>O anúncio recompensado funciona como no Android</strong> (<a href="#anuncios">seção
+        6</a>), com a pergunta de idade da <a href="#criancas">seção 5</a>, e uma coisa a mais: antes do
+        primeiro anúncio, o iPhone faz a pergunta da Apple de <strong>Transparência de Rastreamento de
+        Apps</strong> (<a href="#att">seção 6</a>).</li>
+    <li><strong>Não há Firebase</strong>: nenhum acontecimento de jogo e nenhum relatório de falha é
+        enviado (a <a href="#analises">seção 10</a> vale só para o Android).</li>
+    <li><strong>O feedback funciona como no Android</strong> (<a href="#feedback">seção 11</a>); no bloco
+        técnico, a plataforma aparece como iOS.</li>
+    <li><strong>Os recados do time</strong> chegam como em todo aparelho (<a href="#pais">seção 12</a>);
+        com a conta entrada, chega também o recado endereçado a ela (<a href="#conta">seção 8</a>).</li>
+    <li><strong>No iPhone</strong>, o progresso e as configurações ficam no aparelho e nunca são enviados
+        para nós. <strong>Configurações → Apagar meus dados</strong> apaga tudo, como no Android.</li>
+    <li><strong>Os controles dos pais são os da Apple</strong>: o <strong>Tempo de Uso</strong> do iPhone
+        permite limitar o tempo de tela, e o Pedir Compra do <strong>Compartilhamento Familiar</strong>
+        pede a aprovação de um responsável antes de baixar um aplicativo e antes de uma compra dentro dele
+        (<a href="#pais">seção 12</a>).</li>
+  </ul>
+
   <h2>3. O resumo, em cinco linhas</h2>
   <ul>
     <li><strong>Jogar é offline.</strong> Todo o seu progresso fica no aparelho e nunca é enviado
@@ -255,7 +337,7 @@
         (<a href="#pais">seção 12</a>). O jogo nunca nos conta o que foi lido.</li>
   </ul>
   <p>Apagar o jogo, ou usar <strong>Configurações → Apagar meus dados</strong>, remove tudo isso.</p>
-  <p>Se você entrou com o Google, o aparelho guarda também a sessão da sua conta, do jeito que a
+  <p>Se você entrou com o Google ou com a Apple, o aparelho guarda também a sessão da sua conta, do jeito que a
      <a href="#conta">seção 8</a> descreve.</p>
 
   <h2 id="criancas">5. Crianças, adolescentes e a pergunta de idade</h2>
@@ -271,7 +353,9 @@
      que não existe. O controle forte é o dos pais, na plataforma: o
      <strong>Family Link</strong> do Google e a <strong>aprovação de compras</strong> do Google Play.
      A <a href="#pais">seção 12</a> diz onde eles ficam. No Windows, o controle é o
-     <strong>Microsoft Family Safety</strong> (<a href="#windows">seção 2.1</a>).</p>
+     <strong>Microsoft Family Safety</strong> (<a href="#windows">seção 2.1</a>), e no iPhone são o
+     <strong>Tempo de Uso</strong> e o <strong>Compartilhamento Familiar</strong> da Apple
+     (<a href="#iphone">seção 2.4</a>).</p>
   <p><strong>A única coisa que precisa de idade é o anúncio</strong>, porque a regra de publicidade é
      diferente para cada faixa. Então, <strong>na primeira vez em que um anúncio vai ser exibido</strong>,
      o jogo pergunta a sua idade uma única vez:</p>
@@ -311,7 +395,7 @@
      entre telas e <strong>nenhum anúncio aparece sozinho</strong>: ele só é exibido depois que você
      toca para ganhar uma pétala a mais quando perde a última. Se você nunca tocar, nunca verá um
      anúncio. <strong>A versão para Windows não tem anúncio nenhum</strong>
-     (<a href="#windows">seção 2.1</a>): esta seção vale só para o Android.</p>
+     (<a href="#windows">seção 2.1</a>): esta seção vale para o Android e para o iPhone.</p>
   <p>Quem serve os anúncios é o <strong>Google AdMob</strong>, que atua como controlador independente
      dos dados que recebe. O tratamento do pedido depende da faixa da
      <a href="#criancas">seção 5</a>:</p>
@@ -332,14 +416,25 @@
      Android, em <em>Google → Anúncios</em>. <strong>Nós não recebemos esse identificador, não o
      guardamos e não o usamos em nenhuma outra parte do jogo</strong>, inclusive nas análises
      (<a href="#analises">seção 10</a>).</p>
+  <p id="att"><strong>No iPhone</strong>, na primeira vez que você toca para ver um anúncio, o iPhone
+     mostra a pergunta da própria Apple, a <em>Transparência de Rastreamento de Apps</em>, antes de
+     qualquer anúncio ser pedido. Só se você escolher <em>Permitir</em> o AdMob pode receber o
+     <strong>identificador de publicidade (IDFA)</strong> do iPhone; com <em>Pedir ao App para Não
+     Rastrear</em> o iOS não o entrega a ninguém, e nada é personalizado. As faixas acima continuam valendo: abaixo de 13
+     anos nenhum identificador é enviado, qualquer que seja a escolha, e de 13 a 17 o anúncio nunca é
+     personalizado. Você pode mudar a resposta a
+     qualquer momento nos <em>Ajustes → Privacidade e Segurança → Rastreamento</em> do iPhone. O jogo
+     mostra o anúncio e dá a pétala do mesmo jeito em qualquer caso e, como no Android, nós nunca
+     recebemos o identificador.</p>
 
   <h2 id="compras">7. Compras no aplicativo</h2>
   <p>O jogo oferece três itens, e nenhum deles é obrigatório para jogar: dois
      <strong>pacotes de pétalas</strong> (compra avulsa) e a assinatura mensal
      <strong>Premium</strong>. <strong>Não existe caixa de recompensa</strong>: você sempre sabe
      exatamente o que está comprando, e nada comprado vira sorteio. No Windows quem cobra é a
-     Microsoft Store, e há também um pacote de 1 pétala (<a href="#windows">seção 2.1</a>); a lista
-     abaixo descreve o Google Play.</p>
+     Microsoft Store, e há também um pacote de 1 pétala (<a href="#windows">seção 2.1</a>); no iPhone
+     quem cobra é a App Store (<a href="#iphone">seção 2.4</a>); a lista abaixo descreve o Google
+     Play.</p>
   <ul>
     <li><strong>Quem cobra é o Google Play</strong>, pelo sistema de faturamento dele.
         <strong>Nós nunca vemos nem recebemos os seus dados de pagamento</strong> — cartão, endereço
@@ -372,7 +467,8 @@
      comemora a assinatura. Nenhuma das duas impede de jogar.</p>
   <p>No Windows a conta é a mesma, e entrar abre o navegador; a <a href="#windows">seção 2.1</a>
      descreve esse login e onde o Windows guarda a sessão.</p>
-  <p>A conta é <strong>só o Google</strong>: não há cadastro com e-mail e senha, não há login
+  <p>A conta é <strong>o Google</strong> e, só no iPhone, também <strong>Entrar com a
+     Apple</strong> (abaixo): não há cadastro com e-mail e senha, não há login
      anônimo. Quem faz o login é o <strong>Supabase</strong>, o nosso operador de autenticação
      (<a href="#compartilhamento">seção 13</a>). Ao entrar, o Google confirma ao Supabase que é você, e
      o Supabase guarda, no servidor de login, junto da sua conta:</p>
@@ -396,6 +492,24 @@
      não sai do painel: não é exportada nem usada para mais nada. <strong>Tudo isso é apagado quando você apaga a
      conta</strong> (<a href="#exclusao">seção 15</a>). O Supabase guarda ainda uma cópia do registro de
      acesso nos registros técnicos dele, que ele mesmo apaga em poucos dias.</p>
+  <p id="apple"><strong>Entrar com a Apple, no iPhone.</strong> No iPhone você pode entrar também
+     com a sua conta Apple. Aí é a Apple que confirma ao Supabase que é você, e o Supabase guarda,
+     junto da conta, o identificador que a Apple dá a você neste jogo e o endereço de e-mail que a
+     Apple manda: o da sua conta Apple, se você escolher compartilhá-lo, ou, se escolher ocultá-lo,
+     um endereço que a Apple cria só para este jogo, que termina em
+     <code>privaterelay.appleid.com</code> e encaminha as mensagens para o seu e-mail. Da Apple o
+     jogo não guarda nome nem foto. Para poder cortar a ligação do jogo com a sua conta Apple quando
+     você apagar a conta, o servidor do jogo guarda também uma credencial que a Apple dá ao jogo na
+     entrada (um token de atualização), e só a usa para isso: ao apagar a conta, o servidor pede à
+     Apple que revogue a ligação e apaga a credencial assim que a Apple confirma, no máximo em 30
+     dias. O resto desta seção vale igual: o registro de acesso, o painel
+     de administração e o que é apagado com a conta.</p>
+  <p><strong>Uma conta, Google e Apple.</strong> No iPhone, uma conta pode ter as duas entradas, o
+     Google e a Apple: continua sendo uma conta só, com um apelido, um lugar no ranking e um
+     Premium, e qualquer uma das duas entra nela. Se o e-mail da sua conta Apple for o mesmo da sua
+     conta Google, o Supabase junta as duas entradas na mesma conta sozinho; se não for, ou se você
+     ocultou o e-mail, você junta pelo próprio jogo. No nosso painel, achamos a conta pelo e-mail
+     de qualquer uma das duas.</p>
   <p><strong>Premium de cortesia.</strong> Para dar ou renovar uma cortesia do Premium, achamos a
      conta no nosso painel de administração, pelo e-mail, pelo nome ou pelo apelido; se você nos
      mandou o e-mail da sua conta Google, ele serve só para isso. A cortesia não guarda o e-mail: guardamos só
@@ -409,7 +523,10 @@
      para outro aparelho</strong>, para que a sua sessão nunca apareça num aparelho em que você não
      entrou. Ela é apagada quando você toca <strong>Sair da conta</strong>, <strong>Apagar meus
      dados</strong> ou <strong>Apagar minha conta</strong>, ou quando você desinstala o jogo. No
-     Windows, a <a href="#windows">seção 2.1</a> diz onde ela fica. A sessão só é usada quando algo
+     Windows, a <a href="#windows">seção 2.1</a> diz onde ela fica. No iPhone, ela fica nas <strong>Chaves do
+     iPhone</strong> (o Keychain), presa a este aparelho: não vai para as Chaves do iCloud e não passa para outro iPhone
+     por uma cópia de segurança. Desinstalar o jogo não a apaga na hora, mas ela não é mais usada, e o jogo a apaga na
+     primeira vez que for aberto depois de instalado de novo. A sessão só é usada quando algo
      precisa dela, como o ranking online. Abrir o jogo não se conecta à conta, com uma exceção: quando
      o aparelho guarda a resposta sobre o Premium da conta (abaixo) e a data dela já passou, o jogo
      renova a sessão sozinho, sem nenhuma tela, para perguntar de novo.</p>
@@ -562,6 +679,9 @@
   <p><strong>No Windows</strong>, os controles equivalentes são os da Microsoft, no
      <strong>Microsoft Family Safety</strong>: limite de tempo de tela e aprovação antes de uma
      compra na Microsoft Store.</p>
+  <p><strong>No iPhone</strong>, os controles equivalentes são os da Apple: o <strong>Tempo de
+     Uso</strong> limita o tempo de tela, e o Pedir Compra do <strong>Compartilhamento
+     Familiar</strong> pede a aprovação de um responsável antes de uma compra na App Store.</p>
   <p>O jogo <strong>mede e mostra</strong> o tempo de uso e <strong>nunca interrompe uma
      partida</strong>. Também não envia notificações, não recompensa o jogador por tempo conectado e
      não tem sequência diária que se perca por faltar um dia.</p>
@@ -585,12 +705,15 @@
     <li><strong>Microsoft Store (Microsoft)</strong>, no Windows: cobra as compras, emite a chave de ID
         da Microsoft Store e, com ela, nos informa o estado da assinatura
         (<a href="#windows">seção 2.1</a>).</li>
-    <li><strong>Google AdMob (Google)</strong>, no Android — serve os anúncios recompensados
+    <li><strong>App Store (Apple)</strong>, no iPhone: cobra as compras e nos informa o estado da
+        assinatura (<a href="#iphone">seção 2.4</a>), e confirma quem você é quando você entra com a
+        Apple (<a href="#apple">seção 8</a>).</li>
+    <li><strong>Google AdMob (Google)</strong>, no Android e no iPhone: serve os anúncios recompensados
         (<a href="#anuncios">seção 6</a>).</li>
     <li><strong>Firebase (Google)</strong>, no Android — análises e relatórios de falha
         (<a href="#analises">seção 10</a>).</li>
-    <li><strong>Supabase</strong> — faz a autenticação da conta Google e hospeda o banco do ranking
-        (seções <a href="#conta">8</a> e <a href="#ranking">9</a>), como nosso operador.</li>
+    <li><strong>Supabase</strong> — faz a autenticação da conta Google (e, no iPhone, da conta Apple) e
+        hospeda o banco do ranking (seções <a href="#conta">8</a> e <a href="#ranking">9</a>), como nosso operador.</li>
     <li><strong>Google Cloud</strong> — hospeda o nosso servidor, como nosso operador.</li>
     <li><strong>Google Apps Script e Google Sheets</strong> — recebem e guardam os relatórios de
         feedback (<a href="#feedback">seção 11</a>), como nossos operadores.</li>

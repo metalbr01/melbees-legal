@@ -11,7 +11,7 @@
   <p class="lang"><strong>English</strong> · <a href="privacy.pt-BR.html">Português</a></p>
 
   <h1>Privacy Policy — Melbees: The Secret of Bees</h1>
-  <p class="muted">Effective date: 2026-07-27 · Last updated: 2026-10-16</p>
+  <p class="muted">Effective date: 2026-07-27 · Last updated: 2026-10-20</p>
 
   <!--
     VERSION 2 — the policy for the MONETIZED game. Written by mission P1 of
@@ -65,6 +65,45 @@
 
     DO NOT REMOVE THE id="feedback" ANCHOR: it is the data-deletion URL already saved
     in the Play Console. The id="deletion" anchor is the new one, for account deletion.
+
+    IPHONE (17/10/2026, ios-conta-apple-servidor, #171): section 8 says that on the iPhone the
+    account may also be Sign in with Apple, what Supabase keeps from it, that one account may hold
+    both identities, and that the panel finds an account by the e-mail of either
+    (account-and-deletion.md §1, §2.2). Publish only on the Owner's word, together with the
+    iPhone build that brings the button (#172), and not before. #172 (17/10/2026,
+    ios-conta-apple-app) added to sections 4 and 8 the iPhone's session in the iPhone's Keychain
+    (account-and-deletion.md §3), under the same publishing rule. Section 2's scope line and the
+    iPhone's own section belong to the iPhone legal-site mission (#181). On publishing, the
+    "Last updated" date becomes the publication's.
+
+    IPHONE B' (19/10/2026, iphone-b-linha, #341): the Owner chose path B' for the first App Store
+    review (docs/decisions/2026-10-19-iphone-b-linha.md): the iPhone is free and has no account until
+    StoreKit (#340) and #173. Section 2's scope line names the App Store, and section 2.4
+    (id="iphone") says what the iPhone collects: only a feedback report the player sends, linked to
+    no one (launch/store-listing/app-store.md §3, §9). The iPhone text of sections 4 and 8 (#171,
+    #172) stays, for the update that brings the account, and section 2.4 says it does not apply
+    until then. Publish only on the Owner's word, together with the first App Store build, and not
+    before.
+
+    APPLE REVOKED AT DELETION (20/10/2026, apple-revoga-token, #173): section 8 (id="apple") says
+    the server keeps Apple's refresh token only to revoke the link when the account is deleted
+    (account-and-deletion.md §4.6). Publish under the iPhone rule above: with the update that brings
+    the iPhone's account, and not before.
+
+    IPHONE ADS (20/10/2026, ios-anuncios, #345): the iPhone shows the rewarded ad as Android does,
+    behind Apple's App Tracking Transparency (specs/60-monetization/ads.md §2.3). Section 2.4 says the
+    ad works as on Android, and section 6 applies to the iPhone too and says what the ATT question is
+    and when the IDFA reaches AdMob (paragraph id="att"). Publish only on the Owner's word, together
+    with the App Store build that carries the ad, and not before.
+
+    THE COMPLETE IPHONE (20/10/2026, #210): the Owner asked for the complete iPhone, with the account,
+    purchases and the ad ("quero o IOS completo: com Ads, com compras"), and it goes to the first App
+    Store review (launch/store-listing/app-store.md §11). Section 2.4 is rewritten for it: the account
+    with Google or Apple, Apple's charging and what reaches us from the subscription (purchase-routes.md
+    §2.8), the ad behind the ATT question, no Firebase. Section 7's opening and sections 12 and 13 name
+    the App Store and Apple. This block supersedes B' above for section 2.4; if #341's switch brings B'
+    back, 2.4 returns to the B' text (git history). Publish only on the Owner's word, together with the
+    App Store build that sells (kAppStoreSells true), and not before.
   -->
 
   <h2>1. Who we are</h2>
@@ -80,8 +119,9 @@
      every difference; where it says nothing, the rest of this policy applies. It also applies to the
      game's browser edition, closed and by invitation only, described in
      <a href="#browser">section 2.2</a>, and to the Daily Challenge open to everyone in the browser,
-     described in <a href="#browser-daily">section 2.3</a>. If the game is ever distributed through another store, this
-     policy will be updated first.</p>
+     described in <a href="#browser-daily">section 2.3</a>, and to the iPhone version on the
+     <strong>App Store</strong>, described in <a href="#iphone">section 2.4</a>. If the game is ever distributed
+     through another store, this policy will be updated first.</p>
   <p>Depending on where you live, besides Brazil's <strong>LGPD</strong> (Law 13.709/2018) the
      <strong>GDPR</strong> of the European Union and the United Kingdom, the United States'
      <strong>COPPA</strong> and other local laws may apply to you.
@@ -217,6 +257,57 @@
         came from.</li>
   </ul>
 
+  <h3 id="iphone">2.4 The iPhone version (App Store)</h3>
+  <p>The iPhone version is the same game, free to download, and it handles less data than the Android one.
+     What changes in it:</p>
+  <ul>
+    <li><strong>The account is optional and works as on Android</strong> (sections <a href="#account">8</a>
+        and <a href="#leaderboard">9</a>), with Google or, on the iPhone only, with <strong>Sign in with
+        Apple</strong> (<a href="#apple">section 8</a>). The session stays in the iPhone's Keychain
+        (<a href="#account">section 8</a>).</li>
+    <li><strong>Apple does the charging</strong>, through the App Store purchase system, on your Apple
+        account. The items are those of <a href="#purchases">section 7</a>. <strong>We never see or receive
+        your payment details.</strong> From Petal purchases, <strong>nothing reaches us</strong>. From the
+        Premium subscription, <strong>something reaches us only if you signed in with the account</strong>,
+        and it is this:
+        <ul>
+          <li><strong>The purchase record, signed by Apple.</strong> It carries the subscription's
+              identifier at Apple (the same for the subscription's whole life), the product, the dates and
+              whether it is in the free trial or was refunded. At the purchase, the game gives Apple a code
+              we derive from your Melbees account that does not reveal who you are; it comes back in the
+              record and binds the subscription to that account.</li>
+          <li><strong>What we keep from the subscription</strong>, together with the link to your account:
+              the subscription's identifier at Apple, its state (active, in a billing grace period, with a
+              payment pending, or ended) and the date it ends. To keep that state current, our server also
+              asks Apple for the subscription's current state. Each link also writes a line to the purchase
+              audit log (<a href="#retention">section 14</a>). The link is deleted when you delete the
+              account (<a href="#deletion">section 15</a>).</li>
+        </ul>
+        We use this to unlock Premium on your devices and to confirm the subscription with Apple, against
+        fraud. With the same account, a Premium bought on the iPhone also counts on Android and Windows, and
+        one bought on Google Play or the Microsoft Store also counts on the iPhone, with the same exception as
+        in <a href="#purchases">section 7</a>. Cancellations, refunds and the right of withdrawal are
+        requested from Apple, under your Apple account's subscriptions, because Apple is the seller.
+        Deleting your Melbees account does <strong>not</strong> cancel the subscription.</li>
+    <li><strong>The rewarded ad works as on Android</strong> (<a href="#ads">section 6</a>), with the
+        age question of <a href="#children">section 5</a>, and one thing more: before the first ad, the
+        iPhone asks Apple's <strong>App Tracking Transparency</strong> question
+        (<a href="#att">section 6</a>).</li>
+    <li><strong>There is no Firebase</strong>: no game event and no crash report is sent
+        (<a href="#analytics">section 10</a> applies to Android only).</li>
+    <li><strong>Feedback works as on Android</strong> (<a href="#feedback">section 11</a>); in the
+        technical block, the platform shows as iOS.</li>
+    <li><strong>The team's messages</strong> arrive as on every device (<a href="#parents">section
+        12</a>); with the account signed in, a message addressed to it arrives too
+        (<a href="#account">section 8</a>).</li>
+    <li><strong>On the iPhone</strong>, your progress and settings stay on the device and are never sent
+        to us. <strong>Settings → Delete my data</strong> deletes all of it, as on Android.</li>
+    <li><strong>The parental controls are Apple's</strong>: the iPhone's <strong>Screen Time</strong> can
+        limit screen time, and <strong>Family Sharing</strong>'s Ask to Buy asks a guardian's approval
+        before an app is downloaded and before a purchase inside it (<a href="#parents">section
+        12</a>).</li>
+  </ul>
+
   <h2>3. The summary, in five lines</h2>
   <ul>
     <li><strong>Playing is offline.</strong> All of your progress stays on the device and is never
@@ -253,7 +344,7 @@
         (<a href="#parents">section 12</a>). The game never tells us what was read.</li>
   </ul>
   <p>Deleting the game, or using <strong>Settings → Delete my data</strong>, removes all of it.</p>
-  <p>If you signed in with Google, the device also keeps your account session, as
+  <p>If you signed in with Google or with Apple, the device also keeps your account session, as
      <a href="#account">section 8</a> describes.</p>
 
   <h2 id="children">5. Children, teenagers and the age question</h2>
@@ -269,7 +360,8 @@
      strong control is the parents', at the platform: Google <strong>Family Link</strong> and Google
      Play's <strong>purchase approval</strong>. <a href="#parents">Section 12</a> says where they
      are. On Windows, the control is <strong>Microsoft Family Safety</strong>
-     (<a href="#windows">section 2.1</a>).</p>
+     (<a href="#windows">section 2.1</a>), and on the iPhone it is Apple's <strong>Screen Time</strong> and
+     <strong>Family Sharing</strong> (<a href="#iphone">section 2.4</a>).</p>
   <p><strong>The one thing that needs an age is the ad</strong>, because the advertising rule is
      different for each band. So, <strong>the first time an ad is about to be shown</strong>, the game
      asks your age once:</p>
@@ -309,7 +401,7 @@
      and <strong>no ad ever appears by itself</strong>: one is shown only after you tap to earn an
      extra Petal when you lose your last one. If you never tap, you will never see an ad.
      <strong>The Windows version has no ads at all</strong> (<a href="#windows">section 2.1</a>): this
-     section applies to Android only.</p>
+     section applies to Android and to the iPhone.</p>
   <p>Ads are served by <strong>Google AdMob</strong>, which acts as an independent controller of the
      data it receives. The treatment of each request depends on the band from
      <a href="#children">section 5</a>:</p>
@@ -329,13 +421,24 @@
      <em>Google → Ads</em>. <strong>We do not receive it, we do not store it, and we do not use it
      anywhere else in the game</strong>, analytics included
      (<a href="#analytics">section 10</a>).</p>
+  <p id="att"><strong>On the iPhone</strong>, the first time you tap to watch an ad, the iPhone shows
+     Apple's own question, <em>App Tracking Transparency</em>, before any ad is requested. Only if you
+     choose <em>Allow</em> can AdMob receive the iPhone's <strong>advertising identifier
+     (IDFA)</strong>; with <em>Ask App Not to Track</em> iOS gives it to no one, and nothing is
+     personalised. The bands above
+     still apply: under 13 no identifier is sent whatever you choose, and from 13 to 17 the ad is never
+     personalised. You can change the answer at
+     any time in the iPhone's <em>Settings → Privacy &amp; Security → Tracking</em>. The game shows the
+     ad and grants the Petal the same way either way, and, as on Android, we never receive the
+     identifier.</p>
 
   <h2 id="purchases">7. In-app purchases</h2>
   <p>The game offers three items, and none of them is required to play: two <strong>Petal packs</strong>
      (one-off purchases) and the monthly <strong>Premium</strong> subscription. <strong>There is no
      loot box</strong>: you always know exactly what you are buying, and nothing bought turns into a
      draw. On Windows the Microsoft Store does the charging, and there is also a 1-Petal pack
-     (<a href="#windows">section 2.1</a>); the list below describes Google Play.</p>
+     (<a href="#windows">section 2.1</a>); on the iPhone the App Store does the charging
+     (<a href="#iphone">section 2.4</a>); the list below describes Google Play.</p>
   <ul>
     <li><strong>Google Play does the charging</strong>, through its own billing system.
         <strong>We never see or receive your payment details</strong> — card, billing address or any
@@ -368,7 +471,8 @@
      and as a button on the screen that celebrates the subscription. Neither stops you from playing.</p>
   <p>On Windows the account is the same, and signing in opens the browser;
      <a href="#windows">section 2.1</a> describes that sign-in and where Windows keeps the session.</p>
-  <p>The account is <strong>Google only</strong>: no e-mail-and-password sign-up, no anonymous login.
+  <p>The account is <strong>Google</strong> and, on the iPhone only, also <strong>Sign in with
+     Apple</strong> (below): no e-mail-and-password sign-up, no anonymous login.
      The sign-in is run by <strong>Supabase</strong>, our authentication processor
      (<a href="#sharing">section 13</a>). When you sign in, Google confirms to Supabase that it is you,
      and Supabase keeps, on the sign-in server, with your account:</p>
@@ -392,6 +496,24 @@
      leaves the panel: it is not exported or used for anything else. <strong>All of it is deleted when you delete the account</strong>
      (<a href="#deletion">section 15</a>). Supabase also keeps a copy of the access record in its own
      technical logs, which it deletes by itself within a few days.</p>
+  <p id="apple"><strong>Sign in with Apple, on the iPhone.</strong> On the iPhone you may also
+     sign in with your Apple account. Then it is Apple that confirms to Supabase that it is you,
+     and Supabase keeps, with the account, the identifier Apple gives you for this game and the
+     e-mail address Apple sends: your Apple account's own, if you choose to share it, or, if you
+     choose to hide it, an address Apple creates for this game only, which ends in
+     <code>privaterelay.appleid.com</code> and forwards messages to your e-mail. From Apple the
+     game keeps no name and no picture. So that it can cut the game's link to your Apple account
+     when you delete the account, the game's server also keeps a credential Apple gives the game at
+     sign-in (a refresh token), and uses it for that alone: when you delete the account, the server
+     asks Apple to revoke the link and deletes the credential as soon as Apple confirms, within 30
+     days at most. The rest of this section applies the same: the access
+     record, the administration panel, and what is deleted with the account.</p>
+  <p><strong>One account, Google and Apple.</strong> On the iPhone one account may hold both
+     sign-ins, Google and Apple: it is still a single account, with one nickname, one place on the
+     leaderboard and one Premium, and either sign-in opens it. If your Apple account's e-mail is
+     the same as your Google account's, Supabase joins the two sign-ins into the same account on
+     its own; if it is not, or if you hid the e-mail, you join them in the game itself. In our
+     panel we find the account by the e-mail of either one.</p>
   <p><strong>Courtesy Premium.</strong> To grant or renew a courtesy Premium, we find the account in
      our administration panel, by its e-mail, name or nickname; if you sent us the e-mail of your
      Google account, it is used only for that. The courtesy does not keep the e-mail: we keep only its start,
@@ -405,7 +527,10 @@
      another device</strong>, so your session never shows up on a device you did not sign in on. It is
      erased when you tap <strong>Sign out</strong>, <strong>Delete my data</strong> or <strong>Delete
      my account</strong>, or when you uninstall the game. On Windows, <a href="#windows">section
-     2.1</a> says where it is kept. The session is used only when something needs it, such as the
+     2.1</a> says where it is kept. On the iPhone, it is kept in the <strong>iPhone's Keychain</strong>,
+     tied to this device: it does not go to iCloud Keychain and does not move to another iPhone through a
+     backup. Uninstalling the game does not erase it at once, but it is no longer used, and the game erases
+     it the first time it opens after being installed again. The session is used only when something needs it, such as the
      online leaderboard. Opening the game does not connect to the account, with one exception: when the
      device holds the answer about the account's Premium (below) and its date has passed, the game
      renews the session by itself, with no screen, to ask again.</p>
@@ -548,6 +673,9 @@
   <p><strong>On Windows</strong>, the matching controls are Microsoft's, in
      <strong>Microsoft Family Safety</strong>: screen-time limits and approval before a purchase on
      the Microsoft Store.</p>
+  <p><strong>On the iPhone</strong>, the matching controls are Apple's: <strong>Screen Time</strong>
+     limits screen time, and <strong>Family Sharing</strong>'s Ask to Buy asks a guardian's approval
+     before a purchase on the App Store.</p>
   <p>The game <strong>measures and shows</strong> time of use and <strong>never interrupts a
      run</strong>. It also sends no notifications, gives no reward for time spent connected, and has
      no daily streak that is lost by missing a day.</p>
@@ -571,12 +699,15 @@
     <li><strong>Microsoft Store (Microsoft)</strong>, on Windows: charges for purchases, issues the
         Microsoft Store ID key and, through it, tells us the subscription's state
         (<a href="#windows">section 2.1</a>).</li>
-    <li><strong>Google AdMob (Google)</strong>, on Android — serves the rewarded ads
+    <li><strong>App Store (Apple)</strong>, on the iPhone: charges for purchases and tells us the
+        subscription's state (<a href="#iphone">section 2.4</a>), and confirms who you are when you sign in
+        with Apple (<a href="#apple">section 8</a>).</li>
+    <li><strong>Google AdMob (Google)</strong>, on Android and on the iPhone: serves the rewarded ads
         (<a href="#ads">section 6</a>).</li>
     <li><strong>Firebase (Google)</strong>, on Android — analytics and crash reports
         (<a href="#analytics">section 10</a>).</li>
-    <li><strong>Supabase</strong> — authenticates the Google account and hosts the leaderboard database
-        (sections <a href="#account">8</a> and <a href="#leaderboard">9</a>), as our processor.</li>
+    <li><strong>Supabase</strong> — authenticates the Google account (and, on the iPhone, the Apple one)
+        and hosts the leaderboard database (sections <a href="#account">8</a> and <a href="#leaderboard">9</a>), as our processor.</li>
     <li><strong>Google Cloud</strong> — hosts our server, as our processor.</li>
     <li><strong>Google Apps Script and Google Sheets</strong> — receive and store the feedback reports
         (<a href="#feedback">section 11</a>), as our processors.</li>
