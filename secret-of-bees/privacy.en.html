@@ -11,7 +11,7 @@
   <p class="lang"><strong>English</strong> · <a href="privacy.pt-BR.html">Português</a></p>
 
   <h1>Privacy Policy — Melbees: The Secret of Bees</h1>
-  <p class="muted">Effective date: 2026-07-27 · Last updated: 2026-10-20</p>
+  <p class="muted">Effective date: 2026-07-27 · Last updated: 2026-10-24</p>
 
   <!--
     VERSION 2 — the policy for the MONETIZED game. Written by mission P1 of
@@ -105,6 +105,14 @@
     back, 2.4 returns to the B' text (git history). Publish only on the Owner's word, together with the
     App Store build that sells (kAppStoreSells true), and not before. PUBLISHED 2026-10-20 on the Owner's
     word, with every iPhone block above and the delete-account pages (melbees-legal d25e178).
+
+    ACCOUNTS LIST IN THE REPORT (2026-10-24, funil-plataforma, #384): section 8 (id="accounts-report")
+    says a daily copy of the accounts list goes to the internal report in BigQuery and expires in 2
+    days (account-and-deletion.md §1, analytics-and-telemetry.md §7.4), and no longer says the list
+    "never leaves the panel"; sections 13, 14 and 15 say the same. A DRAFT until the Owner's word:
+    publish before the first load (node tools/accounts.mjs load --apply, provisioning-runbook passo
+    26), never after. On publication, the "Last updated" date becomes the publication's. PUBLISHED
+    2026-10-24 on the Owner's word, before the first load.
   -->
 
   <h2>1. Who we are</h2>
@@ -488,15 +496,26 @@
         browser</strong> of each sign-in and of each session renewal, in an access record.</li>
   </ul>
   <p>The game reads none of this except the identifier. Your name, e-mail and picture never appear on
-     the leaderboard or to another player, never go into analytics or ads, and are not sold or shared.
-     We see the e-mail and the name only in our administration panel, which only we use: it lists the
+     the leaderboard or to another player, never go into the game's analytics
+     (<a href="#analytics">section 10</a>) or ads, and are not sold or shared.
+     We see the e-mail and the name in our administration panel, which only we use, and the e-mail
+     also in our internal report (<a href="#accounts-report">below</a>), and nowhere else. The panel lists the
      accounts that signed in to the game (the e-mail, the name, the dates of creation and last
      sign-in, the leaderboard nickname and whether the account has Premium) so that we can find an
      account when you ask by e-mail to delete it (<a href="delete-account.en.html">Delete your
-     account</a>) or ask for a courtesy Premium, and when we give a courtesy Premium. That list never
-     leaves the panel: it is not exported or used for anything else. <strong>All of it is deleted when you delete the account</strong>
+     account</a>) or ask for a courtesy Premium, and when we give a courtesy Premium. <strong>All of it is deleted when you delete the account</strong>
      (<a href="#deletion">section 15</a>). Supabase also keeps a copy of the access record in its own
      technical logs, which it deletes by itself within a few days.</p>
+  <p id="accounts-report"><strong>The accounts list in our internal report.</strong> Once a day, a copy
+     of that list goes to an internal report of ours, in Google Cloud (BigQuery), which also only we
+     see, so that we know how many accounts the game has, on which platform, and when they last signed
+     in. The copy carries only the e-mail, the dates of creation and last sign-in, how you signed in
+     (Google or Apple), the store of the subscription, if any, and whether the account is one of our
+     own (the team's or the family's), so that we do not count those as players; it does not carry the
+     name, the picture, the nickname or the access record. Each copy replaces the one before and
+     deletes itself after <strong>2 days</strong>, so a deleted account leaves the report within 2 days
+     at most. The list and the copy do not go into the game's analytics, are not matched with them, and
+     are not used for anything else.</p>
   <p id="apple"><strong>Sign in with Apple, on the iPhone.</strong> On the iPhone you may also
      sign in with your Apple account. Then it is Apple that confirms to Supabase that it is you,
      and Supabase keeps, with the account, the identifier Apple gives you for this game and the
@@ -508,7 +527,7 @@
      sign-in (a refresh token), and uses it for that alone: when you delete the account, the server
      asks Apple to revoke the link and deletes the credential as soon as Apple confirms, within 30
      days at most. The rest of this section applies the same: the access
-     record, the administration panel, and what is deleted with the account.</p>
+     record, the administration panel, the internal report, and what is deleted with the account.</p>
   <p><strong>One account, Google and Apple.</strong> On the iPhone one account may hold both
      sign-ins, Google and Apple: it is still a single account, with one nickname, one place on the
      leaderboard and one Premium, and either sign-in opens it. If your Apple account's e-mail is
@@ -626,18 +645,21 @@
      <strong>2 months</strong> for analytics data and <strong>90 days</strong> for crash reports.</p>
 
   <h2 id="feedback">11. Feedback and support</h2>
-  <p>The game has a <strong>Send feedback</strong> screen (Settings ▸ Account) and a per-word report on
-     the results screen. They exist so you can tell us about a problem, a wrong word, an idea or a
-     compliment. <strong>There is no automatic sending</strong>: nothing leaves the device until you
+  <p>The game has a <strong>Send feedback</strong> screen (Settings ▸ About), a per-word report on
+     the results screen and, after a rewarded ad, a <strong>Report this ad</strong> link. They exist so
+     you can tell us about a problem, a wrong word, an idea, a compliment or an inappropriate ad. <strong>There is no automatic sending</strong>: nothing leaves the device until you
      tap “Send”.</p>
-  <p><strong>What is sent</strong>, and nothing beyond it: the category you chose (one of four fixed
+  <p><strong>What is sent</strong>, and nothing beyond it: the category you chose (one of five fixed
      labels), <strong>your message</strong> as free text, and a <strong>technical block</strong> the
      app assembles and <strong>shows you on screen before you send</strong> — the app version and build
      type, the platform and the operating-system version string cut at 40 characters (on Android this
      is usually a kernel line, not the device model), the interface language, the tap mode, the screen
      you were on, and a list of up to 20 recent actions as internal game codes. Errors appear as a
      label from a closed list, never the error message and never the stack. A per-word report also
-     carries the category, subcategory, secret count, phase and the word's internal identifier.</p>
+     carries the category, subcategory, secret count, phase and the word's internal identifier. An ad
+     report also carries the ad unit, the time the ad was shown and the identifier the ad network gave
+     that one ad response, so we can find the ad and block its advertiser; it is not a device or
+     advertising identifier.</p>
   <p><strong>Important: the message field is free text and reaches us exactly as you wrote it. Do not
      write your name, e-mail, phone number, address or any other personal information there — yours or
      a child's.</strong> We do not need it to fix the game, and the app says so under the field.</p>
@@ -709,7 +731,8 @@
         (<a href="#analytics">section 10</a>).</li>
     <li><strong>Supabase</strong> — authenticates the Google account (and, on the iPhone, the Apple one)
         and hosts the leaderboard database (sections <a href="#account">8</a> and <a href="#leaderboard">9</a>), as our processor.</li>
-    <li><strong>Google Cloud</strong> — hosts our server, as our processor.</li>
+    <li><strong>Google Cloud</strong>: hosts our server and our internal report, with the copy of the
+        accounts list (<a href="#accounts-report">section 8</a>), as our processor.</li>
     <li><strong>Google Apps Script and Google Sheets</strong> — receive and store the feedback reports
         (<a href="#feedback">section 11</a>), as our processors.</li>
   </ul>
@@ -730,6 +753,8 @@
         (<a href="#account">section 8</a>). The raw list of moves is deleted after
         <strong>60 days</strong>. Supabase's technical logs, within a few days; Google Cloud's request
         log, after <strong>30 days</strong> (<a href="#leaderboard">section 9</a>).</li>
+    <li><strong>The copy of the accounts list in the internal report</strong>: each copy replaces the one
+        before and deletes itself after <strong>2 days</strong> (<a href="#accounts-report">section 8</a>).</li>
     <li><strong>The subscription link</strong> (the purchase code or, on Windows, the subscription's
         identifier at Microsoft, with the state and the end date): for as long as the account exists.
         <strong>The Microsoft Store ID key</strong>: until it expires, in 30 days unless renewed, and
@@ -755,7 +780,9 @@
     <li><strong>Delete the account</strong>: Settings → Account → <strong>Delete my account</strong>,
         which immediately deletes the account (with the e-mail, the name, the picture link and the
         access record the sign-in keeps), the nickname, the portrait, the runs submitted to the
-        leaderboard and the subscription link (on Windows, with the Microsoft Store ID key). Without
+        leaderboard and the subscription link (on Windows, with the Microsoft Store ID key); the
+        account's copy in our internal report leaves within 2 days at most
+        (<a href="#accounts-report">section 8</a>). Without
         the game installed, use the
         <a href="delete-account.en.html">Delete your account</a> page, and we act within
         <strong>30 days</strong>. <strong>These are two different actions</strong>: deleting the
@@ -773,7 +800,7 @@
   <p><strong>The legal bases.</strong> We perform the contract of using the game in order to make the
      game work, deliver what you bought, and keep your account and the leaderboard (LGPD art. 7 V;
      GDPR art. 6(1)(b)). We rely on <strong>legitimate interests</strong> to fix defects, to measure
-     whether the game works, and to defend the leaderboard against cheating (LGPD art. 7 IX; GDPR
+     whether the game works and how many accounts it has, and to defend the leaderboard against cheating (LGPD art. 7 IX; GDPR
      art. 6(1)(f)). We rely on your <strong>consent</strong> for personalised advertising where it is
      required (LGPD art. 7 I; GDPR art. 6(1)(a)), and you may withdraw it at any time. We also comply
      with <strong>legal obligations</strong>, such as those of Brazil's Law 15.211/2025, the Digital

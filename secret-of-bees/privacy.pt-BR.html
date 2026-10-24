@@ -11,7 +11,7 @@
   <p class="lang"><a href="privacy.en.html">English</a> · <strong>Português</strong></p>
 
   <h1>Política de Privacidade — Melbees: The Secret of Bees</h1>
-  <p class="muted">Data de vigência: 27/07/2026 · Última atualização: 20/10/2026</p>
+  <p class="muted">Data de vigência: 27/07/2026 · Última atualização: 24/10/2026</p>
 
   <!--
     VERSÃO 2 — a política do jogo MONETIZADO. Escrita pela missão P1 do
@@ -101,6 +101,14 @@
     Owner, junto com todos os blocos do iPhone acima e as páginas de exclusão (melbees-legal d25e178).
     Depois, o nome do recurso da Apple no Brasil, "Pedir para Comprar" (antes "Pedir Compra"), nas
     seções 2.4 e 12; a data fica 20/10/2026, o mesmo dia.
+
+    LISTA DE CONTAS NO RELATÓRIO (24/10/2026, funil-plataforma, #384): a seção 8 (id="relatorio-contas")
+    diz que uma cópia diária da lista de contas vai para o relatório interno no BigQuery e expira em 2
+    dias (account-and-deletion.md §1, analytics-and-telemetry.md §7.4), e deixa de dizer que a lista
+    "não sai do painel"; as seções 13, 14 e 15 dizem o mesmo. RASCUNHO até a palavra do Owner: publicar
+    antes da primeira carga (node tools/accounts.mjs load --apply, provisioning-runbook passo 26), e não
+    depois. Ao publicar, a data de "Última atualização" passa a ser a da publicação. PUBLICADO em
+    24/10/2026 na palavra do Owner, antes da primeira carga.
 
     NÃO REMOVA A ÂNCORA id="feedback": ela é a URL de exclusão de dados já salva no
     Play Console. A âncora id="exclusao" é a nova, para a exclusão de conta.
@@ -486,15 +494,25 @@
         navegador</strong> de cada login e de cada renovação da sessão, num registro de acesso.</li>
   </ul>
   <p>O jogo não lê nada disso além do identificador. O seu nome, o seu e-mail e a sua foto nunca
-     aparecem no ranking nem para outro jogador, não entram em análises nem em anúncios, e não são
-     vendidos nem compartilhados. Nós vemos o e-mail e o nome só no nosso painel de administração,
-     que só nós usamos: ele lista as contas que entraram no jogo (o e-mail, o nome, as datas de
+     aparecem no ranking nem para outro jogador, não entram nas análises do jogo
+     (<a href="#analises">seção 10</a>) nem em anúncios, e não são
+     vendidos nem compartilhados. Nós vemos o e-mail e o nome no nosso painel de administração, que
+     só nós usamos, e o e-mail também no nosso relatório interno (<a href="#relatorio-contas">abaixo</a>),
+     e em nenhum outro lugar. O painel lista as contas que entraram no jogo (o e-mail, o nome, as datas de
      criação e do último login, o apelido do ranking e se a conta tem Premium) para acharmos uma
      conta quando você pede por e-mail para apagá-la (<a href="delete-account.pt-BR.html">Apagar sua
-     conta</a>) ou pede uma cortesia do Premium, e quando damos uma cortesia do Premium. Essa lista
-     não sai do painel: não é exportada nem usada para mais nada. <strong>Tudo isso é apagado quando você apaga a
+     conta</a>) ou pede uma cortesia do Premium, e quando damos uma cortesia do Premium. <strong>Tudo isso é apagado quando você apaga a
      conta</strong> (<a href="#exclusao">seção 15</a>). O Supabase guarda ainda uma cópia do registro de
      acesso nos registros técnicos dele, que ele mesmo apaga em poucos dias.</p>
+  <p id="relatorio-contas"><strong>A lista de contas no nosso relatório interno.</strong> Uma vez por dia,
+     uma cópia dessa lista vai para um relatório interno nosso, no Google Cloud (BigQuery), que também
+     só nós vemos, para sabermos quantas contas o jogo tem, em que plataforma e quando elas voltaram a
+     entrar. A cópia leva só o e-mail, as datas de criação e do último login, como você entrou (Google
+     ou Apple), a loja da assinatura, se houver, e se a conta é uma das nossas (da equipe ou da
+     família), para não contarmos essas como jogadores; não leva o nome, a foto, o apelido nem o
+     registro de acesso. Cada cópia substitui a anterior e se apaga sozinha em <strong>2 dias</strong>,
+     então uma conta apagada sai do relatório em no máximo 2 dias. A lista e a cópia não vão para as
+     análises do jogo, não são cruzadas com elas e não são usadas para mais nada.</p>
   <p id="apple"><strong>Entrar com a Apple, no iPhone.</strong> No iPhone você pode entrar também
      com a sua conta Apple. Aí é a Apple que confirma ao Supabase que é você, e o Supabase guarda,
      junto da conta, o identificador que a Apple dá a você neste jogo e o endereço de e-mail que a
@@ -506,7 +524,7 @@
      entrada (um token de atualização), e só a usa para isso: ao apagar a conta, o servidor pede à
      Apple que revogue a ligação e apaga a credencial assim que a Apple confirma, no máximo em 30
      dias. O resto desta seção vale igual: o registro de acesso, o painel
-     de administração e o que é apagado com a conta.</p>
+     de administração, o relatório interno e o que é apagado com a conta.</p>
   <p><strong>Uma conta, Google e Apple.</strong> No iPhone, uma conta pode ter as duas entradas, o
      Google e a Apple: continua sendo uma conta só, com um apelido, um lugar no ranking e um
      Premium, e qualquer uma das duas entra nela. Se o e-mail da sua conta Apple for o mesmo da sua
@@ -629,11 +647,12 @@
      meses</strong> para os dados de análise e <strong>90 dias</strong> para os relatórios de falha.</p>
 
   <h2 id="feedback">11. Feedback e suporte</h2>
-  <p>O jogo tem uma tela <strong>Enviar feedback</strong> (Configurações ▸ Conta) e um relatório por
-     palavra na tela de resultados. Eles existem para você nos contar um problema, uma palavra errada,
-     uma ideia ou um elogio. <strong>Não há envio automático</strong>: nada sai do aparelho até você
+  <p>O jogo tem uma tela <strong>Enviar feedback</strong> (Configurações ▸ Sobre), um relatório por
+     palavra na tela de resultados e, depois de um anúncio recompensado, o link <strong>Denunciar
+     anúncio</strong>. Eles existem para você nos contar um problema, uma palavra errada, uma ideia, um
+     elogio ou um anúncio impróprio. <strong>Não há envio automático</strong>: nada sai do aparelho até você
      tocar em “Enviar”.</p>
-  <p><strong>O que é enviado</strong>, e nada além disso: a categoria escolhida (um entre quatro
+  <p><strong>O que é enviado</strong>, e nada além disso: a categoria escolhida (um entre cinco
      rótulos fixos), a <strong>sua mensagem</strong> em texto livre, e um <strong>bloco
      técnico</strong> que o aplicativo monta e <strong>mostra na tela antes de você enviar</strong> —
      a versão e o tipo do build, a plataforma e a string de versão do sistema cortada em 40
@@ -641,7 +660,10 @@
      interface, o modo de toque, a tela em que você estava e uma lista de até 20 ações recentes como
      códigos internos do jogo. Erros entram como um rótulo de uma lista fechada, nunca a mensagem do
      erro e nunca a pilha. No relatório por palavra vão também a categoria, a subcategoria, a
-     quantidade de segredos, a fase e o identificador interno da palavra.</p>
+     quantidade de segredos, a fase e o identificador interno da palavra. No relatório de anúncio vão
+     também a unidade do anúncio, a hora em que ele foi mostrado e o identificador que a rede de
+     anúncios deu àquela resposta, para acharmos o anúncio e bloquearmos o anunciante; não é um
+     identificador do aparelho nem de publicidade.</p>
   <p><strong>Importante: o campo de mensagem é texto livre e chega até nós como você o escreveu. Não
      escreva ali o seu nome, e-mail, telefone, endereço nem qualquer outra informação pessoal — sua
      ou de uma criança.</strong> Não precisamos dessa informação para corrigir o jogo, e o aplicativo
@@ -717,7 +739,8 @@
         (<a href="#analises">seção 10</a>).</li>
     <li><strong>Supabase</strong> — faz a autenticação da conta Google (e, no iPhone, da conta Apple) e
         hospeda o banco do ranking (seções <a href="#conta">8</a> e <a href="#ranking">9</a>), como nosso operador.</li>
-    <li><strong>Google Cloud</strong> — hospeda o nosso servidor, como nosso operador.</li>
+    <li><strong>Google Cloud</strong>: hospeda o nosso servidor e o nosso relatório interno, com a cópia
+        da lista de contas (<a href="#relatorio-contas">seção 8</a>), como nosso operador.</li>
     <li><strong>Google Apps Script e Google Sheets</strong> — recebem e guardam os relatórios de
         feedback (<a href="#feedback">seção 11</a>), como nossos operadores.</li>
   </ul>
@@ -737,6 +760,8 @@
         jogadas crua é apagada em <strong>60 dias</strong>. Os registros técnicos do Supabase, em poucos
         dias; o registro de pedidos do Google Cloud, em <strong>30 dias</strong>
         (<a href="#ranking">seção 9</a>).</li>
+    <li><strong>A cópia da lista de contas no relatório interno</strong>: cada cópia substitui a anterior
+        e se apaga sozinha em <strong>2 dias</strong> (<a href="#relatorio-contas">seção 8</a>).</li>
     <li><strong>O vínculo da assinatura</strong> (o código da compra ou, no Windows, o identificador da
         assinatura na Microsoft, com o estado e a data de fim): enquanto a conta existir. <strong>A
         chave de ID da Microsoft Store</strong>: até vencer, em 30 dias se não for renovada, e nunca
@@ -762,7 +787,7 @@
         conta. Não alcança a conta.</li>
     <li><strong>Apagar a conta</strong>: Configurações → Conta → <strong>Apagar minha conta</strong>, que
         apaga na hora a conta (com o e-mail, o nome, o link da foto e o registro de acesso que o login
-        guarda), o apelido, o retrato, as partidas enviadas ao ranking e o vínculo da assinatura (no Windows, com a chave de ID da Microsoft Store). Sem o jogo
+        guarda), o apelido, o retrato, as partidas enviadas ao ranking e o vínculo da assinatura (no Windows, com a chave de ID da Microsoft Store); a cópia da conta no nosso relatório interno sai em no máximo 2 dias (<a href="#relatorio-contas">seção 8</a>). Sem o jogo
         instalado, use a página <a href="delete-account.pt-BR.html">Apagar sua conta</a>, e nós
         atendemos em até <strong>30 dias</strong>. <strong>São duas ações diferentes</strong>: apagar
         a conta não apaga nada do aparelho, e apagar os dados do aparelho não apaga a conta.</li>
@@ -778,7 +803,7 @@
   <p><strong>As bases legais.</strong> Executamos o contrato de uso do jogo para fazer o jogo
      funcionar, entregar o que você comprou e manter a sua conta e o ranking (LGPD art. 7º, V; RGPD
      art. 6(1)(b)). Apoiamo-nos no <strong>legítimo interesse</strong> em corrigir defeitos, medir se
-     o jogo funciona, e defender o ranking contra trapaça (LGPD art. 7º, IX; RGPD art. 6(1)(f)).
+     o jogo funciona e quantas contas ele tem, e defender o ranking contra trapaça (LGPD art. 7º, IX; RGPD art. 6(1)(f)).
      Usamos o seu <strong>consentimento</strong> para o anúncio personalizado, onde ele é exigido
      (LGPD art. 7º, I; RGPD art. 6(1)(a)), e você pode revogá-lo a qualquer momento. Cumprimos
      ainda <strong>obrigações legais</strong>, como as da Lei nº 15.211/2025, o Estatuto Digital da
