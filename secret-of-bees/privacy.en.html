@@ -63,6 +63,20 @@
     Game Jolt and Addicting Games (specs/50-architecture/web-daily.md §6.1, §8); its sentence on what
     reaches Google Analytics follows #233 (2026-10-16, only the site). Publish only on the Owner's word.
 
+    FUNNEL AND THE STUDIO DEVICE (2026-10-24, funil-privacidade, #409): sections 10.1 (id="counts") and
+    10.2 (id="studio") say what POST /funnel counts (analytics-and-telemetry.md §7.5, #387) and what the
+    Studio device switch does (§7.4, #401); sections 2.1, 2.4, 3, 4, 9, 13, 14 and 15 point to them.
+    PUBLISHED 2026-10-24 on the Owner's word, after the filter. VERSION 3 = everything this file already carries as a draft since the
+    publication of 20/10 (melbees-legal d25e178): the ATT moment (#376), the ad report (#377), the
+    accounts list in the report (#384) and this block. The Daily ranking text (sections 2.3 and 9, #400)
+    is not written yet (missions/403) and joins the same publication or a later one: one publication,
+    one version number. ORDER: the sentence of section 9 and the one of 10.1 about Google Cloud's request
+    log are true only with the exclusion filter for POST /funnel applied and checked
+    (analytics-bigquery.md §6, step 3, the Director's): filter first, then the publication, and only then
+    any FunnelConfig key; nothing is sent before that. The iPhone key also waits for the app's privacy
+    manifest (PrivacyInfo.xcprivacy) to carry the Analytics purpose on Product Interaction. On
+    publication, the "Last updated" date becomes the publication's.
+
     DO NOT REMOVE THE id="feedback" ANCHOR: it is the data-deletion URL already saved
     in the Play Console. The id="deletion" anchor is the new one, for account deletion.
 
@@ -144,8 +158,10 @@
         age</strong>: the question in <a href="#children">section 5</a> exists only because of the ad.
         Nothing in <a href="#ads">section 6</a> happens on Windows.</li>
     <li><strong>There is no Firebase.</strong> The Windows version has neither Google Analytics for
-        Firebase nor Firebase Crashlytics: no game event and no crash report is sent
-        (<a href="#analytics">section 10</a> applies to Android only).</li>
+        Firebase nor Firebase Crashlytics: no crash report is sent, and no game event goes to
+        Google. What Windows sends to our server is <strong>simple counts, with no identifier</strong>
+        (<a href="#counts">section 10.1</a>); the rest of <a href="#analytics">section 10</a> applies to
+        Android only.</li>
     <li><strong>Microsoft does the charging</strong>, through the Microsoft Store purchase system, on your
         Microsoft account. The items are those of <a href="#purchases">section 7</a> plus a 1-Petal
         pack. <strong>We never see or receive your payment details.</strong> From Petal purchases,
@@ -189,7 +205,8 @@
     <li><strong>Feedback works as on Android</strong> (<a href="#feedback">section 11</a>); in the
         technical block, the platform shows as Windows.</li>
     <li><strong>On the computer</strong>, your progress and settings stay in your Windows user and are
-        never sent to us. <strong>Settings → Delete my data</strong> deletes all of it, as on
+        never sent to us, except the studio switch (<a href="#studio">section 10.2</a>).
+        <strong>Settings → Delete my data</strong> deletes all of it, as on
         Android.</li>
     <li><strong>The parental controls are Microsoft's</strong>: <strong>Microsoft Family Safety</strong>
         can limit screen time and require approval before a purchase on the Microsoft Store
@@ -237,7 +254,8 @@
         that says who you are or links one visit to another. There is no Firebase Crashlytics in this
         edition.</li>
     <li><strong>Attempts, times, the lessons taken and the settings stay in the browser's
-        storage</strong>, on this device and in this browser, and are never sent to us. Clearing the
+        storage</strong>, on this device and in this browser, and are never sent to us, except the studio
+        switch (<a href="#studio">section 10.2</a>). Clearing the
         site's data in the browser's settings erases everything.</li>
     <li><strong>The hosting is Cloudflare's</strong>, which logs the visits to the pages (such as the IP
         address, the date and time and the browser used), like any hosting service, and counts the visits
@@ -302,15 +320,17 @@
         age question of <a href="#children">section 5</a>, and one thing more: before the first ad, the
         iPhone asks Apple's <strong>App Tracking Transparency</strong> question
         (<a href="#att">section 6</a>).</li>
-    <li><strong>There is no Firebase</strong>: no game event and no crash report is sent
-        (<a href="#analytics">section 10</a> applies to Android only).</li>
+    <li><strong>There is no Firebase</strong>: no crash report is sent, and no game event goes to
+        Google. What the iPhone sends to our server is <strong>simple counts, with no identifier</strong>
+        (<a href="#counts">section 10.1</a>); the rest of <a href="#analytics">section 10</a> applies to
+        Android only.</li>
     <li><strong>Feedback works as on Android</strong> (<a href="#feedback">section 11</a>); in the
         technical block, the platform shows as iOS.</li>
     <li><strong>The team's messages</strong> arrive as on every device (<a href="#parents">section
         12</a>); with the account signed in, a message addressed to it arrives too
         (<a href="#account">section 8</a>).</li>
     <li><strong>On the iPhone</strong>, your progress and settings stay on the device and are never sent
-        to us. <strong>Settings → Delete my data</strong> deletes all of it, as on Android.</li>
+        to us (except the studio switch, <a href="#studio">section 10.2</a>). <strong>Settings → Delete my data</strong> deletes all of it, as on Android.</li>
     <li><strong>The parental controls are Apple's</strong>: the iPhone's <strong>Screen Time</strong> can
         limit screen time, and <strong>Family Sharing</strong>'s Ask to Buy asks a guardian's approval
         before an app is downloaded and before a purchase inside it (<a href="#parents">section
@@ -320,7 +340,8 @@
   <h2>3. The summary, in five lines</h2>
   <ul>
     <li><strong>Playing is offline.</strong> All of your progress stays on the device and is never
-        sent to us.</li>
+        sent to us. On Windows and the iPhone we send only simple counts, with no identifier
+        (<a href="#counts">section 10.1</a>).</li>
     <li><strong>We do not ask your age in order to let you play</strong>, and there is no date-of-birth
         screen. We ask your age <strong>once, before the first ad</strong>, and we keep only the
         band — never the number (<a href="#children">section 5</a>). On Windows there is no
@@ -353,6 +374,11 @@
         (<a href="#parents">section 12</a>). The game never tells us what was read.</li>
   </ul>
   <p>Deleting the game, or using <strong>Settings → Delete my data</strong>, removes all of it.</p>
+  <p>One exception: the hidden <strong>Studio device</strong> switch, off by default
+     (<a href="#studio">section 10.2</a>), is a device setting whose state, when on, goes as a test mark "1"
+     along with the counts and the events of <a href="#analytics">section 10</a>. (The feedback you choose
+     to send carries the interface language and the touch mode, as <a href="#feedback">section 11</a>
+     describes.)</p>
   <p>If you signed in with Google or with Apple, the device also keeps your account session, as
      <a href="#account">section 8</a> describes.</p>
 
@@ -591,12 +617,14 @@
      requests. Google Cloud, which hosts the server as our processor, records each request made to it
      (the IP address, the kind of device, the time and the address called) in a technical log that it
      deletes by itself after <strong>30 days</strong>; we look at it only to investigate a failure or an
-     attack. The sign-in keeps the IP separately, in the account's access record
+     attack. One exception: the simple count from Windows and the iPhone (<a href="#counts">section 10.1</a>)
+     is not in that log. The sign-in keeps the IP separately, in the account's access record
      (<a href="#account">section 8</a>).</p>
 
   <h2 id="analytics">10. Analytics and crash reports</h2>
-  <p><strong>This section applies to Android only</strong>: the Windows version does not use Firebase
-     (<a href="#windows">section 2.1</a>).</p>
+  <p><strong>This section applies to Android only</strong>: the Windows and iPhone versions do not use
+     Firebase (<a href="#windows">section 2.1</a>, <a href="#iphone">section 2.4</a>); what they send is in
+     <a href="#counts">section 10.1</a>, and the studio switch is in <a href="#studio">section 10.2</a>.</p>
   <p>We use <strong>Google Analytics for Firebase</strong> and <strong>Firebase Crashlytics</strong> to
      know whether the game works and where it breaks. They are configured as
      <strong>internal operations</strong>, and that configuration is the reason we can use them with
@@ -643,6 +671,54 @@
   <p><strong>What this does not erase.</strong> What had already been sent stays with Google, tied to
      identifiers that no longer exist on your device, and is erased by the retention period:
      <strong>2 months</strong> for analytics data and <strong>90 days</strong> for crash reports.</p>
+
+  <h3 id="counts">10.1 Windows and iPhone: simple counts, with no identifier</h3>
+  <p>The Windows and iPhone versions do not use Firebase. They only count, on our server, a few steps at
+     the start of the game, as numbers, so that we know whether the game is being opened and played in
+     those stores. They are counts of events, not of people.</p>
+  <ul>
+    <li><strong>What is counted</strong>, in six steps: the game was opened; the game was opened for the
+        first time after being installed; a match started; the installation's first match started; the
+        first phase of a match was won; a match was won.</li>
+    <li><strong>What is sent</strong>, and nothing else: a short notice with the platform (Windows or
+        iPhone) and the step and, only if the studio switch is on (<a href="#studio">section 10.2</a>),
+        the test mark. No name, e-mail, account, installation or device identifier, text, age band or
+        the device's clock is sent. If the sending fails, or there is no internet, it is not retried: that
+        count is lost.</li>
+    <li><strong>What the server keeps</strong>: it adds 1 to the day's total (the server's own day, in UTC)
+        for that platform and that step, and keeps only that total. It does not keep a time, an IP
+        address, an identifier or the content of the notice, and the application writes no log line
+        because of it. As with any request over the internet, the IP address reaches the server; it is
+        used only in memory, for an instant, to limit the number of requests, and is not stored
+        (<a href="#leaderboard">section 9</a>). That request is not in the Google Cloud technical log
+        described in section 9, because we exclude that route from it.</li>
+    <li><strong>Nothing links the count to you</strong>: there is no way to tell whose a count was or to
+        join two of them. It is the same for everyone, of any age, and does not depend on the age answer.
+        There is no option to turn it off.</li>
+    <li><strong>What these numbers are worth</strong>: the address that receives the counts asks for no
+        password, so anyone who knows it could send false counts. We use the numbers as an estimate,
+        never as proof.</li>
+  </ul>
+  <p>Android does not send this count to our server: it stays as described above, with Firebase.</p>
+
+  <h3 id="studio">10.2 The studio device</h3>
+  <p>In Settings → About there is a hidden switch, <strong>Studio device</strong>, so that the devices of
+     our team and our family do not count as players in our numbers. It is off by default.</p>
+  <ul>
+    <li><strong>What it does, when on</strong>: it adds a test mark, the number 1, to what the device
+        already sends: to Firebase's game events (Android), to the server counts (Windows and iPhone,
+        <a href="#counts">section 10.1</a>) and to the events of the Daily Challenge in the browser
+        (Google Analytics). The automatic events of those services do not carry the mark. Nothing else
+        changes in what is sent.</li>
+    <li><strong>It is not an identifier</strong>: the value is the same on every device that turns it on,
+        no list of devices exists anywhere, and it links neither a device to a person nor one count to
+        another. Anyone who finds the switch can turn it on; the only effect is that what that device
+        sends counts as a test.</li>
+    <li><strong>Where it stays</strong>: only on this device (in the browser, only in this browser and on
+        this site). What was sent before it was turned on stays counted as a player's. <strong>Delete my
+        data</strong> (in the browser, clearing the site's data) turns the switch off; what was already
+        counted stays (<a href="#rights">section 15</a>).</li>
+  </ul>
 
   <h2 id="feedback">11. Feedback and support</h2>
   <p>The game has a <strong>Send feedback</strong> screen (Settings ▸ About), a per-word report on
@@ -732,7 +808,8 @@
     <li><strong>Supabase</strong> — authenticates the Google account (and, on the iPhone, the Apple one)
         and hosts the leaderboard database (sections <a href="#account">8</a> and <a href="#leaderboard">9</a>), as our processor.</li>
     <li><strong>Google Cloud</strong>: hosts our server and our internal report, with the copy of the
-        accounts list (<a href="#accounts-report">section 8</a>), as our processor.</li>
+        accounts list (<a href="#accounts-report">section 8</a>), and receives the simple counts from
+        Windows and the iPhone (<a href="#counts">section 10.1</a>), as our processor.</li>
     <li><strong>Google Apps Script and Google Sheets</strong> — receive and store the feedback reports
         (<a href="#feedback">section 11</a>), as our processors.</li>
   </ul>
@@ -755,6 +832,8 @@
         log, after <strong>30 days</strong> (<a href="#leaderboard">section 9</a>).</li>
     <li><strong>The copy of the accounts list in the internal report</strong>: each copy replaces the one
         before and deletes itself after <strong>2 days</strong> (<a href="#accounts-report">section 8</a>).</li>
+    <li><strong>The Windows and iPhone counts</strong>: totals per day, with no identifier, kept for as long
+        as the game exists, because they link to no one (<a href="#counts">section 10.1</a>).</li>
     <li><strong>The subscription link</strong> (the purchase code or, on Windows, the subscription's
         identifier at Microsoft, with the state and the end date): for as long as the account exists.
         <strong>The Microsoft Store ID key</strong>: until it expires, in 30 days unless renewed, and
@@ -776,7 +855,9 @@
   <ul>
     <li><strong>Delete the device data</strong>: Settings → <strong>Delete my data</strong>. It erases
         progress, settings and the age band you answered, and removes the account session from this
-        device. It does not reach the account.</li>
+        device. It does not reach the account, nor the simple counts already sent
+        (<a href="#counts">section 10.1</a>): they are totals that link to no one, so there is nothing to
+        locate for a person.</li>
     <li><strong>Delete the account</strong>: Settings → Account → <strong>Delete my account</strong>,
         which immediately deletes the account (with the e-mail, the name, the picture link and the
         access record the sign-in keeps), the nickname, the portrait, the runs submitted to the
