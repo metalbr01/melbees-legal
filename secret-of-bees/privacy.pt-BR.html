@@ -11,7 +11,7 @@
   <p class="lang"><a href="privacy.en.html">English</a> · <strong>Português</strong></p>
 
   <h1>Política de Privacidade — Melbees: The Secret of Bees</h1>
-  <p class="muted">Data de vigência: 27/07/2026 · Última atualização: 24/10/2026</p>
+  <p class="muted">Data de vigência: 27/07/2026 · Última atualização: 25/10/2026</p>
 
   <!--
     VERSÃO 2 — a política do jogo MONETIZADO. Escrita pela missão P1 do
@@ -124,6 +124,17 @@
     (PrivacyInfo.xcprivacy) com a finalidade Análise em Interação com o produto. Ao publicar, a data de
     "Última atualização" passa a ser a da publicação.
 
+    CONTA NA WEB (25/10/2026, ranking-web-conta, #426): as seções 2.2 e 2.3 dizem que no navegador a
+    conta é opcional e serve só para o ranking do Desafio do dia (o login pelo redirecionamento do
+    Supabase, a sessão no armazenamento do site, a partida de um Desafio vencido ao servidor), que o
+    pódio do dia é lido do Supabase sem nada do jogador, e que nos portais não há login; a seção 8 diz
+    onde o navegador oferece o login (specs/50-architecture/web-daily.md §4.1, §8;
+    account-and-deletion.md §3.4). Publicar só com a palavra do Owner, ANTES do deploy web que traz o
+    login (provisioning-runbook passo 30.4), numa versão nova; a data de "Última atualização" vira a da
+    publicação. VERSÃO 4 = este bloco, PUBLICADO em 25/10/2026 na palavra do Owner, antes do deploy web
+    que traz o login. O texto do Ranking Diário sem conta (seções 2.3 e 9, #400) continua fora: entra numa
+    versão seguinte, quando aquele caminho for ao ar.
+
     NÃO REMOVA A ÂNCORA id="feedback": ela é a URL de exclusão de dados já salva no
     Play Console. A âncora id="exclusao" é a nova, para a exclusão de conta.
   -->
@@ -218,12 +229,16 @@
         Cloudflare, e a Cloudflare manda para ele um código de acesso. Quem recebe esse e-mail e envia o
         código é a Cloudflare, e vale a política de privacidade dela. A lista dos e-mails convidados fica
         só no Cloudflare Access: <strong>nunca no jogo nem nos nossos servidores</strong>.</li>
-    <li><strong>Não há conta, compra nem anúncio.</strong> O Premium já vem liberado nesta edição, sem
-        pagamento. Por não haver anúncio, o jogo <strong>não pergunta a sua idade</strong>
-        (<a href="#criancas">seção 5</a>), e nada das seções <a href="#anuncios">6</a>,
-        <a href="#compras">7</a>, <a href="#conta">8</a> e <a href="#ranking">9</a> acontece nela.</li>
-    <li><strong>Não há Firebase</strong> (<a href="#analises">seção 10</a>), e o jogo <strong>não faz
-        nenhuma requisição aos nossos servidores</strong>.</li>
+    <li><strong>Não há compra nem anúncio, e a conta serve só para o ranking do Desafio do dia.</strong>
+        O Premium já vem liberado nesta edição, sem pagamento, e não vale para ranking nenhum. Por não
+        haver anúncio, o jogo <strong>não pergunta a sua idade</strong> (<a href="#criancas">seção 5</a>),
+        e nada das seções <a href="#anuncios">6</a> e <a href="#compras">7</a> acontece nela. Entrar com
+        a conta é opcional e funciona como no Desafio no navegador (<a href="#desafio-navegador">seção
+        2.3</a>): só então as seções <a href="#conta">8</a> e <a href="#ranking">9</a> valem, e só para o
+        ranking do Desafio do dia.</li>
+    <li><strong>Não há Firebase</strong> (<a href="#analises">seção 10</a>), e o jogo <strong>não manda
+        nada seu aos nossos servidores</strong>, salvo se você entrar com a conta para o ranking do
+        Desafio do dia (<a href="#desafio-navegador">seção 2.3</a>).</li>
     <li><strong>O progresso e as configurações ficam no armazenamento do navegador</strong>, neste
         aparelho e neste navegador, e nunca são enviados para nós. Apagar os dados do site nas
         configurações do navegador apaga tudo.</li>
@@ -239,18 +254,34 @@
      instalar nada e sem convite. É só o Desafio do dia; o resto do jogo está nos aplicativos. O que muda
      nele:</p>
   <ul>
-    <li><strong>Não há conta, compra nem anúncio</strong>, e o Premium não vem liberado. Por não haver
+    <li><strong>Não há compra nem anúncio</strong>, e o Premium não vem liberado. Por não haver
         anúncio, o jogo <strong>não pergunta a sua idade</strong> (<a href="#criancas">seção 5</a>), e
-        nada das seções <a href="#anuncios">6</a>, <a href="#compras">7</a>, <a href="#conta">8</a> e
-        <a href="#ranking">9</a> acontece nele: o seu tempo não vai para nenhum ranking.</li>
-    <li><strong>O jogo não faz nenhuma requisição aos nossos servidores.</strong> Ele conta
+        nada das seções <a href="#anuncios">6</a> e <a href="#compras">7</a> acontece nele. <strong>A conta
+        é opcional e serve só para pôr os seus tempos no ranking do dia</strong> (abaixo); sem ela, nada das
+        seções <a href="#conta">8</a> e <a href="#ranking">9</a> acontece, e o seu tempo não vai para
+        nenhum ranking.</li>
+    <li><strong>O ranking do dia é lido por todos, sem conta.</strong> Para mostrar o pódio, o jogo pede
+        ao <strong>Supabase</strong> (<a href="#compartilhamento">seção 13</a>) as melhores marcas do dia,
+        sem mandar nada seu: nenhum identificador, nenhuma conta. O Supabase recebe o endereço IP do
+        aparelho, como qualquer servidor que responde a um pedido.</li>
+    <li><strong>Se você entrar com a conta</strong> (só nos endereços próprios do Desafio, pelo botão
+        <strong>Entrar com o Google</strong> sob o pódio), a página vai ao Supabase e à página de login do
+        próprio Google, e volta conectada à mesma conta dos aplicativos: o que o Supabase guarda é o da
+        <a href="#conta">seção 8</a>. O navegador guarda a sessão no armazenamento do site até você tocar
+        em <strong>Sair da conta</strong> ou apagar os dados do site. Conectado, um Desafio que você
+        vence até a décima fase vai para o ranking do dia como diz a <a href="#ranking">seção 9</a> (a sua
+        partida e o apelido da conta); o e-mail e o nome da conta nunca aparecem no ranking. Nas páginas
+        dos portais (itch.io, Game Jolt, Addicting Games) não há login: um botão abre o endereço próprio
+        do Desafio numa aba nova.</li>
+    <li><strong>Sem a conta, o jogo não manda nada seu aos nossos servidores.</strong> Ele conta
         acontecimentos de jogo (como abrir o Desafio, terminar uma fase, tocar no botão da loja) no
         <strong>Google Analytics</strong>, com todos os consentimentos negados: <strong>sem cookies e sem
         identificador</strong>, nada que diga quem você é ou ligue uma visita a outra. Não há Firebase
         Crashlytics nesta edição.</li>
     <li><strong>As tentativas, os tempos, as aulas feitas e as configurações ficam no armazenamento do
-        navegador</strong>, neste aparelho e neste navegador, e nunca são enviados para nós, salvo a chave do
-        estúdio (<a href="#estudio">seção 10.2</a>). Apagar os
+        navegador</strong>, neste aparelho e neste navegador, e nunca são enviados para nós, salvo a partida
+        de um Desafio vencido quando você está conectado (acima) e a chave do estúdio
+        (<a href="#estudio">seção 10.2</a>). Apagar os
         dados do site nas configurações do navegador apaga tudo.</li>
     <li><strong>A hospedagem é da Cloudflare</strong>, que registra os acessos às páginas (como o
         endereço IP, a data e a hora e o navegador usado), como qualquer serviço de hospedagem, e conta
@@ -501,7 +532,8 @@
      inclusive na outra plataforma.
      Quem é assinante e ainda não entrou vê essa oferta também como uma linha discreta antes de uma
      partida, avisando que ela não vai para o ranking online sem a conta, e como um botão na tela que
-     comemora a assinatura. Nenhuma das duas impede de jogar.</p>
+     comemora a assinatura. Nenhuma das duas impede de jogar. No navegador, o login aparece só para o
+     ranking do Desafio do dia (<a href="#desafio-navegador">seção 2.3</a>).</p>
   <p>No Windows a conta é a mesma, e entrar abre o navegador; a <a href="#windows">seção 2.1</a>
      descreve esse login e onde o Windows guarda a sessão.</p>
   <p>A conta é <strong>o Google</strong> e, só no iPhone, também <strong>Entrar com a

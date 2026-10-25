@@ -11,7 +11,7 @@
   <p class="lang"><strong>English</strong> · <a href="privacy.pt-BR.html">Português</a></p>
 
   <h1>Privacy Policy — Melbees: The Secret of Bees</h1>
-  <p class="muted">Effective date: 2026-07-27 · Last updated: 2026-10-24</p>
+  <p class="muted">Effective date: 2026-07-27 · Last updated: 2026-10-25</p>
 
   <!--
     VERSION 2 — the policy for the MONETIZED game. Written by mission P1 of
@@ -76,6 +76,17 @@
     any FunnelConfig key; nothing is sent before that. The iPhone key also waits for the app's privacy
     manifest (PrivacyInfo.xcprivacy) to carry the Analytics purpose on Product Interaction. On
     publication, the "Last updated" date becomes the publication's.
+
+    WEB ACCOUNT (2026-10-25, ranking-web-conta, #426): sections 2.2 and 2.3 say that in the browser the
+    account is optional and serves only the day's Daily Challenge ranking (the sign-in by Supabase's
+    redirect, the session in the site's storage, a won Daily's run to the server), that the day's podium
+    is read from Supabase with nothing of the player, and that the portals have no sign-in; section 8
+    says where the browser offers the sign-in (specs/50-architecture/web-daily.md §4.1, §8;
+    account-and-deletion.md §3.4). Publish only on the Owner's word, BEFORE the web deploy that brings
+    the sign-in (provisioning-runbook step 30.4), as a new version; the "Last updated" date becomes the
+    publication's. VERSION 4 = this block, PUBLISHED 2026-10-25 on the Owner's word, before the web deploy
+    that brings the sign-in. The Daily ranking text with no account (sections 2.3 and 9, #400) stays out:
+    it joins a later version, when that path goes live.
 
     DO NOT REMOVE THE id="feedback" ANCHOR: it is the data-deletion URL already saved
     in the Play Console. The id="deletion" anchor is the new one, for account deletion.
@@ -221,13 +232,17 @@
         and Cloudflare sends an access code to it. Cloudflare is the one that receives that e-mail and
         sends the code, and its own privacy policy applies. The list of invited e-mails lives only in
         Cloudflare Access: <strong>never in the game or on our servers</strong>.</li>
-    <li><strong>There is no account, no purchase and no ad.</strong> Premium comes unlocked in this
-        edition, with no payment. Because there is no ad, the game <strong>does not ask your
-        age</strong> (<a href="#children">section 5</a>), and nothing in sections
-        <a href="#ads">6</a>, <a href="#purchases">7</a>, <a href="#account">8</a> and
-        <a href="#leaderboard">9</a> happens in it.</li>
+    <li><strong>There is no purchase and no ad, and the account serves only the Daily Challenge's
+        ranking.</strong> Premium comes unlocked in this edition, with no payment, and counts for no
+        ranking. Because there is no ad, the game <strong>does not ask your age</strong>
+        (<a href="#children">section 5</a>), and nothing in sections <a href="#ads">6</a> and
+        <a href="#purchases">7</a> happens in it. Signing in is optional and works as in the Daily
+        Challenge in the browser (<a href="#browser-daily">section 2.3</a>): only then do sections
+        <a href="#account">8</a> and <a href="#leaderboard">9</a> apply, and only for the day's Daily
+        Challenge ranking.</li>
     <li><strong>There is no Firebase</strong> (<a href="#analytics">section 10</a>), and the game
-        <strong>makes no request to our servers</strong>.</li>
+        <strong>sends nothing about you to our servers</strong>, unless you sign in for the day's Daily
+        Challenge ranking (<a href="#browser-daily">section 2.3</a>).</li>
     <li><strong>Progress and settings stay in the browser's storage</strong>, on this device and in
         this browser, and are never sent to us. Clearing the site's data in the browser's settings
         erases everything.</li>
@@ -243,19 +258,34 @@
      nothing to install and no invitation. It is only the day's Challenge; the rest of the game is in the
      apps. What changes in it:</p>
   <ul>
-    <li><strong>There is no account, no purchase and no ad</strong>, and Premium is not unlocked. Because
-        there is no ad, the game <strong>does not ask your age</strong> (<a href="#children">section
-        5</a>), and nothing in sections <a href="#ads">6</a>, <a href="#purchases">7</a>,
-        <a href="#account">8</a> and <a href="#leaderboard">9</a> happens in it: your time goes to no
-        ranking.</li>
-    <li><strong>The game makes no request to our servers.</strong> It counts game events (such as
+    <li><strong>There is no purchase and no ad</strong>, and Premium is not unlocked. Because there is no
+        ad, the game <strong>does not ask your age</strong> (<a href="#children">section 5</a>), and
+        nothing in sections <a href="#ads">6</a> and <a href="#purchases">7</a> happens in it. <strong>The
+        account is optional and serves only to put your times on the day's ranking</strong> (below);
+        without it, nothing in sections <a href="#account">8</a> and <a href="#leaderboard">9</a> happens,
+        and your time goes to no ranking.</li>
+    <li><strong>Everyone reads the day's ranking, with no account.</strong> To draw the podium, the game
+        asks <strong>Supabase</strong> (<a href="#sharing">section 13</a>) for the day's best marks,
+        sending nothing about you: no identifier, no account. Supabase receives the device's IP address,
+        as any server answering a request does.</li>
+    <li><strong>If you sign in</strong> (only on the Daily's own addresses, with the <strong>Sign in with
+        Google</strong> button under the podium), the page goes to Supabase and to Google's own sign-in
+        page, and comes back signed in to the same account as the apps: what Supabase keeps is what
+        <a href="#account">section 8</a> says. The browser keeps the session in the site's storage until
+        you tap <strong>Sign out</strong> or clear the site's data. Signed in, a Daily you win to its
+        tenth phase goes to the day's ranking as <a href="#leaderboard">section 9</a> describes (your run
+        and the account's nickname); the account's e-mail and name never appear on the ranking. On the
+        portal pages (itch.io, Game Jolt, Addicting Games) there is no sign-in: a button opens the Daily's
+        own address in a new tab.</li>
+    <li><strong>Without an account, the game sends nothing about you to our servers.</strong> It counts game events (such as
         opening the Daily, finishing a phase, tapping the store button) in <strong>Google
         Analytics</strong>, with every consent denied: <strong>no cookie and no identifier</strong>, nothing
         that says who you are or links one visit to another. There is no Firebase Crashlytics in this
         edition.</li>
     <li><strong>Attempts, times, the lessons taken and the settings stay in the browser's
-        storage</strong>, on this device and in this browser, and are never sent to us, except the studio
-        switch (<a href="#studio">section 10.2</a>). Clearing the
+        storage</strong>, on this device and in this browser, and are never sent to us, except the run of a
+        won Daily when you are signed in (above) and the studio switch (<a href="#studio">section
+        10.2</a>). Clearing the
         site's data in the browser's settings erases everything.</li>
     <li><strong>The hosting is Cloudflare's</strong>, which logs the visits to the pages (such as the IP
         address, the date and time and the browser used), like any hosting service, and counts the visits
@@ -503,7 +533,9 @@
      an action of yours: the <strong>online leaderboard</strong> and <strong>restoring a
      subscription</strong> on another device, the other platform included. A subscriber who has not signed in also sees that offer as
      a quiet line before a game, saying it will not reach the online leaderboard without the account,
-     and as a button on the screen that celebrates the subscription. Neither stops you from playing.</p>
+     and as a button on the screen that celebrates the subscription. Neither stops you from playing. In
+     the browser, the sign-in is offered only for the day's Daily Challenge ranking
+     (<a href="#browser-daily">section 2.3</a>).</p>
   <p>On Windows the account is the same, and signing in opens the browser;
      <a href="#windows">section 2.1</a> describes that sign-in and where Windows keeps the session.</p>
   <p>The account is <strong>Google</strong> and, on the iPhone only, also <strong>Sign in with
