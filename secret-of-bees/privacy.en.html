@@ -11,7 +11,7 @@
   <p class="lang"><strong>English</strong> · <a href="privacy.pt-BR.html">Português</a></p>
 
   <h1>Privacy Policy — Melbees: The Secret of Bees</h1>
-  <p class="muted">Effective date: 2026-07-27 · Last updated: 2026-10-25</p>
+  <p class="muted">Effective date: 2026-07-27 · Last updated: 2026-10-29</p>
 
   <!--
     VERSION 2 — the policy for the MONETIZED game. Written by mission P1 of
@@ -87,6 +87,11 @@
     publication's. VERSION 4 = this block, PUBLISHED 2026-10-25 on the Owner's word, before the web deploy
     that brings the sign-in. The Daily ranking text with no account (sections 2.3 and 9, #400) stays out:
     it joins a later version, when that path goes live.
+
+    VERSION 5 = section 10.3 (id="apple-ads", #501) and the pointers of sections 2.4, 3 and 10.1 to it,
+    PUBLISHED 2026-10-29 on the Owner's word, before the iPhone update that brings the Apple Ads
+    attribution. The Daily's ad in the browser (section 2.3, #488) stays out: it joins a later version,
+    before the folder that turns the ad on.
 
     DO NOT REMOVE THE id="feedback" ANCHOR: it is the data-deletion URL already saved
     in the Play Console. The id="deletion" anchor is the new one, for account deletion.
@@ -352,8 +357,9 @@
         (<a href="#att">section 6</a>).</li>
     <li><strong>There is no Firebase</strong>: no crash report is sent, and no game event goes to
         Google. What the iPhone sends to our server is <strong>simple counts, with no identifier</strong>
-        (<a href="#counts">section 10.1</a>); the rest of <a href="#analytics">section 10</a> applies to
-        Android only.</li>
+        (<a href="#counts">section 10.1</a>) and, if the install came from an Apple Ads ad, the numbers of
+        that campaign (<a href="#apple-ads">section 10.3</a>); the rest of
+        <a href="#analytics">section 10</a> applies to Android only.</li>
     <li><strong>Feedback works as on Android</strong> (<a href="#feedback">section 11</a>); in the
         technical block, the platform shows as iOS.</li>
     <li><strong>The team's messages</strong> arrive as on every device (<a href="#parents">section
@@ -371,7 +377,8 @@
   <ul>
     <li><strong>Playing is offline.</strong> All of your progress stays on the device and is never
         sent to us. On Windows and the iPhone we send only simple counts, with no identifier
-        (<a href="#counts">section 10.1</a>).</li>
+        (<a href="#counts">section 10.1</a>; on the iPhone, if you came from an Apple Ads ad, with the
+        numbers of that campaign, <a href="#apple-ads">section 10.3</a>).</li>
     <li><strong>We do not ask your age in order to let you play</strong>, and there is no date-of-birth
         screen. We ask your age <strong>once, before the first ad</strong>, and we keep only the
         band — never the number (<a href="#children">section 5</a>). On Windows there is no
@@ -711,10 +718,13 @@
   <ul>
     <li><strong>What is counted</strong>, in six steps: the game was opened; the game was opened for the
         first time after being installed; a match started; the installation's first match started; the
-        first phase of a match was won; a match was won.</li>
+        first phase of a match was won; a match was won. <strong>On the iPhone, four more</strong>
+        (<a href="#apple-ads">section 10.3</a>): a Daily Challenge started; a Daily Challenge won; a Premium
+        free trial seen starting; a Petal purchase.</li>
     <li><strong>What is sent</strong>, and nothing else: a short notice with the platform (Windows or
         iPhone) and the step and, only if the studio switch is on (<a href="#studio">section 10.2</a>),
-        the test mark. No name, e-mail, account, installation or device identifier, text, age band or
+        the test mark (and, on those four iPhone steps, the numbers of
+        <a href="#apple-ads">section 10.3</a>, when there are any). No name, e-mail, account, installation or device identifier, text, age band or
         the device's clock is sent. If the sending fails, or there is no internet, it is not retried: that
         count is lost.</li>
     <li><strong>What the server keeps</strong>: it adds 1 to the day's total (the server's own day, in UTC)
@@ -750,6 +760,34 @@
         this site). What was sent before it was turned on stays counted as a player's. <strong>Delete my
         data</strong> (in the browser, clearing the site's data) turns the switch off; what was already
         counted stays (<a href="#rights">section 15</a>).</li>
+  </ul>
+
+  <h3 id="apple-ads">10.3 The iPhone: which Apple Ads campaign brought the install</h3>
+  <p>If you installed the game from an <strong>Apple Ads</strong> ad (the App Store's search ads), the
+     iPhone version asks Apple which campaign it was, so that we know which of our ads are worth what they
+     cost. This uses <strong>AdServices</strong>, Apple's own feature for it: it
+     <strong>does not ask the tracking question</strong> (App Tracking Transparency), does not read the
+     advertising identifier and does not depend on your answer to it. None of this shows in the game.</p>
+  <ul>
+    <li><strong>What happens</strong>: shortly after the game opens, in the background and without making you
+        wait, the game asks Apple for a one-time code (the token) and sends it to Apple. If there was an ad,
+        Apple answers with a few numbers about it: the campaign's, the ad group's and the keyword's.
+        <strong>The token goes only to Apple</strong>: we do not send it to our server or keep it. If Apple
+        did not answer, the game tries again at the next openings, at most three times and up to seven days
+        after the first.</li>
+    <li><strong>What the game keeps, on the device only</strong>: those numbers (or the note that there was
+        no ad), how many times it tried and the date of the first try. <strong>Settings → Delete my
+        data</strong> erases them; at the next opening the game asks Apple again, and Apple answers the
+        same, because the install's record is Apple's.</li>
+    <li><strong>What it adds to the counts</strong>: four of the steps of <a href="#counts">section 10.1</a>
+        (a Daily Challenge started, a Daily Challenge won, a Premium free trial seen starting and a Petal
+        purchase) carry those three numbers, when there are any. The server adds 1 to the day's total for
+        that step and those numbers, and keeps only that: no time, IP address, identifier or content of the
+        notice. They are counts of events, not of people: nothing links the count to you or one count to
+        another, and with no ad it is added to the same step with no numbers.</li>
+    <li><strong>What the numbers say</strong>: only which of our campaigns an install came from, the same for
+        everyone who came from that ad. Apple documents that this record does not identify you or your
+        device. It is the same for everyone, of any age, and there is no option to turn it off.</li>
   </ul>
 
   <h2 id="feedback">11. Feedback and support</h2>

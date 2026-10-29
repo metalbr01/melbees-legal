@@ -11,7 +11,7 @@
   <p class="lang"><a href="privacy.en.html">English</a> · <strong>Português</strong></p>
 
   <h1>Política de Privacidade — Melbees: The Secret of Bees</h1>
-  <p class="muted">Data de vigência: 27/07/2026 · Última atualização: 25/10/2026</p>
+  <p class="muted">Data de vigência: 27/07/2026 · Última atualização: 29/10/2026</p>
 
   <!--
     VERSÃO 2 — a política do jogo MONETIZADO. Escrita pela missão P1 do
@@ -134,6 +134,11 @@
     publicação. VERSÃO 4 = este bloco, PUBLICADO em 25/10/2026 na palavra do Owner, antes do deploy web
     que traz o login. O texto do Ranking Diário sem conta (seções 2.3 e 9, #400) continua fora: entra numa
     versão seguinte, quando aquele caminho for ao ar.
+
+    VERSÃO 5 = a seção 10.3 (id="apple-ads", #501) e os apontamentos das seções 2.4, 3 e 10.1 para ela,
+    PUBLICADO em 29/10/2026 na palavra do Owner, antes da atualização do iPhone que traz a atribuição do
+    Apple Ads. O anúncio do Desafio no navegador (seção 2.3, #488) continua fora: entra numa versão
+    seguinte, antes da pasta que liga o anúncio.
 
     NÃO REMOVA A ÂNCORA id="feedback": ela é a URL de exclusão de dados já salva no
     Play Console. A âncora id="exclusao" é a nova, para a exclusão de conta.
@@ -347,8 +352,9 @@
         Apps</strong> (<a href="#att">seção 6</a>).</li>
     <li><strong>Não há Firebase</strong>: nenhum relatório de falha é enviado, e nenhum acontecimento
         de jogo vai para o Google. O que o iPhone envia ao nosso servidor são <strong>contagens simples,
-        sem identificador</strong> (a <a href="#contagens">seção 10.1</a>); o resto da
-        <a href="#analises">seção 10</a> vale só para o Android.</li>
+        sem identificador</strong> (a <a href="#contagens">seção 10.1</a>) e, se a instalação veio de um
+        anúncio do Apple Ads, os números da campanha dele (a <a href="#apple-ads">seção 10.3</a>); o resto
+        da <a href="#analises">seção 10</a> vale só para o Android.</li>
     <li><strong>O feedback funciona como no Android</strong> (<a href="#feedback">seção 11</a>); no bloco
         técnico, a plataforma aparece como iOS.</li>
     <li><strong>Os recados do time</strong> chegam como em todo aparelho (<a href="#pais">seção 12</a>);
@@ -365,7 +371,8 @@
   <ul>
     <li><strong>Jogar é offline.</strong> Todo o seu progresso fica no aparelho e nunca é enviado
         para nós. No Windows e no iPhone enviamos só contagens simples, sem identificador
-        (<a href="#contagens">seção 10.1</a>).</li>
+        (<a href="#contagens">seção 10.1</a>; no iPhone, se você veio de um anúncio do Apple Ads, com os
+        números da campanha dele, <a href="#apple-ads">seção 10.3</a>).</li>
     <li><strong>Nós não pedimos a sua idade para deixar você jogar</strong>, e não há tela de data de
         nascimento. Perguntamos a idade <strong>uma vez, antes do primeiro anúncio</strong>, e só
         guardamos a faixa — nunca o número (<a href="#criancas">seção 5</a>). No Windows não há
@@ -713,10 +720,13 @@
   <ul>
     <li><strong>O que é contado</strong>, em seis passos: o jogo foi aberto; o jogo foi aberto pela primeira
         vez depois de instalado; uma partida começou; a primeira partida da instalação começou; a primeira
-        fase de uma partida foi vencida; uma partida foi vencida.</li>
+        fase de uma partida foi vencida; uma partida foi vencida. <strong>No iPhone, mais quatro</strong>
+        (<a href="#apple-ads">seção 10.3</a>): um Desafio do dia começou; um Desafio do dia foi vencido; um
+        teste grátis do Premium foi visto começando; uma compra de pétalas foi feita.</li>
     <li><strong>O que é enviado</strong>, e nada além disso: um aviso curto com a plataforma (Windows ou
         iPhone) e o passo e, só se a chave do estúdio estiver ligada (<a href="#estudio">seção 10.2</a>),
-        o sinal de teste. Não vão nome, e-mail, conta, identificador de instalação ou de aparelho, texto,
+        o sinal de teste (e, nesses quatro passos do iPhone, os números da <a href="#apple-ads">seção
+        10.3</a>, quando há). Não vão nome, e-mail, conta, identificador de instalação ou de aparelho, texto,
         faixa de idade nem a hora do aparelho. Se o envio falha, ou se não há internet, ele não é refeito:
         aquela contagem se perde.</li>
     <li><strong>O que o servidor guarda</strong>: soma 1 ao total do dia (o dia do próprio servidor, em UTC)
@@ -753,6 +763,35 @@
         foi enviado antes de ligar continua contado como de jogador. <strong>Apagar meus dados</strong>
         (no navegador, apagar os dados do site) desliga a chave; o que já foi contado fica
         (<a href="#direitos">seção 15</a>).</li>
+  </ul>
+
+  <h3 id="apple-ads">10.3 iPhone: de qual anúncio do Apple Ads veio a instalação</h3>
+  <p>Se você instalou o jogo a partir de um anúncio do <strong>Apple Ads</strong> (os anúncios de busca da
+     App Store), a versão para iPhone pergunta à Apple de qual campanha foi, para sabermos quais dos nossos
+     anúncios valem o que custam. Isso usa o <strong>AdServices</strong>, o recurso da própria Apple para
+     isso: ele <strong>não faz a pergunta de rastreamento</strong> (a Transparência de Rastreamento de Apps),
+     não lê o identificador de publicidade e não depende da resposta a ela. Nada disso aparece no jogo.</p>
+  <ul>
+    <li><strong>O que acontece</strong>: pouco depois de o jogo abrir, em segundo plano e sem fazer você
+        esperar, o jogo pede à Apple um código de uso único (o token) e o envia à Apple. Se houve um anúncio, a
+        Apple responde com alguns números dele: o da campanha, o do grupo de anúncios e o da palavra-chave.
+        <strong>O token vai só à Apple</strong>: não o enviamos ao nosso servidor nem o guardamos. Se a Apple
+        não respondeu, o jogo tenta de novo nas aberturas seguintes, no máximo três vezes e até sete dias
+        depois da primeira.</li>
+    <li><strong>O que o jogo guarda, só no aparelho</strong>: esses números (ou a anotação de que não houve
+        anúncio), quantas vezes tentou e a data da primeira tentativa. <strong>Configurações → Apagar meus
+        dados</strong> apaga isso; na abertura seguinte o jogo pergunta à Apple de novo, e a Apple responde o
+        mesmo, porque o registro da instalação é dela.</li>
+    <li><strong>O que isso acrescenta às contagens</strong>: quatro dos passos da
+        <a href="#contagens">seção 10.1</a> (um Desafio do dia começado, um Desafio do dia vencido, um teste
+        grátis do Premium visto começando e uma compra de pétalas) levam esses três números, quando existem.
+        O servidor soma 1 ao total do dia daquele passo e daqueles números, e guarda só isso: nenhuma hora,
+        endereço IP, identificador nem o conteúdo do aviso. São contagens de acontecimentos, não de pessoas:
+        nada liga a contagem a você nem uma contagem a outra, e, sem anúncio, ela é somada ao mesmo passo, sem
+        números.</li>
+    <li><strong>O que os números dizem</strong>: só de qual das nossas campanhas veio uma instalação, igual
+        para todos os que vieram do mesmo anúncio. A Apple documenta que esse registro não identifica você nem
+        o seu aparelho. Vale para todos, de qualquer idade, e não há uma opção para desligar.</li>
   </ul>
 
   <h2 id="feedback">11. Feedback e suporte</h2>
