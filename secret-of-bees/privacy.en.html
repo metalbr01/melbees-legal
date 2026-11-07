@@ -11,9 +11,11 @@
   <p class="lang"><strong>English</strong> · <a href="privacy.pt-BR.html">Português</a></p>
 
   <h1>Privacy Policy - Melbees: The Secret of Bees</h1>
-  <p class="muted">Effective date: 2026-07-27 · Last updated: 2026-11-05</p>
+  <p class="muted">Effective date: 2026-07-27 · Last updated: 2026-11-06</p>
 
   <!--
+    WEB DUEL (#588, 2026-11-05): on top of #619. Web Duel, Turnstile and public rooms; Ready ad prepared and off until AdSense approval. PUBLISHED on 2026-11-06 on the Owner's word.
+
     VERSION 2 - the policy for the MONETIZED game. Written by mission P1 of
     launch-director-plan.md against the code that G5 (Play Billing), G6 (AdMob + UMP),
     M1 (Firebase) and S3 (Google account) landed. This page is the translation of
@@ -260,21 +262,44 @@
 
   <h3 id="browser-daily">2.3 The Daily Challenge in the browser (open to everyone)</h3>
   <p>The Daily Challenge also opens in the browser (Chrome, Edge or Safari), from a public address, with
-     nothing to install and no invitation. It is only the day's Challenge; the rest of the game is in the
-     apps. What changes in it:</p>
+     nothing to install and no invitation. Alongside the day's Challenge, the Duel is available on our own addresses diario.melbees.games and daily.melbees.games. What changes in it:</p>
   <ul>
-    <li><strong>There is no purchase and no ad</strong>, and Premium is not unlocked. Because there is no
-        ad, the game <strong>does not ask your age</strong> (<a href="#children">section 5</a>), and
-        nothing in sections <a href="#ads">6</a> and <a href="#purchases">7</a> happens in it. <strong>The
-        account is optional and serves only to put your times on the day's ranking</strong> (below);
-        without it, nothing in sections <a href="#account">8</a> and <a href="#leaderboard">9</a> happens,
-        and your time goes to no ranking.</li>
+    <li><strong>There are no purchases</strong>, and Premium is not unlocked. The account is optional for the solo Daily and its ranking, and required for the Duel (<a href="#duel">section 9.1</a>). Browser ads stay off until AdSense approves. When enabled, the Daily's rewarded ad and the Duel's Ready ad use the same age and consent choices, as described below.</li>
+    <li id="browser-ad"><strong>Browser ads are prepared but stay off until AdSense approves.</strong>
+        When enabled, there are two types, only on the Daily's own addresses. When Petals run out in the Daily, you may choose a rewarded ad for one Petal and 30 seconds. In the Duel, after tapping <strong>Ready</strong>, players without Premium may see a full-screen ad with no reward: in the first three duels of the day, then less often as they play. Never when the page opens or during play. Refusing an ad or a failed load does not block the Duel. There are no banners or portal ads.
+        Before the first ad of either type, the game asks <strong>the same age question and cookie notice</strong>, once, with two equally weighted buttons: <em>Watch ad</em> and <em>Not now</em>. It stores only the band, never the age typed, in this browser and on this site. <em>Not now</em> loads nothing from the ad and asks nothing more that visit; the Duel's Ready goes on. No ad is requested without an answered band. These treatments only start operating when ads are enabled.</li>
+
+    <li><strong>Nothing is requested from Google until you accept.</strong> The ad is
+        <strong>Google AdSense</strong>'s, which acts as an independent controller of the data it
+        receives (<a href="#sharing">section 13</a>). After you accept, the game loads Google's ad
+        script, and <strong>that first request reaches Google with the address of the page and the data
+        the browser sends with every request</strong> (such as the IP address and the browser used).
+        Google's script may set and read its own cookies, <strong>to measure the ad and to prevent
+        fraud</strong>. On the next visits, once you have accepted, the game loads the script a moment
+        after the page is drawn, without asking again, until you clear your choice (below).</li>
+    <li><strong>No ad is personalised, whatever your age.</strong> The band only chooses how strict the
+        request is: under 13 it is marked <em>child-directed</em>, from 13 to 17 it is treated as the
+        under-age-of-consent request of Google's rules, and from 18 up it is not marked; and every
+        request, in every band, asks for a <strong>non-personalised</strong> ad. <strong>On a day when the
+        Daily's theme is a children's one</strong>, every request is child-directed, whatever your band.
+        The game sends Google no age and no other data of the game: that treatment mark is all it
+        tells it about you.</li>
+    <li><strong>In the European Union, the United Kingdom and Switzerland</strong>, the consent for the
+        ad's cookies is asked by <strong>Google's own message</strong>, shown with the ad script; if you
+        refuse it, the game shows no ad. Elsewhere, the notice you accepted is the consent. In both
+        cases the ad's cookies are Google's and are separate from the game's analytics, which keeps
+        every consent denied (below).</li>
+    <li><strong>You can change your mind at any time</strong> with the <strong>Privacy and ads</strong>
+        link in the page's footer: it opens this policy, Google's message where there is one, and
+        <strong>Clear my choice</strong>, which stops the ad for that visit and erases the stored band, so
+        the question comes back at the next ad. Clearing the site's data in the browser's settings erases
+        the band too.</li>
     <li><strong>Everyone reads the day's ranking, with no account.</strong> To draw the podium, the game
         asks <strong>Supabase</strong> (<a href="#sharing">section 13</a>) for the day's best marks,
         sending nothing about you: no identifier, no account. Supabase receives the device's IP address,
         as any server answering a request does.</li>
     <li><strong>If you sign in</strong> (only on the Daily's own addresses, with the <strong>Sign in with
-        Google</strong> button under the podium), the page goes to Supabase and to Google's own sign-in
+        Google</strong> button under the podium or when entering the Duel), the page goes to Supabase and to Google's own sign-in
         page, and comes back signed in to the same account as the apps: what Supabase keeps is what
         <a href="#account">section 8</a> says. The browser keeps the session in the site's storage until
         you tap <strong>Sign out</strong> or clear the site's data. Signed in, a Daily you win to its
@@ -282,7 +307,7 @@
         and the account's nickname); the account's e-mail and name never appear on the ranking. On the
         portal pages (itch.io, Game Jolt, Addicting Games) there is no sign-in: a button opens the Daily's
         own address in a new tab.</li>
-    <li><strong>Without an account, the game sends nothing about you to our servers.</strong> It counts game events (such as
+    <li><strong>In the solo Daily without an account, the game sends no run to our servers.</strong> The Duel verification sends signals to Cloudflare as described in <a href="#duel">section 9.1</a>. It counts game events (such as
         opening the Daily, finishing a phase, tapping the store button) in <strong>Google
         Analytics</strong>, with every consent denied: <strong>no cookie and no identifier</strong>, nothing
         that says who you are or links one visit to another. There is no Firebase Crashlytics in this
@@ -290,7 +315,7 @@
     <li><strong>Attempts, times, the lessons taken and the settings stay in the browser's
         storage</strong>, on this device and in this browser, and are never sent to us, except the run of a
         won Daily when you are signed in (above) and the studio switch (<a href="#studio">section
-        10.2</a>). Clearing the
+        10.2</a>). In the Duel, plays pass through the room service (<a href="#duel">section 9.1</a>). Clearing the
         site's data in the browser's settings erases everything.</li>
     <li><strong>The hosting is Cloudflare's</strong>, which logs the visits to the pages (such as the IP
         address, the date and time and the browser used), like any hosting service, and counts the visits
@@ -457,6 +482,7 @@
         account (<em>Play Age Signals</em>) and we <strong>do not query it</strong>: its terms forbid
         using that information for advertising, which is the only thing we would need an age for.</li>
   </ul>
+  <p><strong>On the web Daily, when ads are enabled after AdSense approval</strong>, the same band applies to both ads. The notice and choices are those of <a href="#browser-ad">section 2.3</a>: without an answer no ad is requested and the Duel continues; no ad is personalized, at any band. The browser does not use Firebase.</p>
   <p><strong>United States.</strong> We do not knowingly collect personal information from children
      under 13 for the purposes COPPA restricts. <strong>European Union and United Kingdom.</strong>
      Some countries set the age at which a teenager can consent alone anywhere between 13 and 16;
@@ -474,8 +500,7 @@
    never during a duel and never in the solo game, and you close it with the ad's own control. There is no banner.
    <strong>The Windows version has no ads at all</strong> (<a href="#windows">section 2.1</a>), and Premium removes the Duel's
    ad: this section applies to Android and to the iPhone. The Duel's ad follows the same age and consent handling as the
-   rewarded ad, described below. The Daily Challenge in the browser has no ad and no Duel
-   (<a href="#browser-daily">section 2.3</a>).</p>
+   rewarded ad, described below. The Duel also exists on the web Daily. Its Ready ad uses AdSense H5 and stays off until approval, like the rewarded ad (<a href="#browser-daily">section 2.3</a>).</p>
   <p>Ads are served by <strong>Google AdMob</strong>, which acts as an independent controller of the
      data it receives. The treatment of each request depends on the band from
      <a href="#children">section 5</a>:</p>
@@ -540,7 +565,7 @@
   <p><strong>The account is optional for the solo game: you need none to play or to buy.</strong> Only the Duel, the mode where you play a friend, needs an account, because your friend sees your nickname and your face. The game never asks you to sign in on launch. It offers the sign-in for three things, and signing in is always an action of yours: the <strong>online leaderboard</strong>, <strong>restoring a subscription</strong> on another device, the other platform included, and the <strong>Duel</strong>. A subscriber who has not signed in also sees that offer as
      a quiet line before a game, saying it will not reach the online leaderboard without the account,
      and as a button on the screen that celebrates the subscription. Neither stops you from playing. In
-     the browser, the sign-in is offered only for the day's Daily Challenge ranking
+     the Daily's own browser pages, sign-in is offered for the Duel and the day's Daily Challenge ranking
      (<a href="#browser-daily">section 2.3</a>).</p>
   <p>On Windows the account is the same, and signing in opens the browser;
      <a href="#windows">section 2.1</a> describes that sign-in and where Windows keeps the session.</p>
@@ -673,6 +698,11 @@
    a code only is not in the list.</p>
 <p>A duel's result stays on the two devices: <strong>it does not go to the leaderboard</strong>. The Share button builds an image
    with no Secret word and no other player's nickname, and it leaves the device only if you send it.</p>
+
+<p><strong>On the web Daily</strong>, the same service receives the messages and deletes them within the same periods above. To create a room or publish it in the public room list, the page loads <strong>Cloudflare Turnstile</strong> to distinguish a person from a program. Cloudflare processes browser and connection signals such as IP address, TLS connection characteristics, browser used, and the site key with its origin. It verifies the attempt for us as a processor and also processes signals as an independent controller to improve bot detection, under the <a href="https://www.cloudflare.com/turnstile-privacy-policy/">Turnstile privacy notice</a>. That notice governs retention of these signals; we do not promise the room's 30-minute period for them. The page receives a verification token, sends it to the service for that attempt and discards it afterwards. Publishing the room requires another verification with a fresh single-use token; the creation token is not reused. It does not keep it in site storage or use it for advertising.</p>
+<p>To resume an invitation after Google sign-in, the browser may store the short code and time. Resuming is valid for up to ten minutes; the code is erased on resuming, cancelling or checking that its time has passed. No room token is in this record. Clearing site data also erases it.</p>
+<p><strong>Public rooms are also available on the web</strong>, when the listing service is available to browsers. Creating a private or public room uses the day's Daily category in the page's language. Joining may list rooms of every category and language, including rooms created in the apps. The public data is the same as above; the list entry is deleted when the room is removed and expires within <strong>90 seconds</strong> after its last renewal. A private room is accessible only to someone with its code or invitation.</p>
+<p><strong>Hiding the tab counts as leaving the Duel</strong>, including switching tabs or minimizing the browser. The room connection is interrupted; if you stay away for <strong>15 seconds</strong> during play while the other player remains connected, they win by walkover. Returning before the deadline lets you resume the same seat. Neither player wins if both are absent.</p>
 
   <h2 id="analytics">10. Analytics and crash reports</h2>
   <p><strong>This section applies to Android only</strong>: the Windows and iPhone versions do not use
@@ -895,6 +925,8 @@
         accounts list (<a href="#accounts-report">section 8</a>), and receives the simple counts from
         Windows and the iPhone (<a href="#counts">section 10.1</a>), as our processor.</li>
     <li><strong>Cloudflare</strong>, in the Duel: the room service relays the room's messages between the two players and deletes them when the room ends (<a href="#duel">section 9.1</a>), as our processor.</li>
+    <li><strong>Cloudflare Turnstile</strong>, on the web Daily: verifies room creation and publication and processes the signals in <a href="#duel">section 9.1</a>, also to improve its detection under its privacy notice.</li>
+    <li><strong>Google AdSense</strong>, on the web Daily, only when ads are enabled after approval: serves rewarded and Ready ads as an independent controller (<a href="#browser-ad">section 2.3</a>).</li>
     <li><strong>Google Apps Script and Google Sheets</strong> - receive and store the feedback reports
         (<a href="#feedback">section 11</a>), as our processors.</li>
   </ul>
