@@ -11,9 +11,17 @@
   <p class="lang"><strong>English</strong> · <a href="privacy.pt-BR.html">Português</a></p>
 
   <h1>Privacy Policy - Melbees: The Secret of Bees</h1>
-  <p class="muted">Effective date: 2026-07-27 · Last updated: 2026-11-19</p>
+  <p class="muted">Effective date: 2026-07-27 · Last updated: 2026-11-20</p>
 
   <!--
+    VERSION 9 = THE REVIEW REQUEST (#764, from #722, 2026-11-20): in section 10.1, seven more steps,
+    without Apple Ads numbers (analytics-and-telemetry.md §7.5.2, server/migrations/0044_funnel_review.sql):
+    the tap on "Rate the game", on Windows and the iPhone (review_open), and the six results of Apple's own
+    review request, iPhone only (review_requested, review_capped, review_unavailable, review_not_engaged,
+    review_disabled, review_error). The Owner's yes on 2026-11-20 (train 1.0.46+46, "Servidor 0044 +
+    §10.1"): publish before the server with 0044 and the 1.0.46 apps; if published after 2026-11-20,
+    "Last updated" becomes the publication date.
+
     VERSION 8 = IPHONE: DAILY CHALLENGE AND OTHER MODES (#486, 2026-11-19): in section 10.1, two more
     iPhone-only steps, without Apple Ads numbers: the installation's first complete Daily Challenge won and
     each match won in Run or Walk. Publish on the Owner's word, before the iPhone version that sends the two
@@ -779,7 +787,16 @@
         <strong>On the iPhone, also, without Apple Ads numbers</strong>: the first complete Daily
         Challenge won since this capable version observes the installation; and each match won in the
         other modes, Run or Walk, counted together. The first count uses a mark stored only on the device;
-        deleting the data allows it to be counted again. Wins before the update are not recovered.</li>
+        deleting the data allows it to be counted again. Wins before the update are not recovered.
+        <strong>On Windows and the iPhone, also, without Apple Ads numbers</strong>: each tap on
+        “Rate the game”, in Settings → About. <strong>On the iPhone only</strong>, also without those
+        numbers: each time that, after a match won, the game checks whether it may ask for a review in
+        Apple's own window, the result, in one of six steps: the request was made to Apple; it was not made
+        because there was already a request in the last 90 days; it was not made because the device says
+        reviewing is not available; it was not made because there are not enough wins on this device yet;
+        it was not made because the request is turned off; there was an error in the attempt. Apple does not
+        tell the game whether the window appeared or whether you reviewed, and none of these steps says
+        that.</li>
     <li><strong>What is sent</strong>, and nothing else: a short notice with the platform (Windows or
         iPhone) and the step and, only if the studio switch is on (<a href="#studio">section 10.2</a>),
         the test mark (and, on those four iPhone steps, the numbers of

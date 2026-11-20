@@ -11,9 +11,17 @@
   <p class="lang"><a href="privacy.en.html">English</a> · <strong>Português</strong></p>
 
   <h1>Política de Privacidade - Melbees: The Secret of Bees</h1>
-  <p class="muted">Data de vigência: 27/07/2026 · Última atualização: 19/11/2026</p>
+  <p class="muted">Data de vigência: 27/07/2026 · Última atualização: 20/11/2026</p>
 
   <!--
+    VERSÃO 9 = O PEDIDO DE AVALIAÇÃO (#764, de #722, 20/11/2026): na seção 10.1, sete passos a mais, sem
+    os números do Apple Ads (analytics-and-telemetry.md §7.5.2, server/migrations/0044_funnel_review.sql):
+    o toque em "Avaliar o jogo", no Windows e no iPhone (review_open), e os seis resultados do pedido de
+    avaliação da própria Apple, só no iPhone (review_requested, review_capped, review_unavailable,
+    review_not_engaged, review_disabled, review_error). Sim do Owner em 20/11/2026 (trem 1.0.46+46,
+    "Servidor 0044 + §10.1"): publicar antes do servidor com a 0044 e dos apps 1.0.46; se publicada depois
+    de 20/11/2026, a data de "Última atualização" passa a ser a da publicação.
+
     VERSÃO 8 = IPHONE: DESAFIO DO DIA E OUTROS MODOS (#486, 19/11/2026): na seção 10.1, dois passos a
     mais só do iPhone, sem os números do Apple Ads: o primeiro Desafio do dia completo vencido na instalação
     e cada partida vencida em Corrida ou Passeio. Publicar na palavra do Owner, antes da versão do iPhone que
@@ -784,7 +792,15 @@
         <strong>No iPhone, também, sem os números do Apple Ads</strong>: o primeiro Desafio do dia
         completo vencido desde que esta versão capaz observa a instalação; e cada partida vencida nos
         outros modos, Corrida ou Passeio, somados. A primeira contagem é uma marca guardada só no aparelho;
-        apagar os dados permite contá-la de novo. Não recupera vitórias anteriores à atualização.</li>
+        apagar os dados permite contá-la de novo. Não recupera vitórias anteriores à atualização.
+        <strong>No Windows e no iPhone, também, sem os números do Apple Ads</strong>: cada toque em
+        “Avaliar o jogo”, em Configurações → Sobre. <strong>Só no iPhone</strong>, também sem esses
+        números: cada vez que, depois de uma partida vencida, o jogo vê se pode pedir uma avaliação na janela
+        da própria Apple, o resultado, em um de seis passos: o pedido foi feito à Apple; não foi feito porque
+        já houve um pedido nos últimos 90 dias; não foi feito porque o aparelho diz que a avaliação não está
+        disponível; não foi feito porque ainda não há vitórias suficientes neste aparelho; não foi feito
+        porque o pedido está desligado; houve um erro na tentativa. A Apple não conta ao jogo se a janela
+        apareceu nem se você avaliou, e nenhum desses passos diz isso.</li>
     <li><strong>O que é enviado</strong>, e nada além disso: um aviso curto com a plataforma (Windows ou
         iPhone) e o passo e, só se a chave do estúdio estiver ligada (<a href="#estudio">seção 10.2</a>),
         o sinal de teste (e, nesses quatro passos do iPhone, os números da <a href="#apple-ads">seção
